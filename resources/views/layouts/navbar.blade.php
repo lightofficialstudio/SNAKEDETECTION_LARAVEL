@@ -68,7 +68,7 @@
                         class="menu-item {{ request()->is('snake/firstaid*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
                         <a href="{{ route('snake.firstaid') }}" class="menu-link">
-                            <span class="menu-title">สาราณูกรมงู</span>
+                            <span class="menu-title">วิธีปฐมพยาบาล</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
                         <!--end:Menu link-->

@@ -86,7 +86,7 @@ License: For each use you must have a valid license purchased only from above li
             @include('layouts/navbar')
             <!--end::Header-->
             <!--begin::Wrapper-->
-
+            @yield('modal')
             @yield('content')
 
             @include('layouts.footer')
@@ -131,6 +131,7 @@ License: For each use you must have a valid license purchased only from above li
     <script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+    @yield('script')
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>

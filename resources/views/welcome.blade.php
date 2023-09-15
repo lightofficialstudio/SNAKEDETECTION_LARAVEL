@@ -201,6 +201,31 @@
                             </div>
                             <!--end::Row-->
 
+                            <!--begin::Row-->
+                            <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
+                                <!--begin::Col-->
+                                <div class="col-md-12 ">
+                                    <!--begin::Hot sales post-->
+                                    <div class="card-xl-stretch me-md-6  p-12 rounded text-center">
+                                        <!--begin::Overlay-->
+
+                                        <!--begin::Image-->
+                                        <img src="{{ asset('project/images/line.jpg') }}" alt="line-chat" width="800px;">
+                                        <!--end::Image-->
+                                        <!--begin::Action-->
+
+                                        <!--end::Action-->
+                                        </a>
+                                        <!--end::Overlay-->
+
+                                    </div>
+                                    <!--end::Hot sales post-->
+                                </div>
+
+
+                            </div>
+                            <!--end::Row-->
+
 
 
                         </div>
