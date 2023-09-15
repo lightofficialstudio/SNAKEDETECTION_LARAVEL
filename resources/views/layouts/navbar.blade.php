@@ -31,7 +31,8 @@
                 <div class="menu menu-rounded menu-active-bg menu-state-primary menu-column menu-lg-row menu-title-gray-700 menu-icon-gray-500 menu-arrow-gray-500 menu-bullet-gray-500 my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"
                     id="kt_app_header_menu" data-kt-menu="true">
                     <!--begin:Menu item-->
-                    <div class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+                    <div
+                        class="menu-item {{ request()->is('/') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
                         <a href="{{ route('snake.home') }}" class="menu-link">
                             <span class="menu-title">หน้าหลัก</span>
@@ -39,10 +40,9 @@
                         </a>
                         <!--end:Menu link-->
                     </div>
-                    <!--end:Menu item-->
 
-                    <!--begin:Menu item-->
-                    <div class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
+                    <div
+                        class="menu-item {{ request()->is('snake/callcenter*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
                         <a href="{{ route('snake.callcenter') }}" class="menu-link">
                             <span class="menu-title">ตรวจสอบชนิดงู</span>
@@ -52,10 +52,11 @@
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
-                    <div class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
+                    <div
+                        class="menu-item {{ request()->is('snake/profile*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
                         <a href="{{ route('snake.profile') }}" class="menu-link">
-                            <span class="menu-title">สาราณุกรมงู</span>
+                            <span class="menu-title">สาราณูกรมงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
                         <!--end:Menu link-->
@@ -63,10 +64,11 @@
                     <!--end:Menu item-->
 
                     <!--begin:Menu item-->
-                    <div class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
+                    <div
+                        class="menu-item {{ request()->is('snake/firstaid*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
                         <a href="{{ route('snake.firstaid') }}" class="menu-link">
-                            <span class="menu-title">ปฐมพยาบาล</span>
+                            <span class="menu-title">สาราณูกรมงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
                         <!--end:Menu link-->
