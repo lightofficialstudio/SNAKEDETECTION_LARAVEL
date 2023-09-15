@@ -1,46 +1,72 @@
 <!--begin::Footer-->
 
-<div id="kt_app_footer" class="app-footer">
-    <!--begin::Footer container-->
-    <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-        <!--begin::Copyright-->
-        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-            <li class="menu-item">
-                <a href="#" target="_blank" class="menu-link px-2">แชทบอท</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-            </li>
-        </ul>
-        <!--end::Copyright-->
-        <!--begin::Menu-->
-        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-            <li class="menu-item">
-                <a href="#" target="_blank" class="menu-link px-2">แชทบอท</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-            </li>
-        </ul>
-        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-            <li class="menu-item">
-                <a href="#" target="_blank" class="menu-link px-2">แชทบอท</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-            </li>
-        </ul>
-        <!--end::Menu-->
+<div style="background-color: #534340;">
+    <div id="kt_app_footer" class="app-footer mx-12 pt-3">
+        <!--begin::Footer container-->
+        <div
+            class="app-container container-fluid d-flex flex-column flex-md-row py-3 align-item-start justify-content-between">
+
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
+                <li class="menu-item">
+                    <h3 href="#" target="_blank" class="text-white px-2">เนื้อหา</h3>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">ตรวจสอบชนิดงู</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">สารบัญงู</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">สายด่วนงู</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">วิธีปฐมพยาบาล</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">แชทบอท</a>
+                </li>
+
+            </ul>
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
+                <li class="menu-item">
+                    <h3 href="#" target="_blank" class="text-white px-2">คู่มือการใช้งาน</h3>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">เว็บไซต์</a>
+                </li>
+
+
+            </ul>
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
+                <li class="menu-item">
+                    <h3 href="#" target="_blank" class="text-white px-2">เงื่อนไขการใช้งาน</h3>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">ข้อตกลง</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">ความเป็นส่วนตัว</a>
+                </li>
+
+
+            </ul>
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
+                <li class="menu-item">
+                    <h3 href="#" target="_blank" class="text-white px-2">เกี่ยวกับเรา</h3>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">จุดประสงค์การจัดทำ</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">ข้อมูลผู้ติดต่อ</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <!--end::Footer container-->
     </div>
-    <!--end::Footer container-->
 </div>
+
 <!--end::Footer-->

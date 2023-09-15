@@ -13,7 +13,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
+                opacity: 90%;
             }
         </style>
 
@@ -35,196 +35,179 @@
                     <!--begin::Toolbar container-->
 
                     <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-                        <!--begin::Toolbar container-->
-                        {{-- <div class="d-flex flex-stack flex-row-fluid">
-                            <!--begin::Toolbar container-->
-                            <div class="d-flex flex-column flex-row-fluid">
-                                <!--begin::Toolbar wrapper-->
-                                <!--begin::Breadcrumb-->
-                                <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
-                                    <!--begin::Item-->
-                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
-                                        <a href="../../demo41/dist/index.html" class="text-white text-hover-primary">
-                                            <i class="ki-outline ki-home text-gray-700 fs-6"></i>
-                                        </a>
-                                    </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
-                                    <li class="breadcrumb-item">
-                                        <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
-                                    </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
-                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Dashboards</li>
-                                    <!--end::Item-->
-                                </ul>
-                                <!--end::Breadcrumb-->
-                                <!--begin::Page title-->
-                                <div class="page-title d-flex align-items-center me-3">
-                                    <!--begin::Title-->
-                                    <h1
-                                        class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
-                                        Call Center</h1>
-                                    <!--end::Title-->
-                                </div>
-                                <!--end::Page title-->
-                            </div>
-                            <!--end::Toolbar container-->
 
-                        </div> --}}
-                        <!--end::Toolbar container-->
                     </div>
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content">
-                    <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-fluid">
-                        <div class="card border-transparent mb-5" data-bs-theme="light" style="background-color: #1C325E;">
-                            <!--begin::Body-->
-                            <div class="card-body d-flex ps-xl-15 justify-content-center text-center">
-                                <!--begin::Wrapper-->
-                                <div class="m-5">
-                                    <!--begin::Title-->
-                                    <div class="position-relative fs-3x z-index-2 fw-bold text-white mb-2">
-                                        <span class="me-2">
-                                            ทำนายชนิดงูโดย Machine Learning คืออะไร?
-                                        </span>
-                                        <br>
+                <section class="content" style="min-height: 100vh; background-color:#fefefe;">
+                    <div id="kt_app_content" class="app-content">
+                        <!--begin::Content container-->
+                        <div id="kt_app_content_container" class="app-container container-fluid">
+                            <div class="row d-flex justify-content-center">
+                                <div class="card border-transparent mb-5 col-9 " data-bs-theme="light">
+                                    <!--begin::Body-->
+                                    <div class="card-body d-flex  justify-content-center text-center border">
+                                        <!--begin::Wrapper-->
+                                        <div class="m-5">
+                                            <!--begin::Title-->
+                                            <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
+                                                <span class="me-2">
+                                                    ทำนายชนิดงูโดย Machine Learning คืออะไร?
+                                                </span>
+                                                <br>
 
 
-                                    </div>
-                                    <div
-                                        class="d-flex justify-content-center fs-2x z-index-2 text-white align-items-center mb-3">
-                                        <span>
-                                            เราฝึกฝนคอมพิวเตอร์ให้เรียนรู้และจำแนกลักษณะต่างๆของงูแต่ละชนิด<br>
-                                            เพื่อให้สามารถทำนายชนิดงูจากรูปภาพได้<br>
-                                            โดยในเว็บไซต์นี้มีข้อมูลของงูไทยทั้งหมด 23 ชนิด ซึ่งสามารถพบเจอได้บ่อย
-                                        </span>
-                                    </div>
-
-                                    <div
-                                        class="d-flex justify-content-center fs-2x z-index-2 text-danger align-items-center ">
-                                        <span>
-                                            ** การจำแนกด้วยรูปภาพนั้นมีความเสี่ยงในการผิดพลาด <br>
-                                            กรณีที่ถูกงูกัด เพื่อความปลอดภัย ควรพาผู้ที่ถูกงูกัดพบแพทย์ทุกครั้ง **
-                                        </span>
-                                    </div>
-
-
-                                    <!--end::Title-->
-
-                                    <!--begin::Action-->
-
-                                    <!--begin::Action-->
-                                </div>
-                                <!--begin::Wrapper-->
-
-                                <!--begin::Illustration-->
-                                <img src="{{ asset('project/images/anaconda (1).png') }}"
-                                    class="position-absolute me-3 bottom-0 end-0 h-100px" alt="">
-                                <!--end::Illustration-->
-                            </div>
-                            <!--end::Body-->
-                        </div>
-                        <!--begin::Row-->
-                        <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
-                            <!--begin::Col-->
-                            <div class="col-xl-3">
-                                <!--begin::Card widget 3-->
-                                <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
-                                    style="background-color: #F1416C;background-image:url('assets/media/svg/shapes/wave-bg-red.svg')">
-                                    <!--begin::Header-->
-                                    <div class="card-header pt-5 mb-3">
-                                        <!--begin::Icon-->
-                                        <div class="d-flex flex-center rounded-circle h-80px w-80px"
-                                            style="border: 1px dashed rgba(255, 255, 255, 0.4);background-color: #F1416C">
-                                            <i class="ki-outline ki-whatsapp text-white fs-2qx lh-0"></i>
-                                        </div>
-                                        <!--end::Icon-->
-                                    </div>
-                                    <!--end::Header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body d-flex align-items-end mb-3">
-                                        <!--begin::Info-->
-                                        <div class="d-flex align-items-center">
-                                            <span class="fs-4hx text-white fw-bold me-6">191</span>
-                                            <div class="fw-bold fs-6 text-white">
-                                                <span class="d-block">Police</span>
-                                                <span class="">Calls</span>
                                             </div>
-                                        </div>
-                                        <!--end::Info-->
-                                    </div>
-                                    <!--end::Card body-->
-                                    <!--begin::Card footer-->
-                                    <div class="card-footer"
-                                        style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                        <!--begin::Progress-->
-                                        <div class="fw-bold text-white py-2">
-                                            <span class="fs-1 d-block">935</span>
-                                            <span class="opacity-50">Problems Solved</span>
-                                        </div>
-                                        <!--end::Progress-->
-                                    </div>
-                                    <!--end::Card footer-->
-                                </div>
-                                <!--end::Card widget 3-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col-xl-3">
-                                <!--begin::Card widget 3-->
-                                <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
-                                    style="background-color: #7239EA;background-image:url('assets/media/svg/shapes/wave-bg-purple.svg')">
-                                    <!--begin::Header-->
-                                    <div class="card-header pt-5 mb-3">
-                                        <!--begin::Icon-->
-                                        <div class="d-flex flex-center rounded-circle h-80px w-80px"
-                                            style="border: 1px dashed rgba(255, 255, 255, 0.4);background-color: #7239EA">
-                                            <i class="ki-outline ki-call text-white fs-2qx lh-0"></i>
-                                        </div>
-                                        <!--end::Icon-->
-                                    </div>
-                                    <!--end::Header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body d-flex align-items-end mb-3">
-                                        <!--begin::Info-->
-                                        <div class="d-flex align-items-center">
-                                            <span class="fs-4hx text-white fw-bold me-6">427</span>
-                                            <div class="fw-bold fs-6 text-white">
-                                                <span class="d-block">Outbound</span>
-                                                <span class="">Calls</span>
+                                            <div
+                                                class="d-flex justify-content-center fs-2x z-index-2 text-dark align-items-center mb-3">
+                                                <span>
+                                                    เราฝึกฝนคอมพิวเตอร์ให้เรียนรู้และจำแนกลักษณะต่างๆของงูแต่ละชนิด<br>
+                                                    เพื่อให้สามารถทำนายชนิดงูจากรูปภาพได้<br>
+                                                    โดยในเว็บไซต์นี้มีข้อมูลของงูไทยทั้งหมด 23 ชนิด ซึ่งสามารถพบเจอได้บ่อย
+                                                </span>
                                             </div>
+
+                                            <div
+                                                class="d-flex justify-content-center fs-2x z-index-2 text-danger align-items-center ">
+                                                <span>
+                                                    ** การจำแนกด้วยรูปภาพนั้นมีความเสี่ยงในการผิดพลาด <br>
+                                                    กรณีที่ถูกงูกัด เพื่อความปลอดภัย ควรพาผู้ที่ถูกงูกัดพบแพทย์ทุกครั้ง **
+                                                </span>
+                                            </div>
+
+
+                                            <!--end::Title-->
+
+                                            <!--begin::Action-->
+
+                                            <!--begin::Action-->
                                         </div>
-                                        <!--end::Info-->
+                                        <!--begin::Wrapper-->
+
+                                        <!--begin::Illustration-->
+                                        {{-- <img src="{{ asset('project/images/anaconda (1).png') }}"
+                                            class="position-absolute me-3 bottom-0 end-0 h-100px" alt=""> --}}
+                                        <!--end::Illustration-->
                                     </div>
-                                    <!--end::Card body-->
-                                    <!--begin::Card footer-->
-                                    <div class="card-footer"
-                                        style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                        <!--begin::Progress-->
-                                        <div class="fw-bold text-white py-2">
-                                            <span class="fs-1 d-block">386</span>
-                                            <span class="opacity-50">Generated Leads</span>
-                                        </div>
-                                        <!--end::Progress-->
-                                    </div>
-                                    <!--end::Card footer-->
+                                    <!--end::Body-->
                                 </div>
-                                <!--end::Card widget 3-->
                             </div>
-                            <!--end::Col-->
+
+                            <!--begin::Row-->
+                            <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
+                                <!--begin::Col-->
+                                <div class="col-md-3 ">
+                                    <!--begin::Hot sales post-->
+                                    <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                        <!--begin::Overlay-->
+
+                                        <!--begin::Image-->
+                                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                            style="background-image:url('{{ asset('project/images/snake.jpg') }}')">
+                                        </div>
+                                        <!--end::Image-->
+                                        <!--begin::Action-->
+
+                                        <!--end::Action-->
+                                        </a>
+                                        <!--end::Overlay-->
+                                        <!--begin::Body-->
+                                        <div class="mt-5">
+                                            <!--begin::Title-->
+                                            <p href="#"
+                                                class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                สาราณุกรมงู</p>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ค้นหาและดูข้อมูลงู
+                                                23 ชนิด ที่ถูกพบบ่อย</div>
+                                            <!--end::Text-->
+                                            <!--begin::Text-->
+
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Hot sales post-->
+                                </div>
+                                <div class="col-md-3 ">
+                                    <!--begin::Hot sales post-->
+                                    <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                        <!--begin::Overlay-->
+
+                                        <!--begin::Image-->
+                                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                            style="background-image:url('{{ asset('project/images/snake3.jpg') }}')"></div>
+                                        <!--end::Image-->
+                                        <!--begin::Action-->
+
+                                        <!--end::Action-->
+                                        </a>
+                                        <!--end::Overlay-->
+                                        <!--begin::Body-->
+                                        <div class="mt-5">
+                                            <!--begin::Title-->
+                                            <p href="#"
+                                                class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                วิธีปฐมพยาบาล</p>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-3 text-gray-600 text-dark mt-3">การปฐมพยาบาล
+                                                เบื้องต้นเมื่อถูกกัด</div>
+                                            <!--end::Text-->
+                                            <!--begin::Text-->
+
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Hot sales post-->
+                                </div>
+                                <div class="col-md-3 ">
+                                    <!--begin::Hot sales post-->
+                                    <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                        <!--begin::Overlay-->
+
+                                        <!--begin::Image-->
+                                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                            style="background-image:url('{{ asset('project/images/snake2.jpg') }}')"></div>
+                                        <!--end::Image-->
+                                        <!--begin::Action-->
+
+                                        <!--end::Action-->
+                                        </a>
+                                        <!--end::Overlay-->
+                                        <!--begin::Body-->
+                                        <div class="mt-5">
+                                            <!--begin::Title-->
+                                            <p href="#"
+                                                class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                สายด่วนงู</p>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">งูเข้าบ้าน หรือ
+                                                ถูกงูกัด เบอร์ติดต่อที่เกี่ยวข้อง</div>
+                                            <!--end::Text-->
+                                            <!--begin::Text-->
+
+                                            <!--end::Text-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Hot sales post-->
+                                </div>
+                            </div>
+                            <!--end::Row-->
+
+
 
                         </div>
-                        <!--end::Row-->
-
-
-
+                        <!--end::Content container-->
                     </div>
-                    <!--end::Content container-->
-                </div>
+                </section>
+
                 <!--end::Content-->
             </div>
             <!--end::Content wrapper-->
