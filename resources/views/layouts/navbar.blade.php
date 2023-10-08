@@ -42,9 +42,9 @@
                     </div>
 
                     <div
-                        class="menu-item {{ request()->is('snake/callcenter*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        class="menu-item {{ request()->is('snake/check*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
-                        <a href="{{ route('snake.callcenter') }}" class="menu-link">
+                        <a href="{{ route('snake.check') }}" class="menu-link">
                             <span class="menu-title">ตรวจสอบชนิดงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
@@ -53,9 +53,9 @@
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
                     <div
-                        class="menu-item {{ request()->is('snake/profile*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        class="menu-item {{ request()->is('snake/search*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
-                        <a href="{{ route('snake.profile') }}" class="menu-link">
+                        <a href="{{ route('snake.search') }}" class="menu-link">
                             <span class="menu-title">สาราณูกรมงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
