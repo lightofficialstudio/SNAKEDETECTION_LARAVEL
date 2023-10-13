@@ -11,6 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('snake_posion_code', function (Blueprint $table) {
+            $table->id();
+            $table->text('code_name')->nullable();
+        });
+
         Schema::create('snake_database', function (Blueprint $table) {
             $table->id();
             $table->string('category')->nullable();
@@ -23,10 +28,14 @@ return new class extends Migration
             $table->text('location')->nullable();
             $table->text('status')->nullable();
             $table->text('reference')->nullable();
+            $table->unsignedBigInteger('posion_id')->nullable();
             $table->text('original_src')->nullable();
-
             $table->timestamps();
+
+            $table->foreign('posion_id')->references('id')->on('snake_posion_code');
+
         });
+
     }
 
     /**
@@ -35,5 +44,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('snake_database');
+        Schema::dropIfExists('snake_posion_code');
     }
 };
