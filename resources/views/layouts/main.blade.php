@@ -29,6 +29,7 @@ License: For each use you must have a valid license purchased only from above li
         content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- CSRF Token -->
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
@@ -60,7 +61,7 @@ License: For each use you must have a valid license purchased only from above li
     <script>
         var defaultThemeMode = "light";
         var themeMode;
-        s
+
         if (document.documentElement) {
             if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
                 themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
@@ -131,7 +132,7 @@ License: For each use you must have a valid license purchased only from above li
     <script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
-    @yield('script')
+    @stack('scripts')
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>

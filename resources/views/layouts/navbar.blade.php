@@ -42,9 +42,9 @@
                     </div>
 
                     <div
-                        class="menu-item {{ request()->is('snake/check*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        class="menu-item {{ request()->is('snake/upload*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
-                        <a href="{{ route('snake.check') }}" class="menu-link">
+                        <a href="{{ route('snake.upload') }}" class="menu-link">
                             <span class="menu-title">ตรวจสอบชนิดงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
