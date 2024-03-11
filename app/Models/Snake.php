@@ -9,7 +9,9 @@ use App\Models\SnakePosionCode;
 class Snake extends Model
 {
     use HasFactory;
+    // กำหนดชื่อตารางในฐานข้อมูล
     protected $table = 'snake_database';
+    // กำหนดให้สามารถเพิ่มข้อมูลเข้าไปในตารางได้
     protected $fillable = [
         'category',
         'name_th',
@@ -24,6 +26,8 @@ class Snake extends Model
         'posion_id',
         'image',
     ];
+
+    // กำหนดความสัมพันธ์กับตาราง snake_posion_code
     public function posion()
     {
         return $this->belongsTo(SnakePosionCode::class);

@@ -24,7 +24,7 @@ Route::get('/snake/firstaid', [FirstAidController::class, 'index'])->name('snake
 // ค้นหาประวัติงู
 Route::get('/snake/search', [SnakeProfileContoller::class, 'index'])->name('snake.search');
 // แสดงข้อมูลประวัติงู
-Route::get('/snake/profile', [SnakeProfileContoller::class, 'profile'])->name('snake.profile');
+Route::get('/snake/profile/{id}', [SnakeProfileContoller::class, 'profile'])->name('snake.profile');
 // ตรวจสอบว่างูเป็นพิษหรือไม่
 Route::get('/snake/check/', [SnakeCheckController::class, 'index'])->name('snake.check');
 // อัพโหลดรูปภาพเพื่อตรวจสอบว่างูเป็นพิษหรือไม่

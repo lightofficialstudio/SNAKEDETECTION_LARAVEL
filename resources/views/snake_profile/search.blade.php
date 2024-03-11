@@ -121,16 +121,17 @@
                             <!--begin::Row-->
                             <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
                                 <!--begin::Col-->
-                                @for ($i = 0; $i < 10; $i++)
+                                @foreach ($snakes as $snake)
                                     <div class="col-md-4 p-6">
                                         <!--begin::Hot sales post-->
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <!--begin::Overlay-->
 
                                             <!--begin::Image-->
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="background-image:url('{{ asset('project/images/snake-profileimg.png') }}')">
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover car d-rounded min-h-175px"
+                                                style="background-image:url('{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}')">
                                             </div>
+
                                             <!--end::Image-->
                                             <!--begin::Action-->
 
@@ -140,13 +141,15 @@
                                             <!--begin::Body-->
                                             <div class="mt-5 text-center">
                                                 <!--begin::Title-->
-                                                <a href="{{ route('snake.profile') }}"
+                                                <a href="{{ route('snake.profile', $snake->id) }}"
                                                     class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                                    [ชื่อของงู]</a>
+                                                    {{ $snake->name_th ?? '' }}</a>
                                                 <!--end::Title-->
                                                 <!--begin::Text-->
                                                 <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                                    [รายละเอียดของงู]</div>
+                                                    {{ str_replace('_', ' ', $snake->name_en ?? '') }}
+                                                </div>
+
                                                 <!--end::Text-->
                                                 <!--begin::Text-->
 
@@ -156,7 +159,7 @@
                                         </div>
                                         <!--end::Hot sales post-->
                                     </div>
-                                @endfor
+                                @endforeach
 
 
                             </div>

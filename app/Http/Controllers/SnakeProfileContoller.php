@@ -17,8 +17,14 @@ class SnakeProfileContoller extends Controller
         return view('snake_profile.search', $data);
     }
 
-    public function profile()
+    public function profile($snake_id)
     {
-        return view('snake_profile.profile');
+        // ตั้งตัวแปร $snake เพื่อเก็บข้อมูลของงูที่มี id ตามที่ส่งมา
+        $Snake = SnakeModel::find($snake_id);
+        // ตั้งตัวแปร $data เพื่อเก็บข้อมูลทั้งหมดที่จะส่งไปที่ view
+        $data = [
+            'snake' => $Snake
+        ];
+        return view('snake_profile.profile', $data);
     }
 }
