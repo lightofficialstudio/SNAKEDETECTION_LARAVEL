@@ -177,6 +177,5 @@
 
         @endsection
 
-        @section('script')
-
-        @endsection
+        @push('scripts')
+        @endpush

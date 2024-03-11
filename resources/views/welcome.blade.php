@@ -43,7 +43,7 @@
                         <h1 class="text-center fs-2x text-white font-weight-bold text-stroke">ทำนายชนิดงูโดย Machine
                             Learning</h1>
                         <button class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3"
-                            id="clickToUploadImages">เลือกรูปภาพ</button>
+                            id="clickToUploadImages">ตรวจสอบชนิดของงู</button>
                         <input type="file" name="" id="inputToUploadImages" style="display: none;">
                     </div>
                 </div>
@@ -270,7 +270,7 @@
 
         @endsection
 
-        @section('script')
+        @push('scripts')
             <script>
                 $(document).ready(function() {
                     $('#clickToUploadImages').on('click', function() {
@@ -278,4 +278,4 @@
                     });
                 });
             </script>
-        @endsection
+        @endpush
