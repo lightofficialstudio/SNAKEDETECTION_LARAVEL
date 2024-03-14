@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Snake;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class SnakeUploadController extends Controller
 {
     // URL ของ Flask API สำหรับการทำนายว่างูเป็นพิษหรือไม่
-    public $predictPostUrl = 'http://localhost:5000/predict';
+    public $predictPostUrl = 'http://localhost:8080/predict';
     // ฟังก์ชันสำหรับแสดงหน้าอัพโหลดรูปภาพ
     public function index()
     {
@@ -35,9 +36,13 @@ class SnakeUploadController extends Controller
 
             // วนลูปผ่านผลการทำนายเพื่อเก็บข้อมูล
             foreach ($predictions as $prediction) {
+                // ค้นหาชื่อของงูจากฐานข้อมูล
+                $snake_class = Snake::where('name_en', $prediction['class_name'])
+                    ->first();
+                // เก็บข้อมูลที่ต้องการไว้ใน array
                 $snakeDetails[] = [
                     'class' => $prediction['class'],
-                    'class_name' => $prediction['class_name'],
+                    'class_name' => $snake_class->name_th ?? $prediction['class_name'],
                     'confidence' => $prediction['confidence'],
                     'probability' => $prediction['probability']
                 ];
