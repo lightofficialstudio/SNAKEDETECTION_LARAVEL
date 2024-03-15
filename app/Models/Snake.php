@@ -30,6 +30,6 @@ class Snake extends Model
     // กำหนดความสัมพันธ์กับตาราง snake_posion_code
     public function posion()
     {
-        return $this->belongsTo(SnakePosionCode::class);
+        return $this->belongsTo(SnakePosionCode::class, 'posion_id', 'id');
     }
 }

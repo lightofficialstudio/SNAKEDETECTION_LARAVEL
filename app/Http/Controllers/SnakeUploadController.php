@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class SnakeUploadController extends Controller
 {
-    // URL ของ Flask API สำหรับการทำนายว่างูเป็นพิษหรือไม่
+    // URL ของ Flask API สำหรับการทำนายว่างู
     public $predictPostUrl = 'http://localhost:8080/predict';
     // ฟังก์ชันสำหรับแสดงหน้าอัพโหลดรูปภาพ
     public function index()
@@ -18,6 +18,10 @@ class SnakeUploadController extends Controller
     // ฟังก์ชันสำหรับอัพโหลดรูปภาพและทำนายว่างูเป็นพิษหรือไม่
     public function upload(Request $request)
     {
+        // ตรวจสอบชนิดของไฟล์
+        $request->validate([
+            'snake_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
         // ตรวจสอบว่ามีไฟล์ถูกอัพโหลดมาหรือไม่
         if ($request->hasFile('snake_image')) {
             // ทำการอัพโหลดไฟล์ไปยัง Flask API และรับข้อมูล JSON กลับมา

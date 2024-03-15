@@ -32,8 +32,8 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->foreign('posion_id')->references('id')->on('snake_posion_code');
-
         });
+
 
     }
 

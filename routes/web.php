@@ -29,5 +29,5 @@ Route::get('/snake/profile/{id}', [SnakeProfileContoller::class, 'profile'])->na
 Route::get('/snake/check/', [SnakeCheckController::class, 'index'])->name('snake.check');
 // อัพโหลดรูปภาพเพื่อตรวจสอบว่างูเป็นพิษหรือไม่
 Route::get('/snake/upload', [SnakeUploadController::class, 'index'])->name('snake.upload');
-// ส่งข้อมูลรูปภาพไปยัง Flask API เพื่อทำนายว่างูเป็นพิษหรือไม่
+// ส่งข้อมูลรูปภาพไปยัง Flask API เพื่อทำนายว่างู
 Route::post('/snake/upload/predict', [SnakeUploadController::class, 'upload'])->name('snake.upload.post');
