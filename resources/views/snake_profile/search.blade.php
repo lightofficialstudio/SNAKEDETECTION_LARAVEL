@@ -4,7 +4,7 @@
     <style>
         .header-img {
             position: relative;
-            min-height: 70vh;
+            min-height: 120vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,7 +23,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            filter: blur(8px);
+            filter: blur(6px);
             z-index: 0;
         }
     </style>
@@ -32,31 +32,224 @@
 
         <!--begin::Main-->
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-            <section class="header-img d-flex align-items-center justify-content-center">
+            <section class="header-img d-flex ">
                 <div class="blurred-bg"></div> <!-- นี่คือ div ที่จะแสดงรูปภาพที่เบลอ -->
-                <div class="d-flex align-items-center justify-content-center rounded"
-                    style="width: 100vh; height:40vh; background-color: rgba(255, 255, 255, 0.5); z-index: 1;">
+                <div class="d-flex  rounded"
+                    style="width: 140vh; height:105vh; background-color: rgba(255, 255, 255, 0.9); z-index: 1;">
 
-                    <div class="text-center p-4" style="width: 80%;">
-                        <h1 class="text-center fs-3x text-white font-weight-bold text-stroke">เริ่มการค้นหา
+                    <div class=" p-4" style="width: 100%;">
+                        <h1 class="text-center fs-3x text-dark font-weight-bold text-stroke mb-5">เริ่มการค้นหา
                         </h1>
 
+                        <div class="row">
+                            <div class="form-group mb-5 col-12">
+                                <!--begin::Input group-->
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>เลือกประเภทของงู (ไม่บังคับ)</option>
+                                        <option value="1">มีพิษอันตราย</option>
+                                        <option value="2">พิษเขี้ยวหลัง</option>
+                                        <option value="3">ไม่มีพิษ</option>
+                                    </select>
+                                    <label for="floatingSelect">เลือกประเภทของงู (ไม่บังคับ)</label>
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <div class="form-group mb-5 col-12">
+                                <!--begin::Input group-->
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>เลือกสถานภาพงู (ไม่บังคับ)</option>
+                                        <option value="1">เป็นสัตว์ป่าคุ้มครอง</option>
+                                        <option value="2">เสี่ยงต่ำต่อการสูญพันธ์</option>
+                                    </select>
+                                    <label for="floatingSelect">เลือกสถานภาพงู (ไม่บังคับ)</label>
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <div class="form-group col-12">
+                                <!--begin::Input group-->
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>เลือกสถานที่ ที่สามารถพบงู (ไม่บังคับ)</option>
+                                        <option value="1">ทุกภาค</option>
+                                        <option value="2">ภาคเหนือ</option>
+                                        <option value="3">ภาคตะวันออก</option>
+                                        <option value="4">ภาคตะวันตก</option>
+                                        <option value="5">ภาคใต้</option>
+                                    </select>
+                                    <label for="floatingSelect">เลือกสถานที่ ที่สามารถพบงู (ไม่บังคับ)</label>
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <div class="form-group col-6">
+                                <!--begin::Input group-->
+                                <label for="pattern-snake" class="fs-2x text-left mt-3 mb-3">ลวดลายบนตัวงู</label>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1"></label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="กรุณากรอกคำค้นหา">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1"></label>
-                            <select class="form-select" id="exampleFormControlSelect1">
-                                <option value="" selected>กรุณาเลือกประเภท</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+                                <!--begin::Row-->
+                                <div class="row mw-350px mb-5" data-kt-buttons="true"
+                                    data-kt-buttons-target=".form-check-image, .form-check-input">
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image active">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/pattern/circle.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="radio" checked value="1"
+                                                    name="pattern_option" />
+                                                <div class="form-check-label">
+                                                    วงกลม
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/pattern/segment.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid me-10">
+                                                <input class="form-check-input" type="radio" value="1"
+                                                    name="pattern_option" id="text_wow" />
+                                                <div class="form-check-label">
+                                                    ปล้องใหญ่
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/pattern/table.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid me-10">
+                                                <input class="form-check-input" type="radio" value="1"
+                                                    name="pattern_option" />
+                                                <div class="form-check-label">
+                                                    ตาราง
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/pattern/table.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid me-10">
+                                                <input class="form-check-input" type="radio" value="1"
+                                                    name="pattern_option" />
+                                                <div class="form-check-label">
+                                                    ตาราง
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--end::Input group-->
+                            </div>
+                            <div class="form-group col-6">
+                                <!--begin::Input group-->
+                                <label for="pattern-snake" class="fs-2x text-left mt-3 mb-3">สีบนตัวงู</label>
+
+                                <!--begin::Row-->
+                                <div class="row mw-350px mb-5" data-kt-buttons="true"
+                                    data-kt-buttons-target=".form-check-image, .form-check-input">
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image active">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/color/black.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="radio" checked value="1"
+                                                    name="color_option" />
+                                                <div class="form-check-label">
+                                                    สีดำ
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/color/green.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid me-10">
+                                                <input class="form-check-input" type="radio" value="1"
+                                                    name="color_option" id="text_wow" />
+                                                <div class="form-check-label">
+                                                    สีเขียว
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/color/brown.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid me-10">
+                                                <input class="form-check-input" type="radio" value="1"
+                                                    name="color_option" />
+                                                <div class="form-check-label">
+                                                    สีน้ำตาล
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-6">
+                                        <label class="form-check-image">
+                                            <div class="form-check-wrapper">
+                                                <img src="{{ asset('project/images/color/yellow.png') }}" />
+                                            </div>
+
+                                            <div class="form-check form-check-custom form-check-solid me-10">
+                                                <input class="form-check-input" type="radio" value="1"
+                                                    name="color_option" />
+                                                <div class="form-check-label">
+                                                    สีเหลือง
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
+                                <!--end::Input group-->
+                            </div>
+                            <div class="form-group col-12 ">
+                                <button class="btn btn-primary btn-lg">ค้นหา</button>
+                            </div>
                         </div>
 
 

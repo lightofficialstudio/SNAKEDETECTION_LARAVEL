@@ -11,16 +11,17 @@
                     <h3 href="#" target="_blank" class="text-white px-2">เนื้อหา</h3>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">ตรวจสอบชนิดงู</a>
+                    <a href="{{ route('snake.upload') }}" class="menu-link px-2">ตรวจสอบชนิดงู</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">สารบัญงู</a>
+                    <a href="{{ route('snake.search') }}" class="menu-link px-2">สารบัญงู</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">สายด่วนงู</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modal_emergency_call"
+                        class="menu-link px-2">สายด่วนงู</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">วิธีปฐมพยาบาล</a>
+                    <a href="{{ route('snake.firstaid') }}" class="menu-link px-2">วิธีปฐมพยาบาล</a>
                 </li>
                 <li class="menu-item">
                     <a href="#" target="_blank" class="menu-link px-2">แชทบอท</a>

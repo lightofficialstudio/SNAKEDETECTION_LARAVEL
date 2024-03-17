@@ -88,6 +88,9 @@ License: For each use you must have a valid license purchased only from above li
             <!--end::Header-->
             <!--begin::Wrapper-->
             @yield('modal')
+
+            @include('components.modal-emergency')
+
             @yield('content')
 
             @include('layouts.footer')
