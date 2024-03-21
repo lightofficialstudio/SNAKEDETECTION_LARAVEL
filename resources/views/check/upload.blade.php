@@ -1,6 +1,55 @@
 @extends('layouts/main')
 @section('title', 'ตรวจสอบชนิดงู')
+@section('css')
+    <style>
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border-left-color: #fff;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+@endsection
 @section('content')
+
+    <!-- Loader -->
+    <div id="loader" class="loader-container" style="display: none;">
+        <div class="loader">
+            <p>กำลังตรวจจับชนิดของงู <br>โปรดรอประมาณ 10-20 วินาที...</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
     <div class="app-wrapper d-flex" id="kt_app_wrapper">
         <!--begin::Sidebar-->
 
@@ -146,6 +195,8 @@
                 function handleSubmitSnakeImage() {
                     let formData = new FormData();
                     formData.append('snake_image', $('input[name="snake_image"]').prop('files')[0]);
+                    // แสดง loader
+                    $('#loader').show();
 
                     $.ajax({
                         url: '{{ route('snake.upload.post') }}',
@@ -158,9 +209,14 @@
                         processData: false,
                         success: function(response) {
                             displayPredictionResults(response);
+                        },
+                        complete: function() {
+                            // ซ่อน loader เมื่อการประมวลผลเสร็จสิ้น
+                            $('#loader').hide();
                         }
                     })
                 }
+
 
                 // ฟังก์ชันสำหรับแสดงผลการทำนาย 3 อันดับแรก
                 function displayPredictionResults(predictions) {

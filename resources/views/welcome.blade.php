@@ -43,8 +43,8 @@
                         </h1>
                         <h1 class="text-center fs-2x text-white font-weight-bold text-stroke">ทำนายชนิดงูโดย Machine
                             Learning</h1>
-                        <button class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3"
-                            id="clickToUploadImages">ตรวจสอบชนิดของงู</button>
+                        <a href="{{ route('snake.upload') }}"
+                            class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3">ตรวจสอบชนิดของงู</a>
                         <input type="file" name="" id="inputToUploadImages" style="display: none;">
                     </div>
                 </div>
@@ -261,7 +261,8 @@
                                         <h1 class="fs-4x">LINE CHATBOT</h1>
                                         <h2 class="fs-2x">หรือสามารถตรวจสอบข้อมูลของงูได้อย่างง่ายดาย <br> ผ่านช่องทาง LINE
                                             Chatbot ได้</h2>
-                                        <button class="btn btn-dark btn-lg shadow fs-2x mt-5">คุยแชทบอท</button>
+                                        <a href="https://lin.ee/ovnLjOm"
+                                            class="btn btn-dark btn-lg shadow fs-2x mt-5">คุยแชทบอท</a>
                                     </div>
                                 </div>
 

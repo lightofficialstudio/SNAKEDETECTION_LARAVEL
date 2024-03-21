@@ -21,7 +21,6 @@ class SnakeProfileContoller extends Controller
     {
         // ตั้งตัวแปร $snake เพื่อเก็บข้อมูลของงูที่มี id ตามที่ส่งมา
         $Snake = SnakeModel::find($snake_id);
-        $Poision = $Snake->posion->code_name;
         // ตั้งตัวแปร $data เพื่อเก็บข้อมูลทั้งหมดที่จะส่งไปที่ view
         $data = [
             'snake' => $Snake
