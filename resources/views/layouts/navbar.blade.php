@@ -53,10 +53,21 @@
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
                     <div
-                        class="menu-item {{ request()->is('snake/search*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        class="menu-item {{ request()->is('snake/search/attribute*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
-                        <a href="{{ route('snake.search') }}" class="menu-link">
-                            <span class="menu-title">สารานุกรม</span>
+                        <a href="{{ route('snake.search.attribute') }}" class="menu-link">
+                            <span class="menu-title">คุณลักษณะของงู</span>
+                            <span class="menu-arrow d-lg-none"></span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div
+                        class="menu-item {{ request()->is('snake/search/content') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        <!--begin:Menu link-->
+                        <a href="{{ route('snake.search.content') }}" class="menu-link">
+                            <span class="menu-title">สารบัญงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
                         <!--end:Menu link-->

@@ -2,19 +2,80 @@
 namespace App\Http\Controllers;
 
 use App\Models\Snake as SnakeModel;
+use Illuminate\Http\Request;
 
 class SnakeProfileContoller extends Controller
 {
-    public function index()
+    public function content(Request $request)
     {
-        // ตั้งตัวแปร $snakes เพื่อเก็บข้อมูลทั้งหมดจาก โมเดล snake
-        $Snake = SnakeModel::all();
-        // ตั้งตัวแปร $data เพื่อเก็บข้อมูลทั้งหมดที่จะส่งไปที่ view
+        $query = SnakeModel::query();
+
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อ (name)'
+        if ($request->has('searchByName') && $request->searchByName != '') {
+            $query->where('name_th', 'LIKE', '%' . $request->searchByName . '%')
+                ->orWhere('name_en', 'LIKE', '%' . $request->searchByName . '%')
+                ->orWhere('name_sci', 'LIKE', '%' . $request->searchByName . '%');
+        }
+
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อวงศ์ (family)'
+        if ($request->has('posion_type') && $request->posion_type != '') {
+            $query->where('posion_type', 'LIKE', '%' . $request->posion_type . '%');
+        }
+
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อวงศ์ (family)'
+        if ($request->has('status') && $request->status != '') {
+            $query->where('status', 'LIKE', '%' . $request->status . '%');
+        }
+
+        // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
+        $snakes = $query->get();
+
         $data = [
-            'snakes' => $Snake
+            'snakes' => $snakes,
+            'searchByName' => $request->searchByName,
+            'posion_type' => $request->posion_type,
+            'status' => $request->status
         ];
+
         // ส่งข้อมูลทั้งหมดไปที่ view snake_profile/search.blade.php โดย $data จะถูกส่งไปด้วย
-        return view('snake_profile.search', $data);
+        return view('snake_profile.content', $data);
+    }
+
+    public function attribute(Request $request)
+    {
+        // dd($request->all());
+        // สร้าง query โดยใช้โมเดล SnakeModel
+        $query = SnakeModel::query();
+
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'head_type'
+        if ($request->has('head_type') && $request->head_type != '') {
+            $query->where('head_type', 'LIKE', '%' . $request->head_type . '%');
+        }
+
+        // สำหรับ 'can_hoody' และ 'can_hiss' เนื่องจากเป็นค่า boolean อาจไม่จำเป็นต้องใช้ LIKE
+        if ($request->has('can_hoody') && $request->can_hoody != '') {
+            $query->where('can_hoody', $request->can_hoody == 'yes');
+        }
+
+        if ($request->has('can_hiss') && $request->can_hiss != '') {
+            $query->where('can_hiss', $request->can_hiss == 'yes');
+        }
+
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'pattern'
+        if ($request->has('pattern') && $request->pattern != '') {
+            $query->where('pattern', 'LIKE', '%' . $request->pattern . '%');
+        }
+
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'color'
+        if ($request->has('color') && $request->color != '') {
+            $query->where('color', 'LIKE', '%' . $request->color . '%');
+        }
+
+        // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
+        $snakes = $query->get();
+
+        // ส่งข้อมูลที่ค้นหาได้กลับไปที่ view พร้อมกับตัวแปร $snakes
+        return view('snake_profile.attribute', ['snakes' => $snakes]);
     }
 
     public function profile($snake_id)

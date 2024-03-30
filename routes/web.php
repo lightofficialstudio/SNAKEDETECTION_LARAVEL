@@ -21,8 +21,11 @@ Route::get('/', function () {
 Route::get('/snake/callcenter_contact', [CallCenterController::class, 'index'])->name('snake.callcenter');
 // การปฐมพยาบาล
 Route::get('/snake/firstaid', [FirstAidController::class, 'index'])->name('snake.firstaid');
-// ค้นหาประวัติงู
-Route::get('/snake/search', [SnakeProfileContoller::class, 'index'])->name('snake.search');
+// ค้นหา
+
+Route::get('/snake/search/content', [SnakeProfileContoller::class, 'content'])->name('snake.search.content'); // สารบัญงู
+Route::get('/snake/search/attribute', [SnakeProfileContoller::class, 'attribute'])->name('snake.search.attribute'); // คุณลักษณะของงู
+
 // แสดงข้อมูลประวัติงู
 Route::get('/snake/profile/{id}', [SnakeProfileContoller::class, 'profile'])->name('snake.profile');
 // ตรวจสอบว่างูเป็นพิษหรือไม่

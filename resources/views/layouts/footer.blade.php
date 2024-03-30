@@ -14,7 +14,7 @@
                     <a href="{{ route('snake.upload') }}" class="menu-link px-2">ตรวจสอบชนิดงู</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('snake.search') }}" class="menu-link px-2">สารบัญงู</a>
+                    <a href="{{ route('snake.search.content') }}" class="menu-link px-2">สารบัญงู</a>
                 </li>
                 <li class="menu-item">
                     <a data-bs-toggle="modal" data-bs-target="#modal_emergency_call"

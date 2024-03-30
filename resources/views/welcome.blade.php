@@ -143,7 +143,7 @@
                                         <!--begin::Body-->
                                         <div class="mt-5">
                                             <!--begin::Title-->
-                                            <a href="{{ route('snake.search') }}"
+                                            <a href="#"
                                                 class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
                                                 สารานุกรม</a>
                                             <!--end::Title-->
