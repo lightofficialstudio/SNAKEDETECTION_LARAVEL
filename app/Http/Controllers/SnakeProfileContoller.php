@@ -1,14 +1,20 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Snake as SnakeModel;
+use App\Models\Snake;
 use Illuminate\Http\Request;
 
 class SnakeProfileContoller extends Controller
 {
+    /**
+     * แสดงเนื้อหาของโปรไฟล์งู
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\View
+     */
     public function content(Request $request)
     {
-        $query = SnakeModel::query();
+        $query = Snake::query();
 
         // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อ (name)'
         if ($request->has('searchByName') && $request->searchByName != '') {
@@ -41,11 +47,16 @@ class SnakeProfileContoller extends Controller
         return view('snake_profile.content', $data);
     }
 
+    /**
+     * แสดงข้อมูลตามเงื่อนไขที่รับเข้ามา
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\View
+     */
     public function attribute(Request $request)
     {
-        // dd($request->all());
         // สร้าง query โดยใช้โมเดล SnakeModel
-        $query = SnakeModel::query();
+        $query = Snake::query();
 
         // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'head_type'
         if ($request->has('head_type') && $request->head_type != '') {
@@ -78,10 +89,16 @@ class SnakeProfileContoller extends Controller
         return view('snake_profile.attribute', ['snakes' => $snakes]);
     }
 
+    /**
+     * แสดงโปรไฟล์ของงูที่มี id ตามที่รับเข้ามา
+     *
+     * @param int $snake_id
+     * @return \Illuminate\Contracts\View\View
+     */
     public function profile($snake_id)
     {
         // ตั้งตัวแปร $snake เพื่อเก็บข้อมูลของงูที่มี id ตามที่ส่งมา
-        $Snake = SnakeModel::find($snake_id);
+        $Snake = Snake::find($snake_id);
         // ตั้งตัวแปร $data เพื่อเก็บข้อมูลทั้งหมดที่จะส่งไปที่ view
         $data = [
             'snake' => $Snake

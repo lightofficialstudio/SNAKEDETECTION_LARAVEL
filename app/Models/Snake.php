@@ -27,9 +27,5 @@ class Snake extends Model
         'image',
     ];
 
-    // กำหนดความสัมพันธ์กับตาราง snake_posion_code
-    public function posion()
-    {
-        return $this->belongsTo(SnakePosionCode::class, 'posion_id', 'id');
-    }
+
 }
