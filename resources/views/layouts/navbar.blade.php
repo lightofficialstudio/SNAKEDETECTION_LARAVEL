@@ -14,8 +14,9 @@
         <!--begin::Logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-13">
             <a href="../../demo41/dist/index.html">
-                <img alt="Logo" src="{{ asset('assets/media/logos/demo41.svg') }}" class="h-25px" />
+                <img alt="Logo" src="{{asset('project/images/logo/logo.png')}}" class="h-80px" style="mix-blend-mode: multiply;" />
             </a>
+            <p class="fs-2x">SnakeDetection</p>
         </div>
         <!--end::Logo-->
         <!--begin::Header wrapper-->
