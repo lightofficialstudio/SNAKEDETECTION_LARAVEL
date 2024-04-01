@@ -1,5 +1,6 @@
 @extends('layouts/main')
 @section('title', 'หน้าหลัก')
+
 @section('content')
     <style>
         .header-img {
@@ -42,8 +43,8 @@
                         </h1>
                         <h1 class="text-center fs-2x text-white font-weight-bold text-stroke">ทำนายชนิดงูโดย Machine
                             Learning</h1>
-                        <button class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3"
-                            id="clickToUploadImages">เลือกรูปภาพ</button>
+                        <a href="{{ route('snake.upload') }}"
+                            class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3">ตรวจสอบชนิดของงู</a>
                         <input type="file" name="" id="inputToUploadImages" style="display: none;">
                     </div>
                 </div>
@@ -142,9 +143,9 @@
                                         <!--begin::Body-->
                                         <div class="mt-5">
                                             <!--begin::Title-->
-                                            <p href="#"
+                                            <a href="#"
                                                 class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                                สาราณุกรมงู</p>
+                                                สารานุกรม</a>
                                             <!--end::Title-->
                                             <!--begin::Text-->
                                             <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
@@ -177,9 +178,9 @@
                                         <!--begin::Body-->
                                         <div class="mt-5">
                                             <!--begin::Title-->
-                                            <p href="#"
+                                            <a href="{{ route('snake.firstaid') }}"
                                                 class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                                วิธีปฐมพยาบาล</p>
+                                                วิธีปฐมพยาบาล</a>
                                             <!--end::Title-->
                                             <!--begin::Text-->
                                             <div class="fw-semibold fs-3 text-gray-600 text-dark mt-3">การปฐมพยาบาล
@@ -234,14 +235,17 @@
                             <!--begin::Row-->
                             <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
                                 <!--begin::Col-->
-                                <div class="col-md-12 ">
+                                <div class="col-md-6 ">
                                     <!--begin::Hot sales post-->
-                                    <div class="card-xl-stretch me-md-6  p-12 rounded text-center">
-                                        <!--begin::Overlay-->
+                                    <div class="card-xl-stretch me-md-6  p-12 rounded text-center" <!--begin::Overlay-->
 
                                         <!--begin::Image-->
-                                        <img src="{{ asset('project/images/line.jpg') }}" alt="line-chat" width="800px;">
+
+                                        <img src="{{ asset('project/images/line/image.png') }}" alt="line-chat"
+                                            width="auto;">
+
                                         <!--end::Image-->
+
                                         <!--begin::Action-->
 
                                         <!--end::Action-->
@@ -252,6 +256,15 @@
                                     <!--end::Hot sales post-->
                                 </div>
 
+                                <div class="col-md-6 ">
+                                    <div class="card-xl-stretch me-md-6  p-12 rounded text-left">
+                                        <h1 class="fs-4x">LINE CHATBOT</h1>
+                                        <h2 class="fs-2x">หรือสามารถตรวจสอบข้อมูลของงูได้อย่างง่ายดาย <br> ผ่านช่องทาง LINE
+                                            Chatbot ได้</h2>
+                                        <a href="https://lin.ee/ovnLjOm"
+                                            class="btn btn-dark btn-lg shadow fs-2x mt-5">คุยแชทบอท</a>
+                                    </div>
+                                </div>
 
                             </div>
                             <!--end::Row-->
@@ -270,7 +283,7 @@
 
         @endsection
 
-        @section('script')
+        @push('scripts')
             <script>
                 $(document).ready(function() {
                     $('#clickToUploadImages').on('click', function() {
@@ -278,4 +291,4 @@
                     });
                 });
             </script>
-        @endsection
+        @endpush

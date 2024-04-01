@@ -1,0 +1,24 @@
+ชื่ออังกฤษ				ชื่อไทย
+Reticulated_python		งูเหลือม
+Burmese_python			งูหลาม
+Common_sunbeam_snake		งูแสงอาทิตย์
+Javan_wart_snake		งูงวงช้าง
+Rainbow_mud_snake		งูสายรุ้ง
+Copperhead_racer		งูทางมะพร้าว
+Oriental_rat_snake		งูสิงหางลาย
+Indochinese_rat_snake		งูสิงธรรมดา
+Small_banded_kukri_snake	งูปี่แก้วลายแต้ม
+Striped_kukri_snake		งูงอดไทย
+Golden_tree_snake		งูเขียวพระอินทร์
+Laotian_wolf_snake		งูปล้องฉนวนลาว
+Western_mangrove_cat_snake	งูปล้องทอง
+Yellow_spotted_keelback		งูลายสอบ้าน
+Siamese_red_necked_keelback	งูลายสาบคอแดง
+Malayan_krait			งูทับสมิงคลา
+Monocled_cobra			งูเห่าไทย
+King_cobra			งูจงอาง
+Banded_krait			งูสามเหลี่ยม
+Small_spotted_coral_snake	งูปล้องหวายหัวดำ ***รออนุมัติการตัดชื่อออกจากอาจารย์***
+Large_eyed_pit_viper		งูเขียวหางไหม้ตาโต
+Malayan_pit_viper		งูกะปะ
+Eastern_Russell's_viper		งูแมวเซา

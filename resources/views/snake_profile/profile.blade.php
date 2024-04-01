@@ -42,10 +42,10 @@
                                     <!--begin::Title-->
                                     <h1
                                         class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
-                                        [ชื่อของงู] - </h1>
+                                        {{ $snake->name_th }} - </h1>
                                     <h3
                                         class="page-heading d-flex text-dark fw-bolder fs-1qx flex-column justify-content-center my-0">
-                                        &nbsp;[ENGLISH NAME]</h3>
+                                        &nbsp;{{ $snake->name_en }}</h3>
                                     <!--end::Title-->
                                 </div>
                                 <!--end::Page title-->
@@ -68,10 +68,12 @@
 
                                 <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
                                     <div class="col-md-5">
-                                        <h2>รูปภาพนำเข้า</h2><br />
+                                        <h2>รูปภาพประกอบ</h2><br />
 
                                         <div class="border border-2 d-flex justify-content-center">
-                                            <img src="" alt="snake-original-check" width="900px" height="400px">
+                                            <img src="{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}"
+                                                alt="snake-original-check" width="900px" height="400px">
+
                                         </div>
                                     </div>
 
@@ -95,13 +97,14 @@
                                                     </div>
                                                     <!--end::Header-->
                                                     <!--begin::Title-->
-                                                    <div class="mb-2">
+                                                    {{-- <div class="mb-2">
                                                         <b href="#"
                                                             class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">[หัวข้อ]</b>
-                                                    </div>
+                                                    </div> --}}
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">[ข้อความ]</div>
+                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                        "{{ $snake->features ?? '' }}"</div>
 
                                                 </div>
                                             </div>
@@ -123,12 +126,12 @@
                                                     <!--end::Header-->
                                                     <!--begin::Title-->
                                                     <div class="mb-2">
-                                                        <b href="#"
-                                                            class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">[หัวข้อ]</b>
+
                                                     </div>
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">[ข้อความ]</div>
+                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                        "{{ $snake->location ?? '' }}"</div>
 
                                                 </div>
                                             </div>
@@ -149,13 +152,11 @@
                                                     </div>
                                                     <!--end::Header-->
                                                     <!--begin::Title-->
-                                                    <div class="mb-2">
-                                                        <b href="#"
-                                                            class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">[หัวข้อ]</b>
-                                                    </div>
+
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">[ข้อความ]</div>
+                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                        "{{ $snake->food ?? '' }}"</div>
 
                                                 </div>
                                             </div>
@@ -177,12 +178,12 @@
                                                     <!--end::Header-->
                                                     <!--begin::Title-->
                                                     <div class="mb-2">
-                                                        <b href="#"
-                                                            class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">[หัวข้อ]</b>
+
                                                     </div>
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">[ข้อความ]</div>
+                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                        "{{ $snake->behaviors ?? '' }}"</div>
 
                                                 </div>
                                             </div>
@@ -204,12 +205,12 @@
                                                     <!--end::Header-->
                                                     <!--begin::Title-->
                                                     <div class="mb-2">
-                                                        <b href="#"
-                                                            class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">[หัวข้อ]</b>
+
                                                     </div>
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">[ข้อความ]</div>
+                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                        "{{ $snake->status ?? '' }}"</div>
 
                                                 </div>
                                             </div>
@@ -231,12 +232,14 @@
                                                     <!--end::Header-->
                                                     <!--begin::Title-->
                                                     <div class="mb-2">
-                                                        <b href="#"
-                                                            class="fs-4 fw-bold mb-1 text-gray-900 text-hover-primary">[หัวข้อ]</b>
+
                                                     </div>
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">[ข้อความ]</div>
+                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                        <a
+                                                            href="{{ $snake->reference ?? '' }}">{{ $snake->reference ?? '' }}</a>
+                                                    </div>
 
                                                 </div>
                                             </div>

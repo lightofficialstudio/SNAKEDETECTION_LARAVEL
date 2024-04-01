@@ -14,7 +14,7 @@
         <!--begin::Logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-13">
             <a href="../../demo41/dist/index.html">
-                <img alt="Logo" src="{{ asset('project\logo\logo.png') }}" class="h-75px" style="mix-blend-mode: multiply;" />
+                <img alt="Logo" src="{{asset('project/images/logo/logo.png')}}" class="h-80px" style="mix-blend-mode: multiply;" />
             </a>
             <p class="fs-2x">SnakeDetection</p>
         </div>
@@ -43,9 +43,9 @@
                     </div>
 
                     <div
-                        class="menu-item {{ request()->is('snake/check*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        class="menu-item {{ request()->is('snake/upload*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
-                        <a href="{{ route('snake.check') }}" class="menu-link">
+                        <a href="{{ route('snake.upload') }}" class="menu-link">
                             <span class="menu-title">ตรวจสอบชนิดงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
@@ -54,10 +54,21 @@
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
                     <div
-                        class="menu-item {{ request()->is('snake/search*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        class="menu-item {{ request()->is('snake/search/attribute*') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
                         <!--begin:Menu link-->
-                        <a href="{{ route('snake.search') }}" class="menu-link">
-                            <span class="menu-title">สาราณูกรมงู</span>
+                        <a href="{{ route('snake.search.attribute') }}" class="menu-link">
+                            <span class="menu-title">คุณลักษณะของงู</span>
+                            <span class="menu-arrow d-lg-none"></span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div
+                        class="menu-item {{ request()->is('snake/search/content') ? 'here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2' : 'menu-lg-down-accordion me-0 me-lg-2' }}">
+                        <!--begin:Menu link-->
+                        <a href="{{ route('snake.search.content') }}" class="menu-link">
+                            <span class="menu-title">สารบัญงู</span>
                             <span class="menu-arrow d-lg-none"></span>
                         </a>
                         <!--end:Menu link-->
