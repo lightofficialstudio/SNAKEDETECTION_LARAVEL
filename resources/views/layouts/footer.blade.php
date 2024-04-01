@@ -11,13 +11,13 @@
                     <h3 href="#" target="_blank" class="text-white px-2">เนื้อหา</h3>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">ตรวจสอบชนิดงู</a>
+                    <a href="#" target="_blank" class="menu-link px-2">ค้นหาด้วยรูปภาพ </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">สารบัญงู</a>
+                    <a href="#" target="_blank" class="menu-link px-2"> ค้นหาด้วยคุณลักษณ</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">สายด่วนงู</a>
+                    <a href="#" target="_blank" class="menu-link px-2">สารานุกรมงู</a>
                 </li>
                 <li class="menu-item">
                     <a href="#" target="_blank" class="menu-link px-2">วิธีปฐมพยาบาล</a>
