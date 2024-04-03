@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('title', 'ตรวจสอบชนิดงู')
+@section('title', 'ค้นหางูด้วยรูปภาพ')
 @section('content')
     <div class="app-wrapper d-flex" id="kt_app_wrapper">
         <!--begin::Sidebar-->
@@ -33,7 +33,7 @@
                                     </li>
                                     <!--end::Item-->
                                     <!--begin::Item-->
-                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ตรวจสอบชนิดงู</li>
+                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ค้นหางูด้วยรูปภาพ</li>
                                     <!--end::Item-->
                                 </ul>
                                 <!--end::Breadcrumb-->
@@ -42,7 +42,7 @@
                                     <!--begin::Title-->
                                     <h1
                                         class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
-                                        ตรวจสอบชนิดงู</h1>
+                                        ค้นหางูด้วยรูปภาพ</h1>
                                     <!--end::Title-->
                                 </div>
                                 <!--end::Page title-->

@@ -36,12 +36,13 @@ class SnakeProfileContoller extends Controller
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
         $snakes = $query->get();
 
-        $data = [
-            'snakes' => $snakes,
-            'searchByName' => $request->searchByName,
-            'posion_type' => $request->posion_type,
-            'status' => $request->status
-        ];
+        $data =
+            [
+                'snakes' => $snakes,
+                'searchByName' => $request->searchByName,
+                'posion_type' => $request->posion_type,
+                'status' => $request->status
+            ];
 
         // ส่งข้อมูลทั้งหมดไปที่ view snake_profile/search.blade.php โดย $data จะถูกส่งไปด้วย
         return view('snake_profile.content', $data);

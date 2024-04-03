@@ -24,7 +24,6 @@ class SnakeUploadController extends Controller
         ]);
         // ตรวจสอบว่ามีไฟล์ถูกอัพโหลดมาหรือไม่
         if ($request->hasFile('snake_image')) {
-            // ทำการอัพโหลดไฟล์ไปยัง Flask API และรับข้อมูล JSON กลับมา
             $size = 224; // ขนาดของรูปภาพที่จะส่งไปทำนาย
             $confidence = 0.01; // ค่าความมั่นใจขั้นต่ำ
             $iou = 0.01; // ค่า IOU ขั้นต่ำ
@@ -49,7 +48,7 @@ class SnakeUploadController extends Controller
             $snakeDetails = [];
 
             // ตรวจสอบก่อนว่ามี key 'data' ใน $predictions และ 'data' เป็น array
-            if (isset ($predictions['data']) && is_array($predictions['data'])) {
+            if (isset($predictions['data']) && is_array($predictions['data'])) {
                 // วนลูปผ่าน array 'data'
                 foreach ($predictions['data'] as $prediction) {
                     // ค้นหาชื่อของงูจากฐานข้อมูล

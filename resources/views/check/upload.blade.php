@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@section('title', 'ตรวจสอบชนิดงู')
+@section('title', 'ค้นหาด้วยรูปภาพ')
 @section('css')
     <style>
         .loader-container {
@@ -82,7 +82,7 @@
                                     </li>
                                     <!--end::Item-->
                                     <!--begin::Item-->
-                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ตรวจสอบชนิดงู</li>
+                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ค้นหาด้วยรูปภาพ</li>
                                     <!--end::Item-->
                                 </ul>
                                 <!--end::Breadcrumb-->
@@ -146,19 +146,23 @@
                             <div class="">
 
                                 <div class="row g-5 g-xl-10 mb-5 mb-xl-10 justify-content-between">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-sm-12 ">
                                         <h2>รูปภาพนำเข้า</h2><br />
-                                        <div class="border border-2 d-flex justify-content-center"
-                                            style="width: 500px; height: 500px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                                        <div class="d-flex justify-content-center align-items-center "
+                                            style="overflow: hidden;" id="image-container">
                                             <img src="" alt="snake-original-check" id="previewSnakeImage"
-                                                style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                                class="img-fluid" style="max-height: 500px; object-fit: contain;">
                                         </div>
 
 
+
                                     </div>
-                                    <div class="col-md-6">
-                                        <h2>ผลลัพธ์การตรวจสอบ</h2><br />
-                                        <div id="snake-result-prediction"></div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="h-150px">
+
+                                            <h2>ผลลัพธ์การตรวจสอบ</h2><br />
+                                            <div id="snake-result-prediction"></div>
+                                        </div>
 
                                     </div>
 
@@ -191,7 +195,7 @@
 
         @push('scripts')
             <script>
-                // ฟังก์ชันสำหรับการอัพโหลดรูปภาพ
+                // ฟังก์ชันสำหรับการแสดงรูปภาพที่เลือกจาก input ในการอัพโหลด
                 function handleSubmitSnakeImage() {
                     let formData = new FormData();
                     formData.append('snake_image', $('input[name="snake_image"]').prop('files')[0]);
@@ -210,12 +214,52 @@
                         success: function(response) {
                             displayPredictionResults(response);
                         },
+                        error: function(xhr, status, error) {
+                            // ซ่อน loader เมื่อเกิดข้อผิดพลาด
+                            $('#loader').hide();
+                            if (xhr.status === 422) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'เกิดข้อผิดพลาด',
+                                    text: 'กรุณาใช้งานไฟล์ให้อยู่ในรูปแบบที่กำหนด คือ เป็นรูปภาพ jpeg, png, jpg เท่านั้น',
+                                    confirmButtonText: 'ตกลง'
+                                });
+                            } else {
+                                // สามารถจัดการกับ status code อื่นๆ ตามต้องการ
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'เกิดข้อผิดพลาด',
+                                    text: 'ไม่สามารถอัปโหลดไฟล์ได้ กรุณาลองใหม่อีกครั้ง',
+                                    confirmButtonText: 'ตกลง'
+                                });
+                            }
+                        },
                         complete: function() {
                             // ซ่อน loader เมื่อการประมวลผลเสร็จสิ้น
                             $('#loader').hide();
                         }
                     })
                 }
+                $(document).ready(function() {
+                    $('input[name="snake_image"]').change(function(e) {
+                        var file = e.target.files[0]; // รับไฟล์แรกที่เลือก
+                        if (!file) {
+                            return;
+                        }
+
+                        var reader = new FileReader(); // สร้าง FileReader เพื่ออ่านไฟล์
+                        reader.onload = function(e) {
+                            $('#previewSnakeImage').attr('src', e.target
+                                .result); // อัปเดต src ของรูปภาพตัวอย่าง
+                            $('#previewSnakeImage').show(); // แสดงรูปภาพตัวอย่าง
+                        };
+                        reader.readAsDataURL(file); // อ่านไฟล์เป็น URL แบบ Base64
+                    });
+
+                    // ฟังก์ชันอื่นๆ ที่คุณอาจมี...
+                });
+
+
 
 
                 // ฟังก์ชันสำหรับแสดงผลการทำนาย 3 อันดับแรก
@@ -236,26 +280,5 @@
                     // อัปเดตเนื้อหาในภาคผลการทำนาย
                     $('#snake-result-prediction').html(resultHtml);
                 }
-
-
-                // ฟังก์ชันสำหรับการแสดงรูปภาพที่เลือกจาก input ในการอัพโหลด
-                $(document).ready(function() {
-                    $('#snake-image').change(function() {
-                        var input = this;
-                        if (input.files && input.files[0]) {
-                            var reader = new FileReader();
-
-                            reader.onload = function(e) {
-                                $('#previewSnakeImage').attr('src', e.target.result).css({
-                                    'width': '500px',
-                                    'height': '500px',
-                                    'object-fit': 'cover'
-                                }).show();
-                            };
-
-                            reader.readAsDataURL(input.files[0]);
-                        }
-                    });
-                });
             </script>
         @endpush
