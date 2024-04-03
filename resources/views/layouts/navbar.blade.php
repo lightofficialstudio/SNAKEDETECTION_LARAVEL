@@ -13,6 +13,7 @@
         <!--end::Header mobile toggle-->
         <!--begin::Logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-13">
+<<<<<<< HEAD
             <a href="#">
                 <img alt="Logo" src="{{ asset('project/images/logo.png') }}" class="h-70px"
                     style="mix-blend-mode: multiply;
@@ -20,6 +21,12 @@
 
             </a>
             <p class="fs-1x">SNAKEDETECTION</p>
+=======
+            <a href="../../demo41/dist/index.html">
+                <img alt="Logo" src="{{asset('project/images/logo/logo.png')}}" class="h-80px" style="mix-blend-mode: multiply;" />
+            </a>
+            <p class="fs-2x">SnakeDetection</p>
+>>>>>>> ddef59a61ce368438687fdd416773c438fc4be79
         </div>
         <!--end::Logo-->
         <!--begin::Header wrapper-->
