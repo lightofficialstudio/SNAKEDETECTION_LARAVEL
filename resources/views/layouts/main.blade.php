@@ -45,6 +45,7 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('project/font/font.css') }}">
+
     @yield('css')
     <!--end::Global Stylesheets Bundle-->
     <script>

@@ -39,6 +39,8 @@
             }
         }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet" />
+
 @endsection
 @section('content')
 
@@ -150,8 +152,11 @@
                                         <h2>รูปภาพนำเข้า</h2><br />
                                         <div class="d-flex justify-content-center align-items-center "
                                             style="overflow: hidden;" id="image-container">
-                                            <img src="" alt="snake-original-check" id="previewSnakeImage"
-                                                class="img-fluid" style="max-height: 500px; object-fit: contain;">
+
+                                            <div id="image-container" style="max-width: 100%; height: auto;">
+                                                <img id="image" src="" alt="Picture">
+                                            </div>
+
                                         </div>
 
 
@@ -195,51 +200,89 @@
 
         @push('scripts')
             <script>
+                var cropper;
+                $('input[name="snake_image"]').change(function(e) {
+                    var files = e.target.files;
+                    var done = function(url) {
+                        $('input[name="snake_image"]').val('');
+                        $('#image').attr('src', url);
+                        $('#previewSnakeImage').hide(); // ซ่อนรูปภาพตัวอย่างเดิม
+                        $('#image-container').show();
+                        cropper = new Cropper(document.getElementById('image'), {
+                            aspectRatio: 1,
+                            viewMode: 1,
+                        });
+                    };
+                    var reader;
+                    var file;
+                    var url;
+
+                    if (files && files.length > 0) {
+                        file = files[0];
+                        if (URL) {
+                            done(URL.createObjectURL(file));
+                        } else if (FileReader) {
+                            reader = new FileReader();
+                            reader.onload = function(e) {
+                                done(reader.result);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                });
+            </script>
+            <script>
                 // ฟังก์ชันสำหรับการแสดงรูปภาพที่เลือกจาก input ในการอัพโหลด
                 function handleSubmitSnakeImage() {
-                    let formData = new FormData();
-                    formData.append('snake_image', $('input[name="snake_image"]').prop('files')[0]);
-                    // แสดง loader
-                    $('#loader').show();
+                    if (cropper) {
+                        cropper.getCroppedCanvas().toBlob((blob) => {
+                            var formData = new FormData();
+                            formData.append('snake_image', blob, 'cropped.jpg');
 
-                    $.ajax({
-                        url: '{{ route('snake.upload.post') }}',
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        method: 'POST',
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        success: function(response) {
-                            displayPredictionResults(response);
-                        },
-                        error: function(xhr, status, error) {
-                            // ซ่อน loader เมื่อเกิดข้อผิดพลาด
-                            $('#loader').hide();
-                            if (xhr.status === 422) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'เกิดข้อผิดพลาด',
-                                    text: 'กรุณาใช้งานไฟล์ให้อยู่ในรูปแบบที่กำหนด คือ เป็นรูปภาพ jpeg, png, jpg เท่านั้น',
-                                    confirmButtonText: 'ตกลง'
-                                });
-                            } else {
-                                // สามารถจัดการกับ status code อื่นๆ ตามต้องการ
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'เกิดข้อผิดพลาด',
-                                    text: 'ไม่สามารถอัปโหลดไฟล์ได้ กรุณาลองใหม่อีกครั้ง',
-                                    confirmButtonText: 'ตกลง'
-                                });
-                            }
-                        },
-                        complete: function() {
-                            // ซ่อน loader เมื่อการประมวลผลเสร็จสิ้น
-                            $('#loader').hide();
-                        }
-                    })
+                            // แสดง loader
+                            $('#loader').show();
+
+                            $.ajax({
+                                url: '{{ route('snake.upload.post') }}', // ตรวจสอบให้แน่ใจว่า URL ถูกต้องและรองรับการใช้งาน
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                method: 'POST',
+                                data: formData,
+                                contentType: false,
+                                processData: false,
+                                success: function(response) {
+                                    displayPredictionResults(response);
+                                },
+                                error: function(xhr, status, error) {
+                                    // ซ่อน loader เมื่อเกิดข้อผิดพลาด
+                                    $('#loader').hide();
+                                    if (xhr.status === 422) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'เกิดข้อผิดพลาด',
+                                            text: 'กรุณาใช้งานไฟล์ให้อยู่ในรูปแบบที่กำหนด คือ เป็นรูปภาพ jpeg, png, jpg เท่านั้น',
+                                            confirmButtonText: 'ตกลง'
+                                        });
+                                    } else {
+                                        // สามารถจัดการกับ status code อื่นๆ ตามต้องการ
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'เกิดข้อผิดพลาด',
+                                            text: 'ไม่สามารถอัปโหลดไฟล์ได้ กรุณาลองใหม่อีกครั้ง',
+                                            confirmButtonText: 'ตกลง'
+                                        });
+                                    }
+                                },
+                                complete: function() {
+                                    // ซ่อน loader เมื่อการประมวลผลเสร็จสิ้น
+                                    $('#loader').hide();
+                                }
+                            });
+                        });
+                    }
                 }
+
                 $(document).ready(function() {
                     $('input[name="snake_image"]').change(function(e) {
                         var file = e.target.files[0]; // รับไฟล์แรกที่เลือก
@@ -281,4 +324,5 @@
                     $('#snake-result-prediction').html(resultHtml);
                 }
             </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
         @endpush
