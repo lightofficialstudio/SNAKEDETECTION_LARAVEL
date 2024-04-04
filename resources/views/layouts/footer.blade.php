@@ -11,10 +11,10 @@
                     <h3 href="#" target="_blank" class="text-white px-2">เนื้อหา</h3>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('snake.upload') }}" class="menu-link px-2">ตรวจสอบชนิดงู</a>
+                    <a href="{{ route('snake.upload') }}" class="menu-link px-2">ค้นหาด้วยรูปภาพ</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('snake.search.content') }}" class="menu-link px-2">สารบัญงู</a>
+                    <a href="{{ route('snake.search.content') }}" class="menu-link px-2">ค้นหาด้วยคุณลักษณะ</a>
                 </li>
                 <li class="menu-item">
                     <a data-bs-toggle="modal" data-bs-target="#modal_emergency_call"
