@@ -204,25 +204,22 @@
                 $('input[name="snake_image"]').change(function(e) {
                     var files = e.target.files;
                     var done = function(url) {
-                        $('input[name="snake_image"]').val('');
-                        $('#image').attr('src', url);
-                        $('#previewSnakeImage').hide(); // ซ่อนรูปภาพตัวอย่างเดิม
-                        $('#image-container').show();
+                        $('#image').attr('src', url); // ตั้งค่า src ใหม่สำหรับรูปภาพ
+                        if (cropper) {
+                            cropper.destroy(); // ล้างอินสแตนซ์ Cropper.js ที่มีอยู่
+                        }
                         cropper = new Cropper(document.getElementById('image'), {
                             aspectRatio: 1,
                             viewMode: 1,
                         });
                     };
-                    var reader;
-                    var file;
-                    var url;
 
                     if (files && files.length > 0) {
-                        file = files[0];
+                        var file = files[0];
                         if (URL) {
                             done(URL.createObjectURL(file));
                         } else if (FileReader) {
-                            reader = new FileReader();
+                            var reader = new FileReader();
                             reader.onload = function(e) {
                                 done(reader.result);
                             };
@@ -283,24 +280,7 @@
                     }
                 }
 
-                $(document).ready(function() {
-                    $('input[name="snake_image"]').change(function(e) {
-                        var file = e.target.files[0]; // รับไฟล์แรกที่เลือก
-                        if (!file) {
-                            return;
-                        }
 
-                        var reader = new FileReader(); // สร้าง FileReader เพื่ออ่านไฟล์
-                        reader.onload = function(e) {
-                            $('#previewSnakeImage').attr('src', e.target
-                                .result); // อัปเดต src ของรูปภาพตัวอย่าง
-                            $('#previewSnakeImage').show(); // แสดงรูปภาพตัวอย่าง
-                        };
-                        reader.readAsDataURL(file); // อ่านไฟล์เป็น URL แบบ Base64
-                    });
-
-                    // ฟังก์ชันอื่นๆ ที่คุณอาจมี...
-                });
 
 
 
