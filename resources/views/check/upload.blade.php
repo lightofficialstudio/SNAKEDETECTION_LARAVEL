@@ -93,7 +93,7 @@
                                     <!--begin::Title-->
                                     <h1
                                         class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
-                                        ตรวจสอบชนิดงู</h1>
+                                        ตรวจสอบชนิดของงูด้วยรูปภาพ</h1>
                                     <!--end::Title-->
                                 </div>
                                 <!--end::Page title-->
@@ -153,12 +153,19 @@
                                         <div class="d-flex justify-content-center align-items-center "
                                             style="overflow: hidden;" id="image-container">
 
-                                            <div id="image-container" style="max-width: 100%; height: auto;">
-                                                <img id="image" src="" alt="Picture">
+                                            <div id="image-container" style="max-width: 100%; max-height: 100%;">
+                                                <img id="image" src="{{ asset('project/images/snake-profileimg.png') }}"
+                                                    alt="รูปภาพของงู"
+                                                    style="width:100%; height:100%; object-fit: cover; object-position: center;">
                                             </div>
 
-                                        </div>
 
+
+                                        </div>
+                                        <div class="mt-5">
+                                            <span class="btn btn-dark">* ผู้ใช้งานสามารถครอบรูปภาพงู
+                                                เพื่อการตรวจจับที่แม่นยำมากขึ้น</span>
+                                        </div>
 
 
                                     </div>
