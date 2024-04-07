@@ -36,7 +36,7 @@
             <section class="header-img d-flex align-items-center justify-content-center">
                 <div class="blurred-bg"></div> <!-- นี่คือ div ที่จะแสดงรูปภาพที่เบลอ -->
                 <div class="d-flex align-items-center justify-content-center rounded"
-                    style="width: 85vh; height:35vh; background-color: rgba(255, 255, 255, 0.5); z-index: 1;">
+                    style="width:90vh; max-width: 100vh; height:35vh; background-color: rgba(255, 255, 255, 0.5); z-index: 1;">
 
                     <div class="text-center p-2">
                         <h2 class="text-center fs-3x text-white font-weight-bold text-stroke">
@@ -125,193 +125,109 @@
 
                             <!--begin::Row-->
                             <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
-                                <!--begin::Col-->
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <a href="{{ route('snake.search.attribute') }}">
-                                        <!--begin::Hot sales post-->
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <!--begin::Overlay-->
-
-                                            <!--begin::Image-->
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="background-image:url('{{ asset('project/images/snake.jpg') }}')">
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake.jpg') }}')">
                                             </div>
-                                            <!--end::Image-->
-                                            <!--begin::Action-->
-                                    </a>
-
-
-                                    <!--end::Action-->
-
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ค้นหาด้วยคุณลักษณะ</b>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            ค้นหาและดูข้อมูลงู
-                                            23 ชนิด ที่ถูกพบบ่อย</div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                    </a>
-                                </div>
-                                <!--end::Hot sales post-->
-
-
-
-                                <div class="col-md-4">
-                                    <a href="{{ route('snake.search.content') }}">
-                                        <!--begin::Hot sales post-->
-                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <!--begin::Overlay-->
-
-                                            <!--begin::Image-->
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="background-image:url('{{ asset('project/images/snake.jpg') }}')">
-                                            </div>
-                                            <!--end::Image-->
-                                            <!--begin::Action-->
-
-                                            <!--end::Action-->
-
-                                            <!--end::Overlay-->
-                                            <!--begin::Body-->
                                             <div class="mt-5">
-                                                <!--begin::Title-->
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                                    สารานุกรมงู</b>
-                                                <!--end::Title-->
-                                                <!--begin::Text-->
+                                                    ค้นหาด้วยคุณลักษณะ</b>
                                                 <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
                                                     ค้นหาและดูข้อมูลงู
                                                     23 ชนิด ที่ถูกพบบ่อย</div>
-                                                <!--end::Text-->
-                                                <!--begin::Text-->
-
-                                                <!--end::Text-->
                                             </div>
                                             <!--end::Body-->
                                         </div>
                                     </a>
                                 </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="col-md-4 ">
-                                <a href="{{ route('snake.firstaid') }}">
-                                    <!--begin::Hot sales post-->
-                                    <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                        <!--begin::Overlay-->
-
-                                        <!--begin::Image-->
-                                        <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                            style="background-image:url('{{ asset('project/images/snake3.jpg') }}')">
+                                <div class="col-md-6">
+                                    <a href="{{ route('snake.search.content') }}">
+                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake.jpg') }}')">
+                                            </div>
+                                            <div class="mt-5">
+                                                <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                    สารานุกรมงู</b>
+                                                <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                                    ค้นหาและดูข้อมูลงู
+                                                    23 ชนิด </div>
+                                            </div>
+                                            <!--end::Body-->
                                         </div>
-                                        <!--end::Image-->
-                                        <!--begin::Action-->
-
-                                        <!--end::Action-->
-                                </a>
-                                <!--end::Overlay-->
-                                <!--begin::Body-->
-                                <div class="mt-5">
-                                    <!--begin::Title-->
-                                    <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                        วิธีปฐมพยาบาล</b>
-                                    <!--end::Title-->
-                                    <!--begin::Text-->
-                                    <div class="fw-semibold fs-3 text-gray-600 text-dark mt-3">การปฐมพยาบาล
-                                        เบื้องต้นเมื่อถูกกัด</div>
-                                    <!--end::Text-->
-                                    <!--begin::Text-->
-
-                                    <!--end::Text-->
+                                    </a>
                                 </div>
-                                <!--end::Body-->
+                                <div class="mt-10"></div>
+                                <div class="col-md-6">
+                                    <a href="{{ route('snake.firstaid') }}">
+                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake3.jpg') }}')">
+                                            </div>
+                                            <div class="mt-5">
+                                                <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                    วิธีปฐมพยาบาล</b>
+                                                <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                                    วิธีปฐมพยาบาลเบื้องต้นเมื่อถูกงูกัด</div>
+                                            </div>
+                                            <!--end::Body-->
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#modal_emergency_call">
+                                    <a href="#">
+                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake2.jpg') }}')">
+                                            </div>
+                                            <div class="mt-5">
+                                                <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                    สายด่วนงู</b>
+                                                <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                                    ติดต่อสายด่วนของงูเมื่อเกิดเหตุฉุกเฉิน</div>
+                                            </div>
+                                            <!--end::Body-->
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mt-10"></div>
+
+                                <div class="col-md-8">
+                                    <a href="#">
+                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                            <div class="row ">
+                                                <div class="col-md-5 col-sm-12">
+                                                    <div class="card-xl-stretch me-md-6  p-12 rounded text-left">
+                                                        <h1 class="fs-4x font-weight-bold">LINE CHATBOT</h1>
+                                                        <h2 class="fs-2x">หรือสามารถตรวจสอบข้อมูลของงูได้อย่างง่ายดาย <br>
+                                                            ผ่านช่องทาง LINE
+                                                            Chatbot ได้</h2>
+                                                        <a href="https://lin.ee/ovnLjOm"
+                                                            class="btn btn-dark btn-lg shadow fs-2x mt-5">คุยแชทบอท</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 col-sm-12">
+                                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                                        style="width:100%; height:800px; background-image:url('{{ asset('project/images/messageImage_1694769197499.jpg') }}')">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--end::Body-->
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+
                             </div>
-                            </a>
-                            <!--end::Hot sales post-->
-                        </div>
-                        <div class="col-md-4 ">
-                            <!--begin::Hot sales post-->
-                            <div class="card-xl-stretch me-md-6 border p-12 rounded" data-bs-toggle="modal"
-                                data-bs-target="#modal_emergency_call">
-                                <!--begin::Overlay-->
+                            <!--end::Row-->
 
-                                <!--begin::Image-->
-                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                    style="background-image:url('{{ asset('project/images/snake2.jpg') }}')">
-                                </div>
-                                <!--end::Image-->
-                                <!--begin::Action-->
-
-                                <!--end::Action-->
-                                </a>
-                                <!--end::Overlay-->
-                                <!--begin::Body-->
-                                <div class="mt-5">
-                                    <!--begin::Title-->
-                                    <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                        สายด่วนงู</b>
-                                    <!--end::Title-->
-                                    <!--begin::Text-->
-                                    <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">งูเข้าบ้าน
-                                        หรือ
-                                        ถูกงูกัด เบอร์ติดต่อที่เกี่ยวข้อง</div>
-                                    <!--end::Text-->
-                                    <!--begin::Text-->
-
-                                    <!--end::Text-->
-                                </div>
-                                <!--end::Body-->
-                            </div>
-                            <!--end::Hot sales post-->
-                        </div>
-                        <div class="col-md-6 ">
-                            <!--begin::Hot sales post-->
-                            <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                <!--begin::Overlay-->
-
-                                <!--begin::Image-->
-                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px h-100px"
-                                    style="background-image:url('https://play-lh.googleusercontent.com/74iMObG1vsR3Kfm82RjERFhf99QFMNIY211oMvN636_gULghbRBMjpVFTjOK36oxCbs=w240-h480-rw')">
-                                </div>
-                                <!--end::Image-->
-                                <!--begin::Action-->
-
-                                <!--end::Action-->
-                                </a>
-                                <!--end::Overlay-->
-                                <!--begin::Body-->
-                                <div class="mt-5">
-                                    <!--begin::Title-->
-                                    <p href="#" class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                        แชทบอท</p>
-                                    <!--end::Title-->
-                                    <!--begin::Text-->
-                                    <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                        สามารถตรวจสอบข้อมูลของงูได้อย่างง่ายดายผ่านช่องทางไลน์แชทบอท</div>
-                                    <!--end::Text-->
-                                    <!--begin::Text-->
-
-                                    <!--end::Text-->
-                                </div>
-                                <!--end::Body-->
-                            </div>
-                            <!--end::Hot sales post-->
-                        </div>
-
-                    </div>
-                    <!--end::Row-->
-
-                    <!--begin::Row-->
-                    {{-- <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
+                            <!--begin::Row-->
+                            {{-- <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
                                 <!--begin::Col-->
                                 <div class="col-md-6 ">
                                     <!--begin::Hot sales post-->
@@ -345,28 +261,28 @@
                                 </div>
 
                             </div> --}}
-                    <!--end::Row-->
+                            <!--end::Row-->
 
 
 
+                        </div>
+                        <!--end::Content container-->
+                    </div>
+                </section>
+
+                <!--end::Content-->
             </div>
-            <!--end::Content container-->
-        </div>
-        </section>
-
-        <!--end::Content-->
-    </div>
-    <!--end::Content wrapper-->
+            <!--end::Content wrapper-->
 
 
-@endsection
+        @endsection
 
-@push('scripts')
-    <script>
-        $(document).ready(function() {
-            $('#clickToUploadImages').on('click', function() {
-                $('#inputToUploadImages').click();
-            });
-        });
-    </script>
-@endpush
+        @push('scripts')
+            <script>
+                $(document).ready(function() {
+                    $('#clickToUploadImages').on('click', function() {
+                        $('#inputToUploadImages').click();
+                    });
+                });
+            </script>
+        @endpush

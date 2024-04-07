@@ -163,7 +163,7 @@
 
                                         </div>
                                         <div class="mt-5">
-                                            <span class="btn btn-dark">* ผู้ใช้งานสามารถครอบรูปภาพงู
+                                            <span class="">* ผู้ใช้งานสามารถครอบรูปภาพงู
                                                 เพื่อการตรวจจับที่แม่นยำมากขึ้น</span>
                                         </div>
 
@@ -180,13 +180,13 @@
 
 
                                     {{-- <div class="col-md-8">
-                                        <h2>ผลลัพธ์การตรวจสอบ : <b>[ชื่อของงู]</b></h2> <br />
-                                        <p>โอกาส (Probability) : 12%</p>
+                                    <h2>ผลลัพธ์การตรวจสอบ : <b>[ชื่อของงู]</b></h2> <br />
+                                    <p>โอกาส (Probability) : 12%</p>
 
-                                        <div class="border border-2 d-flex justify-content-center">
-                                            <img src="" alt="snake-original-check" width="800px" height="300px">
-                                        </div>
-                                    </div> --}}
+                                    <div class="border border-2 d-flex justify-content-center">
+                                        <img src="" alt="snake-original-check" width="800px" height="300px">
+                                    </div>
+                                </div> --}}
 
                                 </div>
                             </div>
@@ -206,6 +206,12 @@
         @endsection
 
         @push('scripts')
+            <script>
+                var routes = {
+                    snakeProfile: "{{ route('snake.profile', ['id' => 'PLACEHOLDER']) }}".replace('PLACEHOLDER', '%id%')
+                };
+            </script>
+
             <script>
                 var cropper;
                 $('input[name="snake_image"]').change(function(e) {
@@ -257,6 +263,14 @@
                                 processData: false,
                                 success: function(response) {
                                     displayPredictionResults(response);
+                                    if (response.length === 0) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'เกิดข้อผิดพลาด',
+                                            text: 'ผลการทำนายต่ำจนเกินไป สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 2.รูปภาพที่นำเข้าไม่มีงู โปรดตรวจสอบรูปภาพใหม่อีกครั้ง',
+                                            confirmButtonText: 'ตกลง'
+                                        });
+                                    }
                                 },
                                 error: function(xhr, status, error) {
                                     // ซ่อน loader เมื่อเกิดข้อผิดพลาด
@@ -273,7 +287,7 @@
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'เกิดข้อผิดพลาด',
-                                            text: 'ไม่สามารถอัปโหลดไฟล์ได้ กรุณาลองใหม่อีกครั้ง',
+                                            text: 'เกิดข้อผิดพลาดในการตรวจสอบรูปภาพ กรุณาลองใหม่อีกครั้ง',
                                             confirmButtonText: 'ตกลง'
                                         });
                                     }
@@ -298,12 +312,13 @@
                     predictions.slice(0, 3).forEach(function(prediction, index) {
                         // ใช้ list-group-item และเพิ่มสไตล์ให้กับการแสดงผล
                         resultHtml += `
-            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">อันดับ ${index + 1}: ${prediction.class_name}</h5>
-                    <small>ความน่าจะเป็น: ${prediction.probability}</small>
-                </div>
-            </a>`;
+                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">อันดับ ${index + 1}: ${prediction.class_name}</h5>
+                                <small>ความน่าจะเป็น: ${prediction.probability}%</small>
+                            </div>
+                        </a>`;
+
                     });
                     resultHtml += '</div>';
 

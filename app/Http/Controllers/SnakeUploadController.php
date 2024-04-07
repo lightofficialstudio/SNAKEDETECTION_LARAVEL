@@ -37,7 +37,7 @@ class SnakeUploadController extends Controller
                     $image->getClientOriginalName()
                 )->post($this->predictPostUrl, [
                         'size' => 224,
-                        'confidence' => 0.01,
+                        'confidence' => 0.20,
                         'iou' => 0.01,
                     ]);
 
@@ -56,7 +56,8 @@ class SnakeUploadController extends Controller
                         ->first();
                     // เก็บข้อมูลที่ต้องการไว้ใน array
                     $snakeDetails[] = [
-                        'class_name' => $snake_class->name_th ?? $prediction['name'],
+                        'id' => $snake_class->id ?? null,
+                        'class_name' => $snake_class->name_th . " (" . str_replace("_", " ", $snake_class->name_en) . ")" ?? $prediction['name'],
                         'confidence' => $prediction['confidence'],
                         'probability' => number_format($prediction['confidence'] * 100, 2) // แก้ไขให้ถูกต้องตามที่แนะนำ
                     ];
