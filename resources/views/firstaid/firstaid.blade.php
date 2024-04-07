@@ -65,7 +65,41 @@
                             <!--begin::Col-->
                             <div class="col-md-3">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            ขั้นตอนที่ 1</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ตั้งสติคลายกังวล
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3 p-15 rounded">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -83,7 +117,7 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 1</p>
+                                            ขั้นตอนที่ 2</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ล้างแผลด้วยน้ำและสบู่
@@ -97,10 +131,9 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
-
                             <div class="col-md-3">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-3 p-15 rounded">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -118,7 +151,7 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 2</p>
+                                            ขั้นตอนที่ 3</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ถอดเสื้อผ้า
@@ -133,10 +166,10 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
-
-                            <div class="col-md-3">
+                            <div class="mt-10"></div>
+                            <div class="col-md-4">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -154,7 +187,7 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 3</p>
+                                            ขั้นตอนที่ 4</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">เคลื่อนไหว
@@ -169,10 +202,9 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
-
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border  border-3 p-15 rounded">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -190,7 +222,7 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 4</p>
+                                            ขั้นตอนที่ 5</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ไปโรงพยาบาล
@@ -205,7 +237,57 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
+                            <div class="mt-10"></div>
 
+                            <div class="col-md-6">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-5 p-15 rounded">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            วิธีการปฐมพยาบาลเบื้องต้นอย่างถูกวิธีเมื่อถูกงูกัด
+                                        </p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            เนื่องจากในปัจจุบันสื่อต่างๆและหลักสูตรในสถาบันการศึกษาต่างๆยังให้ความรู้ที่ผิดเกี่ยวกับวิธีการปฐมพยาบาลเบื้องต้นอย่างถูกวิธีเมื่อถูกงูกัด
+                                            ซึ่งก็นับว่าเป็นปัญหาที่สำคัญที่ทำให้คนส่วนใหญ่ยังขาดความรู้และความเข้าใจเกี่ยวกับเรื่องนี้และอาจส่งผลให้เกิดอันตรายต่อผู้ที่ถูกงูที่มีพิษกัดได้
+                                            ทั้งนี้ หลักของการปฐมพยาบาลผู้ที่ถูกงูพิษกัด คือ
+                                            การปฐมพยาบาลเบื้องต้นสำหรับผู้ที่ถูกงูพิษกัดให้เร็วที่สุดด้วยวิธีที่ถูกต้อง
+                                            สำหรับขั้นตอนการปฐมพยาบาลสำหรับผู้ที่ถูกงูกัด มีดังนี้
+
+                                            พยายามทำให้ผู้ป่วยคลายความกังวลและมีสติ
+                                            ถอดเครื่องประดับ และเสื้อผ้าที่อาจกดรัดอวัยวะส่วนที่ถูกกัดออก
+                                            ล้างแผลให้ผู้ที่ถูกงูกัดด้วยน้ำสะอาด
+                                            ให้ผู้ที่ถูกงูกัดนอนในท่าที่สบายและเคลื่อนไหวให้น้อยที่สุด แล้วผ้ายืดหน้ากว้าง
+                                            10 – 15 ซม. และมีความยาวอย่างน้อย 4.5 เมตร
+                                            หรือใช้ผ้าอะไรก็ได้ที่มีความยาวเพียงพอพันรอบอวัยวะส่วนที่ถูกงูกัดทั้งส่วนให้กระชับและไม่แน่นจนเกินไป
+                                            โดยเริ่มจากส่วนปลายหรือบริเวณรอบนิ้วมือ / นิ้วเท้ายาวต่อเนื่องมาจนสุดอวัยวะ
+                                            แล้วทำการดามอวัยวะส่วนที่ถูกกัดด้วยของแข็งเพื่อดามอวัยวะส่วนที่ถูกกัดไม่ให้เคลื่อนไหว
+                                            เนื่องจากการเคลื่อนไหวหรือการหดตัวของกล้ามเนื้อจะทำให้พิษงูถูกดูดซึมเข้าสู่ร่างกายได้เร็วขึ้น
+                                            รีบพาผู้ป่วยไปโรงพยาบาลที่ใกล้ที่สุด หรือเรียกรถพยาบาลมารับทันที
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
                         </div>
                         <!--end::Row-->
 
