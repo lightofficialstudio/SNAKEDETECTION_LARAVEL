@@ -122,95 +122,142 @@
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <section class="content" style="min-height: 100vh; background-color:#fefefe;">
-                    <div id="kt_app_content" class="app-content">
-                        <!--begin::Content container-->
-                        <div id="kt_app_content_container" class="app-container container-fluid">
-                            <div class="row d-flex justify-content-center">
-                                <div class="card border-transparent mb-5 col-9 " data-bs-theme="light">
-                                    <!--begin::Body-->
-                                    <div class="card-body d-flex  justify-content-center text-center border">
-                                        <!--begin::Wrapper-->
-                                        <div class="m-5">
-                                            <!--begin::Title-->
-                                            <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
-                                                <span class="me-2">
-                                                    สาราณุกรมงู
-                                                </span>
-                                                <br>
-
-
-                                            </div>
-
-
-                                            <!--end::Title-->
-
-                                            <!--begin::Action-->
-
-                                            <!--begin::Action-->
-                                        </div>
-                                        <!--begin::Wrapper-->
-
-
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                            </div>
-
-                            <!--begin::Row-->
-                            <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
-                                <!--begin::Col-->
-                                @foreach ($snakes as $snake)
-                                    <div class="col-md-4 p-6">
-                                        <!--begin::Hot sales post-->
-                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <!--begin::Overlay-->
-
-                                            <!--begin::Image-->
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover car d-rounded min-h-175px"
-                                                style="background-image:url('{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}')">
-                                            </div>
-
-                                            <!--end::Image-->
-                                            <!--begin::Action-->
-
-                                            <!--end::Action-->
-                                            </a>
-                                            <!--end::Overlay-->
-                                            <!--begin::Body-->
-                                            <div class="mt-5 text-center">
+                @if ($snakes->isNotEmpty())
+                    <section class="content" id="search-results" style="min-height: 100vh; background-color:#fefefe;">
+                        <div id="kt_app_content" class="app-content">
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="card border-transparent mb-5 col-9 " data-bs-theme="light">
+                                        <!--begin::Body-->
+                                        <div class="card-body d-flex  justify-content-center text-center border">
+                                            <!--begin::Wrapper-->
+                                            <div class="m-5">
                                                 <!--begin::Title-->
-                                                <a href="{{ route('snake.profile', $snake->id) }}"
-                                                    class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                                    {{ $snake->name_th ?? '' }}</a>
-                                                <!--end::Title-->
-                                                <!--begin::Text-->
-                                                <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                                    {{ str_replace('_', ' ', $snake->name_en ?? '') }}
+                                                <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
+                                                    <span class="me-2">
+                                                        ผลลัพธ์การค้นหา สารานุกรมงู
+                                                    </span>
+                                                    <br>
+
+
                                                 </div>
 
-                                                <!--end::Text-->
-                                                <!--begin::Text-->
 
-                                                <!--end::Text-->
+                                                <!--end::Title-->
+
+                                                <!--begin::Action-->
+
+                                                <!--begin::Action-->
                                             </div>
-                                            <!--end::Body-->
+                                            <!--begin::Wrapper-->
+
+
                                         </div>
-                                        <!--end::Hot sales post-->
+                                        <!--end::Body-->
                                     </div>
-                                @endforeach
+                                </div>
+
+                                <!--begin::Row-->
+                                <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
+                                    <!--begin::Col-->
+                                    @foreach ($snakes as $snake)
+                                        <div class="col-md-4 p-6">
+                                            <!--begin::Hot sales post-->
+                                            <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                                <!--begin::Overlay-->
+
+                                                <!--begin::Image-->
+                                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover car d-rounded min-h-175px"
+                                                    style="background-image:url('{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}')">
+                                                </div>
+
+                                                <!--end::Image-->
+                                                <!--begin::Action-->
+
+                                                <!--end::Action-->
+                                                </a>
+                                                <!--end::Overlay-->
+                                                <!--begin::Body-->
+                                                <div class="mt-5 text-center">
+                                                    <!--begin::Title-->
+                                                    <a href="{{ route('snake.profile', $snake->id) }}"
+                                                        class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                        {{ $snake->name_th ?? '' }}</a>
+                                                    <!--end::Title-->
+                                                    <!--begin::Text-->
+                                                    <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                                        {{ str_replace('_', ' ', $snake->name_en ?? '') }}
+                                                    </div>
+
+                                                    <!--end::Text-->
+                                                    <!--begin::Text-->
+
+                                                    <!--end::Text-->
+                                                </div>
+                                                <!--end::Body-->
+                                            </div>
+                                            <!--end::Hot sales post-->
+                                        </div>
+                                    @endforeach
+
+
+                                </div>
+                                <!--end::Row-->
+
+
 
 
                             </div>
-                            <!--end::Row-->
-
-
-
-
+                            <!--end::Content container-->
                         </div>
-                        <!--end::Content container-->
-                    </div>
-                </section>
+                    </section>
+                @else
+                    <section class="content" id="search-results" style="min-height: 100vh; background-color:#fefefe;">
+                        <div id="kt_app_content" class="app-content">
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="card border-transparent mb-5 col-9 " data-bs-theme="light">
+                                        <!--begin::Body-->
+                                        <div class="card-body d-flex  justify-content-center text-center border">
+                                            <!--begin::Wrapper-->
+                                            <div class="m-5">
+                                                <!--begin::Title-->
+                                                <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
+                                                    <span class="me-2">
+                                                        ไม่พบข้อมูลงูที่ค้นหา
+                                                    </span>
+                                                    <br>
+
+
+                                                </div>
+
+
+                                                <!--end::Title-->
+
+                                                <!--begin::Action-->
+
+                                                <!--begin::Action-->
+                                            </div>
+                                            <!--begin::Wrapper-->
+
+
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                            <!--end::Content container-->
+                        </div>
+                    </section>
+                @endif
 
                 <!--end::Content-->
             </div>
@@ -219,5 +266,21 @@
 
         @endsection
 
+
         @push('scripts')
+            <script>
+                // ตรวจสอบว่ามีการทำการค้นหาหรือไม่
+                @if (session('searchPerformed'))
+                    window.addEventListener('load', () => {
+                        // หา element ที่มี id 'search-results'
+                        const searchResultsSection = document.getElementById('search-results');
+                        if (searchResultsSection) {
+                            // เลื่อนหน้าจอไปยัง element
+                            searchResultsSection.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                @endif
+            </script>
         @endpush

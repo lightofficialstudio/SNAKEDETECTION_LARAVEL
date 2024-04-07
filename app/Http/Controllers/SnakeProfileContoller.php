@@ -34,14 +34,20 @@ class SnakeProfileContoller extends Controller
         }
 
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
-        $snakes = $query->get();
-
+        // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
+        if ($request->query()) {
+            $snakes = $query->get();
+            session(['searchPerformed' => true]);
+        } else {
+            $snakes = collect();
+        }
         $data =
             [
                 'snakes' => $snakes,
                 'searchByName' => $request->searchByName,
                 'posion_type' => $request->posion_type,
-                'status' => $request->status
+                'status' => $request->status,
+                'searchPerformed' => session('searchPerformed')
             ];
 
         // ส่งข้อมูลทั้งหมดไปที่ view snake_profile/search.blade.php โดย $data จะถูกส่งไปด้วย
@@ -83,11 +89,29 @@ class SnakeProfileContoller extends Controller
             $query->where('color', 'LIKE', '%' . $request->color . '%');
         }
 
+
+
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
-        $snakes = $query->get();
+        if ($request->query()) {
+            $snakes = $query->get();
+            session(['searchPerformed' => true]);
+        } else {
+            $snakes = collect();
+        }
+
+        // สร้างตัวแปร $data เพื่อเก็บข้อมูลทั้งหมดที่จะส่งไปที่ view
+        $data = [
+            'snakes' => $snakes,
+            'head_type' => $request->head_type,
+            'can_hoody' => $request->can_hoody,
+            'can_hiss' => $request->can_hiss,
+            'pattern' => $request->pattern,
+            'color' => $request->color,
+            'searchPerformed' => session('searchPerformed')
+        ];
 
         // ส่งข้อมูลที่ค้นหาได้กลับไปที่ view พร้อมกับตัวแปร $snakes
-        return view('snake_profile.attribute', ['snakes' => $snakes]);
+        return view('snake_profile.attribute', $data);
     }
 
     /**
