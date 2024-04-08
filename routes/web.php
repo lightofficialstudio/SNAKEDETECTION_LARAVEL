@@ -1,11 +1,16 @@
 <?php
 
-use App\Http\Controllers\CallCenterController;
-use App\Http\Controllers\FirstAidController;
-use App\Http\Controllers\SnakeCheckController;
-use App\Http\Controllers\SnakeProfileContoller;
-use App\Http\Controllers\SnakeUploadController;
+// การเรียกใช้งาน Route จากไฟล์ web.php
 use Illuminate\Support\Facades\Route;
+// การเรียกใช้งาน Controller ที่เราสร้างไว้
+use App\Http\Controllers\CallCenterController; // การเรียกใช้งาน Controller ของ สายด่วนงู
+use App\Http\Controllers\FirstAidController; // การเรียกใช้งาน Controller ของ วิธีการปฐมพยาบาล
+use App\Http\Controllers\SnakeCheckController; // การเรียกใช้งาน Controller ของ ตรวจสอบว่างูเป็นพิษหรือไม่
+use App\Http\Controllers\SnakeProfileContoller; // การเรียกใช้งาน Controller ของ แสดงข้อมูลประวัติงู
+use App\Http\Controllers\SnakeUploadController; // การเรียกใช้งาน Controller ของ อัพโหลดรูปภาพเพื่อตรวจสอบว่างูเป็นพิษหรือไม่
+use App\Http\Controllers\SnakePolicyController; // การเรียกใช้งาน Controller ของ นโยบายความเป็นส่วนตัว
+use App\Http\Controllers\AboutMeController; // การเรียกใช้งาน Controller ของ เกี่ยวกับเรา
+use App\Http\Controllers\ManualController; // การเรียกใช้งาน Controller ของ คู่มือการใช้งาน
 
 /*
     ส่วนของการเรียกใช้งาน Controller และ Route สำหรับแต่ละหน้า
@@ -34,3 +39,9 @@ Route::get('/snake/check/', [SnakeCheckController::class, 'index'])->name('snake
 Route::get('/snake/upload', [SnakeUploadController::class, 'index'])->name('snake.upload');
 // ส่งข้อมูลรูปภาพไปยัง เพื่อทำนายว่างูเป็นงูชนิดไหน?
 Route::post('/snake/upload/predict', [SnakeUploadController::class, 'upload'])->name('snake.upload.post');
+// นโยบายความเป็นส่วนตัว
+Route::get('/snake/policy', [SnakePolicyController::class, 'index'])->name('snake.policy');
+// เกี่ยวกับเรา
+Route::get('/snake/about-me', [AboutMeController::class, 'index'])->name('snake.aboutme');
+// คู่มือการใช้งาน
+Route::get('/snake/manual', [ManualController::class, 'index'])->name('snake.manual');

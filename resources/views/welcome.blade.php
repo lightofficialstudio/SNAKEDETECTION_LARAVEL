@@ -36,7 +36,7 @@
             <section class="header-img d-flex align-items-center justify-content-center">
                 <div class="blurred-bg"></div> <!-- นี่คือ div ที่จะแสดงรูปภาพที่เบลอ -->
                 <div class="d-flex align-items-center justify-content-center rounded"
-                    style="width:90vh; max-width: 100vh; height:35vh; background-color: rgba(255, 255, 255, 0.5); z-index: 1;">
+                    style="width:90vh; max-width: 120vh; height:65vh; background-color: rgba(255, 255, 255, 0.5); z-index: 1;">
 
                     <div class="text-center p-2">
                         <h2 class="text-center fs-3x text-white font-weight-bold text-stroke">
@@ -196,21 +196,21 @@
 
                                 <div class="col-md-8">
                                     <a href="#">
-                                        <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                        <div class="card-xl-stretch me-md-6 border p-12 rounded ">
                                             <div class="row ">
-                                                <div class="col-md-5 col-sm-12">
+                                                <div class="col-md-6 col-sm-12 text-center">
                                                     <div class="card-xl-stretch me-md-6  p-12 rounded text-left">
-                                                        <h1 class="fs-4x font-weight-bold">LINE CHATBOT</h1>
-                                                        <h2 class="fs-2x">หรือสามารถตรวจสอบข้อมูลของงูได้อย่างง่ายดาย <br>
+                                                        <h1 class="fs-3x font-weight-bold">LINE CHATBOT</h1>
+                                                        <h2 class="">หรือสามารถตรวจสอบข้อมูลของงูได้อย่างง่ายดาย <br>
                                                             ผ่านช่องทาง LINE
                                                             Chatbot ได้</h2>
                                                         <a href="https://lin.ee/ovnLjOm"
-                                                            class="btn btn-dark btn-lg shadow fs-2x mt-5">คุยแชทบอท</a>
+                                                            class="btn btn-dark btn-lg shadow mt-5">คุยแชทบอท</a>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-12">
+                                                <div class="col-md-6 col-sm-12">
                                                     <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                        style="width:100%; height:800px; background-image:url('{{ asset('project/images/messageImage_1694769197499.jpg') }}')">
+                                                        style="width:100%; height:800px; max-width:300px; max-height:300px; background-image:url('{{ asset('project/images/messageImage_1694769197499.jpg') }}')">
                                                     </div>
                                                 </div>
                                             </div>

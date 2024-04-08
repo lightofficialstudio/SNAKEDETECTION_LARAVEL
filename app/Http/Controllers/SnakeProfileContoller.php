@@ -35,19 +35,14 @@ class SnakeProfileContoller extends Controller
 
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
-        if ($request->query()) {
-            $snakes = $query->get();
-            session(['searchPerformed' => true]);
-        } else {
-            $snakes = collect();
-        }
+        $snakes = $query->get();
+
         $data =
             [
                 'snakes' => $snakes,
                 'searchByName' => $request->searchByName,
                 'posion_type' => $request->posion_type,
                 'status' => $request->status,
-                'searchPerformed' => session('searchPerformed')
             ];
 
         // ส่งข้อมูลทั้งหมดไปที่ view snake_profile/search.blade.php โดย $data จะถูกส่งไปด้วย

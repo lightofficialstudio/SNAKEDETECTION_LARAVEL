@@ -42,11 +42,10 @@
                 <li class="menu-item">
                     <h3 href="#" target="_blank" class="text-white px-2">เงื่อนไขการใช้งาน</h3>
                 </li>
+
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">ข้อตกลง</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">ความเป็นส่วนตัว</a>
+                    <a href="{{ route('snake.policy') }}" target="_blank"
+                        class="menu-link px-2">ข้อกำหนดการใช้งานเว็บไซต์ (Policy)</a>
                 </li>
 
 
@@ -56,10 +55,10 @@
                     <h3 href="#" target="_blank" class="text-white px-2">เกี่ยวกับเรา</h3>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">จุดประสงค์การจัดทำ</a>
+                    <a href="{{ route('snake.manual') }}" target="_blank" class="menu-link px-2">คู่มือการใช้งาน</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" target="_blank" class="menu-link px-2">ข้อมูลผู้ติดต่อ</a>
+                    <a href="{{ route('snake.aboutme') }}" target="_blank" class="menu-link px-2">ข้อมูลผู้จัดทำ</a>
                 </li>
 
 

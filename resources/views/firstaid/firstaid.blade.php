@@ -34,7 +34,8 @@
                                     </li>
                                     <!--end::Item-->
                                     <!--begin::Item-->
-                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Dashboards</li>
+                                    <li class="breadcrumb-item text-gray-700 fw-bold lh-1">วิธีปฐมพยาบาล
+                                    </li>
                                     <!--end::Item-->
                                 </ul>
                                 <!--end::Breadcrumb-->
