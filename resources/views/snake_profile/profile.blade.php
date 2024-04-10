@@ -68,20 +68,20 @@
                             <div class="">
 
                                 <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
-                                    <div class="col-md-5 text-center">
-                                        <h1 style="text-align: left !important;" class="mt-5 mb-5 fs-2x">
-                                            {{ $snake->name_th }} / {{ str_replace('_', ' ', $snake->name_en) }}
-                                            /<i>{{ $snake->name_sci }}</i>
+                                    <div class="col-md-5 text-center ">
+                                        <h1 class="mt-5 mb-5 fs-2x">
+                                            {{ $snake->name_th }} <br>
                                         </h1>
+                                        @if ($snake->posion_type == 'งูไม่มีพิษ')
+                                            <span class="badge badge-success fs-2x">ไม่มีพิษ</span>
+                                        @else
+                                            <span class="badge badge-danger fs-2x ">{{ $snake->posion_type }}</span>
+                                            <span
+                                                class="badge badge-danger fs-2x">{{ $snake->posion_description ?? '' }}</span>
+                                        @endif
+
                                         <div class="mb-5">
-                                            <small style="text-align: left !important;">
-                                                @if ($snake->posion_type == 'งูไม่มีพิษ')
-                                                    <span class="badge badge-success">ไม่มีพิษ</span>
-                                                @else
-                                                    <span class="badge badge-danger">{{ $snake->posion_type }}</span> :
-                                                    <span>{{ $snake->posion_description ?? '' }}</span>
-                                                @endif
-                                            </small>
+
                                         </div>
 
                                         <div class="d-flex justify-content-center">
@@ -164,7 +164,7 @@
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        "{{ $snake->features ?? '' }}"</div>
+                                                        {{ $snake->features ?? '' }}</div>
 
                                                 </div>
                                             </div>
@@ -191,7 +191,7 @@
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        "{{ $snake->location ?? '' }}"</div>
+                                                        {{ $snake->location ?? '' }}</div>
 
                                                 </div>
                                             </div>
@@ -216,7 +216,7 @@
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        "{{ $snake->food ?? '' }}"</div>
+                                                        {{ $snake->food ?? '' }}</div>
 
                                                 </div>
                                             </div>
@@ -243,7 +243,7 @@
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        "{{ $snake->behaviors ?? '' }}"</div>
+                                                        {{ $snake->behaviors ?? '' }}</div>
 
                                                 </div>
                                             </div>
@@ -270,7 +270,7 @@
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        "{{ $snake->status ?? '' }}"</div>
+                                                        {{ $snake->status ?? '' }}</div>
 
                                                 </div>
                                             </div>
