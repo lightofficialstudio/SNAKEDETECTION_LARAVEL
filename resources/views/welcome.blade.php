@@ -210,7 +210,8 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                        style="width:100%; height:800px; max-width:300px; max-height:300px; background-image:url('{{ asset('project/images/messageImage_1694769197499.jpg') }}')">
+                                                        style="width:100%; height:800px; max-width:300px; max-height:300px;     mix-blend-mode: multiply;
+                                                        background-image:url('{{ asset('project/images/messageImage_1694769197499.jpg') }}')">
                                                     </div>
                                                 </div>
                                             </div>

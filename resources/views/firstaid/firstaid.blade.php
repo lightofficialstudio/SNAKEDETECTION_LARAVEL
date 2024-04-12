@@ -156,8 +156,8 @@
                                             ขั้นตอนที่ 3</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ถอดเสื้อผ้า
-                                            ที่กดทับแผล
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            ล้างแผลด้วยน้ำสะอาด
                                         </div>
                                         <!--end::Text-->
                                         <!--begin::Text-->
@@ -192,8 +192,8 @@
                                             ขั้นตอนที่ 4</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">เคลื่อนไหว
-                                            ให้น้อยที่สุ
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            พยายามให้ผู้ที่ถูกงูกัดเคลื่อนไหวน้อยที่สุด
                                         </div>
                                         <!--end::Text-->
                                         <!--begin::Text-->
@@ -227,8 +227,10 @@
                                             ขั้นตอนที่ 5</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ไปโรงพยาบาล
-                                            โดยเร็วที่สุด
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รีบนำผู้ที่ถูกงูกัดส่งโรงพยาบาล หรือ
+                                            พิรจารณาการทำวิธีการปฐมพยาบาลเบื้องต้นอย่างถูกวิธีเมื่อถูกงูกัด
+                                            ถ้าหากว่าโรงพยาบาลอยู่ไกลจากจุดที่ถูกงูกัด
                                         </div>
                                         <!--end::Text-->
                                         <!--begin::Text-->

@@ -20,7 +20,7 @@ class SnakeUploadController extends Controller
     {
         // ตรวจสอบชนิดของไฟล์
         $request->validate([
-            'snake_image' => 'required|image|max:5120',
+            'snake_image' => 'required|image',
         ]);
         // ตรวจสอบว่ามีไฟล์ถูกอัพโหลดมาหรือไม่
         if ($request->hasFile('snake_image')) {

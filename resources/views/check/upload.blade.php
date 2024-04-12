@@ -43,7 +43,7 @@
 
 @endsection
 @section('content')
-
+    @include('components.modal-manual-upload-snake-module')
     <!-- Loader -->
     <div id="loader" class="loader-container" style="display: none;">
         <div class="loader">
@@ -101,14 +101,16 @@
 
                                 <!--end::Page title-->
                             </div>
-                            <button type="button" class="btn btn-secondary w-20" data-bs-toggle="tooltip"
-                                data-bs-placement="left"
-                                title="
+                            <div data-bs-toggle="modal" data-bs-target="#modal_upload_snake_modal">
+                                <button type="button" class="btn btn-secondary w-20" data-bs-toggle="tooltip"
+                                    data-bs-placement="left"
+                                    title="
                                เริ่มต้นด้วยการอัปโหลดรูปภาพของงู ครอบรูปภาพของงู เมื่อทำเสร็จสิ้นให้กดที่ ปุ่ม 'เริ่มการตรวจสอบชนิดงู' ">
-                                <i class="ki-outline ki-information-2 fs-3"></i>
-                                วิธีใช้งาน
+                                    <i class="ki-outline ki-information-2 fs-3"></i>
+                                    วิธีใช้งาน
+                                </button>
+                            </div>
 
-                            </button>
                             <!--end::Toolbar container-->
 
                         </div>
@@ -126,9 +128,9 @@
                         <div class="container">
                             <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
                                 <!--begin::Col-->
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-md-6 col-sm-12 border border-gray-300 border-dashed rounded ">
                                     <!--begin::Hot sales post-->
-                                    <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                    <div class="card-xl-stretch me-md-6  p-12 ">
                                         <!--begin::Overlay-->
                                         <!--begin::Title-->
                                         <p href="#"
@@ -141,22 +143,17 @@
                                                 @csrf
                                                 <input type="file" class="form-control" name="snake_image"
                                                     id="snake-image" style="display: none;">
-                                                <div class="text-center">
+                                                <div class="text-center mb-10 mt-10">
                                                     <button type="button" onclick="uploadImage()" for="snake-image"
-                                                        class="btn btn-info btn-lg rounded w-50">เลือกรูปภาพ</button>
+                                                        class="btn btn-secondary btn-lg rounded w-50 h-100 fs-2x p-5"> <i
+                                                            class="ki-outline ki-file fs-3x mb-5"></i><br>เลือกรูปภาพ</button>
 
 
                                                 </div>
                                             </form>
                                         </div>
 
-                                        <div class="mt-5 text-center">
-                                            <button onclick="handleSubmitSnakeImage()"
-                                                class="btn btn-primary w-50">เริ่มการตรวจสอบชนิดงู</button>
-                                            {{-- <p>*ขั้นตอนที่ 2 หลังจากเลือกรูปภาพ <br>
-                                                เมื่อครอบเสร็จแล้วให้กดที่ปุ่มเริ่มการตรวจสอบชนิดงู</p> --}}
 
-                                        </div>
 
 
                                         <!--end::Body-->
@@ -169,8 +166,13 @@
 
                                 <div class="row g-5 g-xl-10 mb-5 mb-xl-10 justify-content-between "
                                     style="min-height:100vh">
+
                                     <div class="col-md-6 col-sm-12 ">
                                         <h2>รูปภาพนำเข้า</h2><br />
+                                        <div class="mb-5">
+                                            <span class="badge badge-secondary p-3">* ผู้ใช้งานสามารถครอบรูปภาพงู
+                                                เพื่อการตรวจจับที่แม่นยำมากขึ้น</span>
+                                        </div>
                                         <div class="d-flex justify-content-center align-items-center "
                                             style="overflow: hidden;" id="image-container">
 
@@ -184,17 +186,25 @@
 
 
                                         </div>
-                                        <div class="mt-5">
-                                            <span class="">* ผู้ใช้งานสามารถครอบรูปภาพงู
-                                                เพื่อการตรวจจับที่แม่นยำมากขึ้น</span>
+
+                                        <div class="mt-5 text-center">
+                                            <button onclick="handleSubmitSnakeImage()" class="btn btn-primary w-50">
+                                                เริ่มการตรวจสอบชนิดงู</button>
+                                            {{-- <p>*ขั้นตอนที่ 2 หลังจากเลือกรูปภาพ <br>
+                                                เมื่อครอบเสร็จแล้วให้กดที่ปุ่มเริ่มการตรวจสอบชนิดงู</p> --}}
+
                                         </div>
 
 
                                     </div>
-                                    <div class="col-md-6 col-sm-12">
+                                    <div class="col-md-6 col-sm-12 ">
                                         <div class="h-150px">
 
                                             <h2>ผลลัพธ์การตรวจสอบ</h2><br />
+                                            <span class="badge badge-light-danger p-3">*
+                                                ผลลัพธ์ในการตรวจสอบอาจมีความไม่ถูกต้อง
+                                                ในกรณีที่ถูกงูกัดให้รีบพบแพทย์ให้เร็วที่สุด</span>
+
                                             <div id="snake-result-prediction" class="mb-10"></div>
                                         </div>
 
@@ -253,7 +263,6 @@
                         cropper = new Cropper(document.getElementById('image'), {
                             aspectRatio: 1,
                             viewMode: 1,
-                            autoCropArea: 1,
 
                         });
                     };
@@ -306,10 +315,21 @@
                                     if (response.length === 0) {
                                         Swal.fire({
                                             icon: 'error',
-                                            title: 'เกิดข้อผิดพลาด',
-                                            text: 'ผลการทำนายต่ำจนเกินไป สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 2.รูปภาพที่นำเข้าไม่มีงู โปรดตรวจสอบรูปภาพใหม่อีกครั้ง',
+                                            title: 'เกิดข้อผิดพลาด!',
+                                            text: 'ไม่มีผลการทำนาย สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 3.รูปภาพที่นำเข้าไม่มีงู 4.เป็นชนิดของงูที่ไม่ได้อยู่ในฐานข้อมูล โปรดตรวจสอบรูปภาพนำเข้าใหม่อีกครั้ง',
                                             confirmButtonText: 'ตกลง'
                                         });
+                                    }
+                                    for (let i = 0; i < response.length; i++) {
+                                        if (response[i].confidence < 0.5) {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'คำเตือน!',
+                                                text: 'ผลการทำนายต่ำกว่า 50% สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 3.รูปภาพที่นำเข้าไม่มีงู 4.เป็นชนิดของงูที่ไม่ได้อยู่ในฐานข้อมูล โปรดตรวจสอบรูปภาพใหม่อีกครั้ง',
+                                                confirmButtonText: 'ตกลง'
+                                            });
+
+                                        }
                                     }
                                 },
                                 error: function(xhr, status, error) {
@@ -318,8 +338,9 @@
                                     if (xhr.status === 422) {
                                         Swal.fire({
                                             icon: 'error',
-                                            title: 'เกิดข้อผิดพลาด',
-                                            text: 'กรุณาใช้งานไฟล์ให้อยู่ในรูปแบบที่กำหนด คือ เป็นรูปภาพ jpeg, png, jpg เท่านั้น',
+                                            title: 'เกิดข้อผิดพลาด!',
+                                            text: 'เกิดข้อผิดพลาดในการตรวจสอบรูปภาพ กรุณาลองใหม่อีกครั้ง ขนาดไฟล์ไม่เกิน 5MB และเป็นไฟล์รูปภาพเท่านั้น',
+
                                             confirmButtonText: 'ตกลง'
                                         });
                                     } else {
@@ -327,7 +348,7 @@
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'เกิดข้อผิดพลาด',
-                                            text: 'เกิดข้อผิดพลาดในการตรวจสอบรูปภาพ กรุณาลองใหม่อีกครั้ง',
+                                            text: 'กรุณาใช้งานไฟล์ให้อยู่ในรูปแบบที่กำหนด คือ เป็นรูปภาพ jpeg, png, jpg, gif, webp เท่านั้น',
                                             confirmButtonText: 'ตกลง'
                                         });
                                     }
@@ -352,15 +373,17 @@
                     predictions.slice(0, 3).forEach(function(prediction, index) {
                         // ใช้ list-group-item และเพิ่มสไตล์ให้กับการแสดงผล
                         resultHtml += `
-                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action mb-5" aria-current="true">
-                            <div class="d-flex w-100 justify-content-between">
+                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action mb-5 mt-3  border border-gray-300 border-dashed rounded" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between align-items-center">
                                 <img src="${prediction.image}" style="max-width:200px; max-height:200px; " />
-                                <div>
-                                    <h5 class="mb-1">อันดับ ${index + 1}: ${prediction.class_name}</h5>
+                                <div class="">
+                                    <h2 class="mb-1">อันดับ ${index + 1} : ${prediction.class_name}</h2>
                                     <br>
-                                    <h5 class="text-danger">${prediction.posion_type} : ${prediction.posion_description}</h5>
+                                    <h5 class="${prediction.posion_type === "งูไม่มีพิษ" ? 'text-muted' : 'text-danger'}">${prediction.posion_type }   ${prediction.posion_description}</h5>
+                                    <br>
+                                    <h4 class="text-muted badge badge-light-success">ความน่าจะเป็น : ${prediction.probability}%</h4>
                                 </div>
-                                <small>ความน่าจะเป็น: ${prediction.probability}%</small>
+                                <div>&nbsp;</div>
                             </div>
                         </a>`;
 

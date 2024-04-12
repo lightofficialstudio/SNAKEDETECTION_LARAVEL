@@ -67,7 +67,7 @@
 
                             <div class="col-md-12">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-5 p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-2 border-dashed p-15 rounded">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -104,12 +104,12 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
-
-                            <div class="mt-10"></div>
-
+                            <div class="mt-10 mb-10">
+                                <h1 class="text-center">อาจารย์ที่ปรึกษา</h1>
+                            </div>
                             <div class="col-md-3">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -127,10 +127,52 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ผู้จัดทำ 1</p>
+                                            พิชญ์สินี ชุทสนิท</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รหัสนักศึกษา 6204062636066
+                                            <br>
+                                            นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="mt-10 mb-10">
+                                <h1 class="text-center">นักศึกษาผู้จัดทำ</h1>
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            พิชญ์สินี ชุทสนิท</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รหัสนักศึกษา 6204062636066
+                                            <br>
                                             นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
                                         </div>
                                         <!--end::Text-->
@@ -144,7 +186,7 @@
                             </div>
                             <div class="col-md-3">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3 p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-3 p-15 rounded border-dashed">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -162,10 +204,93 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ผู้จัดทำ 2</p>
+                                            ชัชชวัล ทักษ์ธนโชติ
+
+
+                                        </p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รหัสนักศึกษา 6204062636066
+                                            <br>
+                                            นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+
+                            <div class="mt-10 mb-10">
+                                <h1 class="text-center">ผู้ให้คำแนะนำ</h1>
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            พิชญ์สินี ชุทสนิท</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รหัสนักศึกษา 6204062636066
+                                            <br>
+                                            นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            พิชญ์สินี ชุทสนิท</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รหัสนักศึกษา 6204062636066
+                                            <br>
                                             นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
                                         </div>
                                         <!--end::Text-->
