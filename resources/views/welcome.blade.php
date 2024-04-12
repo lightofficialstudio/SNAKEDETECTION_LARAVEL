@@ -125,11 +125,11 @@
 
                             <!--begin::Row-->
                             <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
-                                <div class="col-md-6">
+                                <div class="col-md-3 col-sm-12">
                                     <a href="{{ route('snake.search.attribute') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake.jpg') }}')">
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/search-attribute.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
@@ -142,11 +142,11 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-3 col-sm-12">
                                     <a href="{{ route('snake.search.content') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake.jpg') }}')">
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/search-content.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
@@ -159,12 +159,11 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="mt-10"></div>
-                                <div class="col-md-6">
+                                <div class="col-md-3 col-sm-12">
                                     <a href="{{ route('snake.firstaid') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake3.jpg') }}')">
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/firstaid.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
@@ -176,11 +175,12 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-md-6" data-bs-toggle="modal" data-bs-target="#modal_emergency_call">
+                                <div class="col-md-3 col-sm-12" data-bs-toggle="modal"
+                                    data-bs-target="#modal_emergency_call">
                                     <a href="#">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/snake2.jpg') }}')">
+                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/callcenter.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">

@@ -93,11 +93,22 @@
                                     <!--begin::Title-->
                                     <h1
                                         class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
-                                        ตรวจสอบชนิดของงูด้วยรูปภาพ</h1>
+                                        ค้นหาด้วยรูปภาพ</h1>
+
+
                                     <!--end::Title-->
                                 </div>
+
                                 <!--end::Page title-->
                             </div>
+                            <button type="button" class="btn btn-secondary w-20" data-bs-toggle="tooltip"
+                                data-bs-placement="left"
+                                title="
+                               เริ่มต้นด้วยการอัปโหลดรูปภาพของงู ครอบรูปภาพของงู เมื่อทำเสร็จสิ้นให้กดที่ ปุ่ม 'เริ่มการตรวจสอบชนิดงู' ">
+                                <i class="ki-outline ki-information-2 fs-3"></i>
+                                วิธีใช้งาน
+
+                            </button>
                             <!--end::Toolbar container-->
 
                         </div>
@@ -115,27 +126,36 @@
                         <div class="container">
                             <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
                                 <!--begin::Col-->
-                                <div class="col-md-6 ">
+                                <div class="col-md-6 col-sm-12">
                                     <!--begin::Hot sales post-->
                                     <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                         <!--begin::Overlay-->
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base text-center">
-                                            อัพโหลดรูปภาพเพื่อตรวจสอบชนิดงู</p>
+                                            อัปโหลดรูปภาพเพื่อตรวจสอบชนิดงู</p>
                                         <!--end::Title-->
                                         <!--begin::Image-->
                                         <div>
                                             <form action="" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="file" class="form-control" name="snake_image"
-                                                    id="snake-image">
+                                                    id="snake-image" style="display: none;">
+                                                <div class="text-center">
+                                                    <button type="button" onclick="uploadImage()" for="snake-image"
+                                                        class="btn btn-info btn-lg rounded w-50">เลือกรูปภาพ</button>
+
+
+                                                </div>
                                             </form>
                                         </div>
 
                                         <div class="mt-5 text-center">
                                             <button onclick="handleSubmitSnakeImage()"
-                                                class="btn btn-primary">ตรวจสอบชนิดงู</button>
+                                                class="btn btn-primary w-50">เริ่มการตรวจสอบชนิดงู</button>
+                                            {{-- <p>*ขั้นตอนที่ 2 หลังจากเลือกรูปภาพ <br>
+                                                เมื่อครอบเสร็จแล้วให้กดที่ปุ่มเริ่มการตรวจสอบชนิดงู</p> --}}
+
                                         </div>
 
 
@@ -145,15 +165,17 @@
                                 </div>
 
                             </div>
-                            <div class="">
+                            <div class="mb-5">
 
-                                <div class="row g-5 g-xl-10 mb-5 mb-xl-10 justify-content-between">
+                                <div class="row g-5 g-xl-10 mb-5 mb-xl-10 justify-content-between "
+                                    style="min-height:100vh">
                                     <div class="col-md-6 col-sm-12 ">
                                         <h2>รูปภาพนำเข้า</h2><br />
                                         <div class="d-flex justify-content-center align-items-center "
                                             style="overflow: hidden;" id="image-container">
 
-                                            <div id="image-container" style="max-width: 100%; max-height: 100%;">
+                                            <div id="image-container"
+                                                style="max-width: 100%; max-height: 100%; min-width:500px; min-height:500px;">
                                                 <img id="image" src="{{ asset('project/images/snake-profileimg.png') }}"
                                                     alt="รูปภาพของงู"
                                                     style="width:100%; height:100%; object-fit: cover; object-position: center;">
@@ -173,7 +195,7 @@
                                         <div class="h-150px">
 
                                             <h2>ผลลัพธ์การตรวจสอบ</h2><br />
-                                            <div id="snake-result-prediction"></div>
+                                            <div id="snake-result-prediction" class="mb-10"></div>
                                         </div>
 
                                     </div>
@@ -207,6 +229,13 @@
 
         @push('scripts')
             <script>
+                function uploadImage() {
+                    $('#snake-image').click();
+
+                }
+            </script>
+
+            <script>
                 var routes = {
                     snakeProfile: "{{ route('snake.profile', ['id' => 'PLACEHOLDER']) }}".replace('PLACEHOLDER', '%id%')
                 };
@@ -224,6 +253,8 @@
                         cropper = new Cropper(document.getElementById('image'), {
                             aspectRatio: 1,
                             viewMode: 1,
+                            autoCropArea: 1,
+
                         });
                     };
 
@@ -242,8 +273,17 @@
                 });
             </script>
             <script>
-                // ฟังก์ชันสำหรับการแสดงรูปภาพที่เลือกจาก input ในการอัพโหลด
+                // ฟังก์ชันสำหรับการแสดงรูปภาพที่เลือกจาก input ในการอัปโหลด
                 function handleSubmitSnakeImage() {
+                    if (!cropper) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'เกิดข้อผิดพลาด',
+                            text: 'กรุณาเลือกรูปภาพก่อนทำการตรวจสอบ',
+                            confirmButtonText: 'ตกลง'
+                        });
+                        return;
+                    }
                     if (cropper) {
                         cropper.getCroppedCanvas().toBlob((blob) => {
                             var formData = new FormData();
@@ -312,15 +352,20 @@
                     predictions.slice(0, 3).forEach(function(prediction, index) {
                         // ใช้ list-group-item และเพิ่มสไตล์ให้กับการแสดงผล
                         resultHtml += `
-                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action" aria-current="true">
+                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action mb-5" aria-current="true">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">อันดับ ${index + 1}: ${prediction.class_name}</h5>
+                                <img src="${prediction.image}" style="max-width:200px; max-height:200px; " />
+                                <div>
+                                    <h5 class="mb-1">อันดับ ${index + 1}: ${prediction.class_name}</h5>
+                                    <br>
+                                    <h5 class="text-danger">${prediction.posion_type} : ${prediction.posion_description}</h5>
+                                </div>
                                 <small>ความน่าจะเป็น: ${prediction.probability}%</small>
                             </div>
                         </a>`;
 
                     });
-                    resultHtml += '</div>';
+                    resultHtml += '</div> <div class="mb-10"></div>';
 
                     // อัปเดตเนื้อหาในภาคผลการทำนาย
                     $('#snake-result-prediction').html(resultHtml);

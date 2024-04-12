@@ -121,7 +121,8 @@
                                             ขั้นตอนที่ 2</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ล้างแผลด้วยน้ำและสบู่
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            ถอดเครื่องประดับและเสื้อผ้าที่อาจกดรัดอวัยวะส่วนที่งูกัดออก
                                         </div>
                                         <!--end::Text-->
                                         <!--begin::Text-->

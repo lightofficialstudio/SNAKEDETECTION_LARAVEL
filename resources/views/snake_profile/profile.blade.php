@@ -146,7 +146,7 @@
                                                     <!--begin::Header-->
                                                     <div class="d-flex flex-stack mb-3">
                                                         <!--begin::Badge-->
-                                                        <div class="badge badge-dark">ลักษณะเด่น</div>
+                                                        <div class="badge badge-dark fs-5">ลักษณะเด่น</div>
                                                         <!--end::Badge-->
                                                         <!--begin::Menu-->
                                                         <div>
@@ -174,7 +174,7 @@
                                                     <!--begin::Header-->
                                                     <div class="d-flex flex-stack mb-3">
                                                         <!--begin::Badge-->
-                                                        <div class="badge badge-dark">ถิ่นที่อยู่อาศัย</div>
+                                                        <div class="badge badge-dark fs-5">ถิ่นที่อยู่อาศัย</div>
                                                         <!--end::Badge-->
                                                         <!--begin::Menu-->
                                                         <div>
@@ -201,7 +201,7 @@
                                                     <!--begin::Header-->
                                                     <div class="d-flex flex-stack mb-3">
                                                         <!--begin::Badge-->
-                                                        <div class="badge badge-dark">อาหาร</div>
+                                                        <div class="badge badge-dark fs-5">อาหาร</div>
                                                         <!--end::Badge-->
                                                         <!--begin::Menu-->
                                                         <div>
@@ -226,7 +226,7 @@
                                                     <!--begin::Header-->
                                                     <div class="d-flex flex-stack mb-3">
                                                         <!--begin::Badge-->
-                                                        <div class="badge badge-dark">พฤติกรรม</div>
+                                                        <div class="badge badge-dark fs-5">พฤติกรรม</div>
                                                         <!--end::Badge-->
                                                         <!--begin::Menu-->
                                                         <div>
@@ -253,7 +253,7 @@
                                                     <!--begin::Header-->
                                                     <div class="d-flex flex-stack mb-3">
                                                         <!--begin::Badge-->
-                                                        <div class="badge badge-dark">สถานภาพปัจจุบัน</div>
+                                                        <div class="badge badge-dark fs-5">สถานภาพปัจจุบัน</div>
                                                         <!--end::Badge-->
                                                         <!--begin::Menu-->
                                                         <div>
@@ -280,7 +280,7 @@
                                                     <!--begin::Header-->
                                                     <div class="d-flex flex-stack mb-3">
                                                         <!--begin::Badge-->
-                                                        <div class="badge badge-dark">แหล่งอ้างอิง</div>
+                                                        <div class="badge badge-dark fs-5">แหล่งอ้างอิง</div>
                                                         <!--end::Badge-->
                                                         <!--begin::Menu-->
                                                         <div>

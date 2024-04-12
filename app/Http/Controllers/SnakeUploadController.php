@@ -20,7 +20,7 @@ class SnakeUploadController extends Controller
     {
         // ตรวจสอบชนิดของไฟล์
         $request->validate([
-            'snake_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'snake_image' => 'required|image|max:5120',
         ]);
         // ตรวจสอบว่ามีไฟล์ถูกอัพโหลดมาหรือไม่
         if ($request->hasFile('snake_image')) {
@@ -37,7 +37,7 @@ class SnakeUploadController extends Controller
                     $image->getClientOriginalName()
                 )->post($this->predictPostUrl, [
                         'size' => 224,
-                        'confidence' => 0.20,
+                        'confidence' => 0.05,
                         'iou' => 0.01,
                     ]);
 
@@ -57,7 +57,10 @@ class SnakeUploadController extends Controller
                     // เก็บข้อมูลที่ต้องการไว้ใน array
                     $snakeDetails[] = [
                         'id' => $snake_class->id ?? null,
-                        'class_name' => $snake_class->name_th . " (" . str_replace("_", " ", $snake_class->name_en) . ")" ?? $prediction['name'],
+                        'class_name' => $snake_class->name_th ?? $prediction['name'],
+                        'image' => asset($snake_class->image ? 'project/images/snake_type/' . $snake_class->image : 'project/images/snake-profileimg.png'),
+                        'posion_type' => $snake_class->posion_type,
+                        'posion_description' => $snake_class->posion_description ?? '',
                         'confidence' => $prediction['confidence'],
                         'probability' => number_format($prediction['confidence'] * 100, 2) // แก้ไขให้ถูกต้องตามที่แนะนำ
                     ];

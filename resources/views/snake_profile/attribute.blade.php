@@ -448,40 +448,43 @@
                                     <!--begin::Col-->
                                     @foreach ($snakes as $snake)
                                         <div class="col-md-4 p-6">
-                                            <!--begin::Hot sales post-->
-                                            <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                                <!--begin::Overlay-->
+                                            <a href="{{ route('snake.profile', $snake->id) }}">
 
-                                                <!--begin::Image-->
-                                                <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover car d-rounded min-h-175px"
-                                                    style="background-image:url('{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}')">
-                                                </div>
+                                                <!--begin::Hot sales post-->
+                                                <div class="card-xl-stretch me-md-6 border p-12 rounded">
+                                                    <!--begin::Overlay-->
 
-                                                <!--end::Image-->
-                                                <!--begin::Action-->
-
-                                                <!--end::Action-->
-                                                </a>
-                                                <!--end::Overlay-->
-                                                <!--begin::Body-->
-                                                <div class="mt-5 text-center">
-                                                    <!--begin::Title-->
-                                                    <a href="{{ route('snake.profile', $snake->id) }}"
-                                                        class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                                        {{ $snake->name_th ?? '' }}</a>
-                                                    <!--end::Title-->
-                                                    <!--begin::Text-->
-                                                    <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                                        {{ str_replace('_', ' ', $snake->name_en ?? '') }}
+                                                    <!--begin::Image-->
+                                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover car d-rounded min-h-175px"
+                                                        style="background-image:url('{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}')">
                                                     </div>
 
-                                                    <!--end::Text-->
-                                                    <!--begin::Text-->
+                                                    <!--end::Image-->
+                                                    <!--begin::Action-->
 
-                                                    <!--end::Text-->
+                                                    <!--end::Action-->
+
+                                                    <!--end::Overlay-->
+                                                    <!--begin::Body-->
+                                                    <div class="mt-5 text-center">
+                                                        <!--begin::Title-->
+                                                        <a href="{{ route('snake.profile', $snake->id) }}"
+                                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                                            {{ $snake->name_th ?? '' }}</a>
+                                                        <!--end::Title-->
+                                                        <!--begin::Text-->
+                                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                                            {{ str_replace('_', ' ', $snake->name_en ?? '') }}
+                                                        </div>
+
+                                                        <!--end::Text-->
+                                                        <!--begin::Text-->
+
+                                                        <!--end::Text-->
+                                                    </div>
+                                                    <!--end::Body-->
                                                 </div>
-                                                <!--end::Body-->
-                                            </div>
+                                            </a>
                                             <!--end::Hot sales post-->
                                         </div>
                                     @endforeach
