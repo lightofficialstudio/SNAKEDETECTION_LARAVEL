@@ -241,7 +241,6 @@
             <script>
                 function uploadImage() {
                     $('#snake-image').click();
-
                 }
             </script>
 
@@ -373,7 +372,8 @@
                     predictions.slice(0, 3).forEach(function(prediction, index) {
                         // ใช้ list-group-item และเพิ่มสไตล์ให้กับการแสดงผล
                         resultHtml += `
-                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action mb-5 mt-3  border border-gray-300 border-dashed rounded" aria-current="true">
+                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action mb-5 mt-3
+                        border border-gray-300 border-dashed rounded" aria-current="true">
                             <div class="d-flex w-100 justify-content-between align-items-center">
                                 <img src="${prediction.image}" style="max-width:200px; max-height:200px; " />
                                 <div class="">

@@ -546,7 +546,6 @@
                         </div>
                     </section>
                 @endif
-
                 <!--end::Content-->
             </div>
             <!--end::Content wrapper-->

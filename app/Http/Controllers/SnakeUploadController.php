@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class SnakeUploadController extends Controller
 {
-    // URL ของ Flask API สำหรับการทำนายว่างู
+    // URL ของ Ultralytics API สำหรับการทำนายว่างู
     public $predictPostUrl = 'https://api.ultralytics.com/v1/predict/4H8ocJLET9cegG6xdV8R';
     // ฟังก์ชันสำหรับแสดงหน้าอัพโหลดรูปภาพ
     public function index()
@@ -43,10 +43,8 @@ class SnakeUploadController extends Controller
 
             // แปลงข้อมูล JSON ที่ได้รับเป็น array
             $predictions = json_decode($response->body(), true);
-
             // เตรียม array สำหรับเก็บข้อมูลที่ต้องการ
             $snakeDetails = [];
-
             // ตรวจสอบก่อนว่ามี key 'data' ใน $predictions และ 'data' เป็น array
             if (isset($predictions['data']) && is_array($predictions['data'])) {
                 // วนลูปผ่าน array 'data'
