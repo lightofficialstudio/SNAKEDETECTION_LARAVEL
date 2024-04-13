@@ -14,7 +14,10 @@
                     <a href="{{ route('snake.upload') }}" class="menu-link px-2">ค้นหางูด้วยรูปภาพ</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('snake.search.content') }}" class="menu-link px-2">ค้นหางูด้วยคุณลักษณะ</a>
+                    <a href="{{ route('snake.search.attribute') }}" class="menu-link px-2">ค้นหางูด้วยคุณลักษณะ</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('snake.search.content') }}" class="menu-link px-2">สารานุกรมงู</a>
                 </li>
                 <li class="menu-item">
                     <a data-bs-toggle="modal" data-bs-target="#modal_emergency_call"
