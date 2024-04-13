@@ -52,7 +52,8 @@
                                     <div class="form-floating">
                                         <select name="head_type" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option selected value="">ลักษณะหัวของงู (ไม่บังคับ)</option>
+                                            <option selected value="" disabled >ลักษณะหัวของงู (ไม่บังคับ)</option>
+                                            <option  value="">ไม่ทราบ</option>
                                             <option value="รูปวงรี" @if (old('head_type', $head_type) == 'รูปวงรี') selected @endif>
                                                 รูปวงรี</option>
                                             <option value="รูปสามเหลี่ยม" @if (old('head_type', $head_type) == 'รูปสามเหลี่ยม') selected @endif>
