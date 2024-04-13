@@ -33,6 +33,11 @@ class SnakeProfileContoller extends Controller
             $query->where('status', 'LIKE', '%' . $request->status . '%');
         }
 
+        // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ "ภูมิภาค (region)"
+        if ($request->has('region') && $request->region != '') {
+            $query->where('region', 'LIKE', '%' . $request->region . '%');
+        }
+
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
         $snakes = $query->get();
@@ -43,6 +48,7 @@ class SnakeProfileContoller extends Controller
                 'searchByName' => $request->searchByName,
                 'posion_type' => $request->posion_type,
                 'status' => $request->status,
+                'region' => $request->region
             ];
 
         // ส่งข้อมูลทั้งหมดไปที่ view snake_profile/search.blade.php โดย $data จะถูกส่งไปด้วย

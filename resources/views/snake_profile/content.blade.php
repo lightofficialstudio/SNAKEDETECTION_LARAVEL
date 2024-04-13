@@ -96,6 +96,40 @@
                                     <!--end::Input group-->
                                 </div>
 
+                                <div class="form-group mb-5 col-12">
+                                    <!--begin::Input group-->
+                                    <div class="form-floating">
+                                        <select name="region" class="form-select" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                            <option value="">ภูมิภาคที่อยู่อาศัย (ไม่บังคับ)</option>
+                                            <option value="ทั่วทุกภาค" @if (old('region', $region) == 'ทั่วทุกภาค') selected @endif>
+                                                ทุกภูมิภาค
+                                            </option>
+                                            <option value="กลาง" @if (old('region', $region) == 'กลาง') selected @endif>
+                                                ภาคกลาง
+                                            </option>
+                                            <option value="ตะวันออก" @if (old('region', $region) == 'ตะวันออก') selected @endif>
+                                                ภาคตะวันออก
+                                            </option>
+                                            <option value="ใต้" @if (old('region', $region) == 'ใต้') selected @endif>
+                                                ภาคใต้
+                                            </option>
+                                            <option value="ตะวันออกเฉียงเหนือ"
+                                                @if (old('region', $region) == 'ตะวันออกเฉียงเหนือ') selected @endif>
+                                                ภาคตะวันออกเฉียงเหนือ
+                                            </option>
+                                            <option value="ตะวันตก" @if (old('region', $region) == 'ตะวันตก') selected @endif>
+                                                ภาคตะวันตก
+                                            </option>
+
+
+                                        </select>
+
+                                        <label for="floatingSelect">ประเภทสัตว์คุ้มครอง (ไม่บังคับ)</label>
+                                    </div>
+                                    <!--end::Input group-->
+                                </div>
+
 
                                 <div class="form-group col-12 mt-3">
                                     <button type="submit" class="btn btn-primary btn-lg">ค้นหา</button>
