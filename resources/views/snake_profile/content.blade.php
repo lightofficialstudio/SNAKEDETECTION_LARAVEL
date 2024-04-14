@@ -4,27 +4,12 @@
     <style>
         .header-img {
             position: relative;
-            min-height: 120vh;
+            min-height: 70vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
             /* เพิ่มคำสั่งนี้ */
-        }
-
-        .blurred-bg {
-            position: absolute;
-            top: -10px;
-            /* เพิ่มขอบเขตเล็กน้อย */
-            right: -10px;
-            bottom: -10px;
-            left: -10px;
-            background-image: url('{{ asset('project/images/green-albolaris-snake-side-view-animal-closeup-green-viper-snake-closeup-head.jpg') }}');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: blur(6px);
-            z-index: 0;
         }
     </style>
     <div class="app-wrapper d-flex" id="kt_app_wrapper">
@@ -32,11 +17,63 @@
 
         <!--begin::Main-->
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                <!--begin::Toolbar container-->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                    <!--begin::Toolbar container-->
+                    <div class="d-flex flex-stack flex-row-fluid">
+                        <!--begin::Toolbar container-->
+                        <div class="d-flex flex-column flex-row-fluid">
+                            <!--begin::Toolbar wrapper-->
+                            <!--begin::Breadcrumb-->
+                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                    <a href="{{ route('snake.home') }}" class="text-white text-hover-primary">
+                                        <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                    </a>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item">
+                                    <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ค้นหางู</li>
+
+                                <li class="breadcrumb-item">
+                                    <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                </li>
+
+                                <li class="breadcrumb-item text-gray-700 fw-bold lh-1">สารานุกรม</li>
+                                <!--end::Item-->
+                            </ul>
+                            <!--end::Breadcrumb-->
+                            <!--begin::Page title-->
+                            <div class="page-title d-flex align-items-center me-3">
+                                <!--begin::Title-->
+                                <h1
+                                    class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
+                                    สารานุกรมงู</h1>
+
+
+
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Page title-->
+                        </div>
+                        <!--end::Toolbar container-->
+
+                    </div>
+                    <!--end::Toolbar container-->
+                </div>
+                <!--end::Toolbar container-->
+            </div>
             <section class="header-img d-flex ">
-                <div class="blurred-bg"></div> <!-- นี่คือ div ที่จะแสดงรูปภาพที่เบลอ -->
                 <div class="d-flex  rounded"
-                    style="width: 140vh; height:60vh; background-color: rgba(255, 255, 255, 0.9); z-index: 1;">
-                    <div class=" p-4" style="width: 100%;">
+                    style="width: 140vh; min-height:60vh; background-color: rgba(239, 239, 239, 0.9); z-index: 1;">
+                    <div class="p-4" style="width: 100%;">
                         <h1 class="text-center fs-3x text-dark font-weight-bold text-stroke mb-5">เริ่มการค้นหา
                         </h1>
                         <form action="{{ route('snake.search.content') }}" method="GET">
@@ -57,7 +94,8 @@
                                     <div class="form-floating">
                                         <select name="posion_type" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option value="">ประเภทพิษ (ไม่บังคับ)</option>
+                                            <option selected disabled value="">ประเภทพิษ (ไม่บังคับ)</option>
+                                            <option value="">ไม่ทราบ </option>
                                             <option value="งูไม่มีพิษ" @if (old('posion_type', $posion_type) == 'งูไม่มีพิษ') selected @endif>
                                                 งูไม่มีพิษ</option>
                                             <option value="งูพิษอันตราย" @if (old('posion_type', $posion_type) == 'งูพิษอันตราย') selected @endif>
@@ -76,17 +114,14 @@
                                     <div class="form-floating">
                                         <select name="status" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option value="">ประเภทสัตว์คุ้มครอง (ไม่บังคับ)</option>
-                                            <option value="สิ่งมีชีวิตที่มีความเสี่ยงต่ำต่อการสูญพันธุ์"
-                                                @if (old('status', $status) == 'สิ่งมีชีวิตที่มีความเสี่ยงต่ำต่อการสูญพันธุ์') selected @endif>
-                                                สิ่งมีชีวิตที่มีความเสี่ยงต่ำต่อการสูญพันธุ์
+                                            <option selected disabled value="">ประเภทสัตว์คุ้มครอง (ไม่บังคับ)
                                             </option>
-                                            <option value="สิ่งมีชีวิตที่เกือบอยู่ในข่ายใกล้การสูญพันธุ์"
-                                                @if (old('status', $status) == 'สิ่งมีชีวิตที่เกือบอยู่ในข่ายใกล้การสูญพันธุ์') selected @endif>
-                                                สิ่งมีชีวิตที่เกือบอยู่ในข่ายใกล้การสูญพันธุ์
+                                            <option value="">ไม่ทราบ</option>
+
+                                            <option value="yes" @if (old('status', $status) == 'yes') selected @endif>
+                                                ไม่เป็นสัตว์คุ้มครอง
                                             </option>
-                                            <option value="เป็นสัตว์ป่าคุ้มครอง"
-                                                @if (old('status', $status) == 'เป็นสัตว์ป่าคุ้มครอง') selected @endif>
+                                            <option value="no" @if (old('status', $status) == 'no') selected @endif>
                                                 เป็นสัตว์ป่าคุ้มครอง
                                             </option>
                                         </select>
@@ -101,7 +136,9 @@
                                     <div class="form-floating">
                                         <select name="region" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option value="">ภูมิภาคที่อยู่อาศัย (ไม่บังคับ)</option>
+                                            <option selected disabled value="">ภูมิภาคที่อยู่อาศัย (ไม่บังคับ)
+                                            </option>
+                                            <option value="">ไม่ทราบ</option>
                                             <option value="ทั่วทุกภาค" @if (old('region', $region) == 'ทั่วทุกภาค') selected @endif>
                                                 ทุกภูมิภาค
                                             </option>
@@ -131,7 +168,7 @@
                                 </div>
 
 
-                                <div class="form-group col-12 mt-3">
+                                <div class="form-group col-12 mt-3 text-center">
                                     <button type="submit" class="btn btn-primary btn-lg">ค้นหา</button>
                                 </div>
                             </div>
@@ -170,7 +207,11 @@
                                                 <!--begin::Title-->
                                                 <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
                                                     <span class="me-2">
-                                                        ผลลัพธ์การค้นหา สารานุกรมงู
+                                                        @if ($searchPerformed === 1)
+                                                            ผลลัพธ์การค้นหา สารานุกรมงู
+                                                        @else
+                                                            สารานุกรมงู
+                                                        @endif
                                                     </span>
                                                     <br>
 

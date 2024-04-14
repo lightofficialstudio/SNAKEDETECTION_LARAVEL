@@ -14,33 +14,43 @@ class SnakeProfileContoller extends Controller
      */
     public function content(Request $request)
     {
-        $query = Snake::query();
 
+        // สร้าง query โดยใช้โมเดล SnakeModel
+        $query = Snake::query();
+        $searchPerformed = 0;
         // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อ (name)'
         if ($request->has('searchByName') && $request->searchByName != '') {
             $query->where('name_th', 'LIKE', '%' . $request->searchByName . '%')
                 ->orWhere('name_en', 'LIKE', '%' . $request->searchByName . '%')
                 ->orWhere('name_sci', 'LIKE', '%' . $request->searchByName . '%');
+            $searchPerformed = 1;
         }
 
         // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อวงศ์ (family)'
         if ($request->has('posion_type') && $request->posion_type != '') {
             $query->where('posion_type', 'LIKE', '%' . $request->posion_type . '%');
+            $searchPerformed = 1;
+
         }
 
         // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ 'ชื่อวงศ์ (family)'
         if ($request->has('status') && $request->status != '') {
             $query->where('status', 'LIKE', '%' . $request->status . '%');
+            $searchPerformed = 1;
+
         }
 
         // ตรวจสอบและเพิ่มเงื่อนไขการค้นหาแบบมีความคล้ายคลึงสำหรับ "ภูมิภาค (region)"
         if ($request->has('region') && $request->region != '') {
             $query->where('region', 'LIKE', '%' . $request->region . '%');
+            $searchPerformed = 1;
+
         }
 
-        // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
+
         // ทำการค้นหาข้อมูลตามเงื่อนไขที่ได้รับและรับข้อมูลทั้งหมด
         $snakes = $query->get();
+
 
         $data =
             [
@@ -48,7 +58,8 @@ class SnakeProfileContoller extends Controller
                 'searchByName' => $request->searchByName,
                 'posion_type' => $request->posion_type,
                 'status' => $request->status,
-                'region' => $request->region
+                'region' => $request->region,
+                'searchPerformed' => $searchPerformed
             ];
 
         // ส่งข้อมูลทั้งหมดไปที่ view snake_profile/search.blade.php โดย $data จะถูกส่งไปด้วย

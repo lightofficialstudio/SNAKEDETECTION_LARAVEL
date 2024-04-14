@@ -26,19 +26,20 @@
                 <li class="menu-item">
                     <a href="{{ route('snake.firstaid') }}" class="menu-link px-2">วิธีปฐมพยาบาล</a>
                 </li>
+                <li class="menu-item">
+                    <a href="https://lin.ee/ovnLjOm" target="_blank" class="menu-link px-2">แชทบอท</a>
+                </li>
 
 
             </ul>
             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
                 <li class="menu-item">
-                    <h3 href="#" target="_blank" class="text-white px-2">คู่มือการใช้งาน</h3>
+                    <h3 href="#" target="_blank" class="text-white px-2">คู่มือการใช้งานเว็บแอพลิเคชัน</h3>
                 </li>
                 <li class="menu-item">
                     <a href="{{ route('snake.manual') }}" target="_blank" class="menu-link px-2">คู่มือการใช้งาน</a>
                 </li>
-                <li class="menu-item">
-                    <a href="https://lin.ee/ovnLjOm" target="_blank" class="menu-link px-2">แชทบอท</a>
-                </li>
+
 
 
             </ul>
@@ -49,7 +50,7 @@
 
                 <li class="menu-item">
                     <a href="{{ route('snake.policy') }}" target="_blank"
-                        class="menu-link px-2">ข้อกำหนดการใช้งานเว็บไซต์ (Policy)</a>
+                        class="menu-link px-2">ข้อกำหนดการใช้งานเว็บไซต์</a>
                 </li>
 
 
@@ -60,7 +61,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="{{ route('snake.aboutme') }}" target="_blank" class="menu-link px-2">ข้อมูลผู้จัดทำ</a>
+                    <a href="{{ route('snake.aboutme') }}" target="_blank" class="menu-link px-2">เกี่ยวกับเรา</a>
                 </li>
 
 

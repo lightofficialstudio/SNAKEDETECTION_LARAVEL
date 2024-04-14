@@ -24,9 +24,7 @@ class SnakeUploadController extends Controller
         ]);
         // ตรวจสอบว่ามีไฟล์ถูกอัพโหลดมาหรือไม่
         if ($request->hasFile('snake_image')) {
-            $size = 224; // ขนาดของรูปภาพที่จะส่งไปทำนาย
-            $confidence = 0.01; // ค่าความมั่นใจขั้นต่ำ
-            $iou = 0.01; // ค่า IOU ขั้นต่ำ
+
             $image = $request->file('snake_image'); // ไฟล์รูปภาพที่ถูกอัพโหลด
             // สร้าง HTTP request โดยใช้ Http facade
             $response = Http::withHeaders([
@@ -50,23 +48,32 @@ class SnakeUploadController extends Controller
                 // วนลูปผ่าน array 'data'
                 foreach ($predictions['data'] as $prediction) {
                     // ค้นหาชื่อของงูจากฐานข้อมูล
+
                     $snake_class = Snake::where('name_en', $prediction['name'])
                         ->first();
-                    // เก็บข้อมูลที่ต้องการไว้ใน array
-                    $snakeDetails[] = [
-                        'id' => $snake_class->id ?? null,
-                        'class_name' => $snake_class->name_th ?? $prediction['name'],
-                        'image' => asset($snake_class->image ? 'project/images/snake_type/' . $snake_class->image : 'project/images/snake-profileimg.png'),
-                        'posion_type' => $snake_class->posion_type,
-                        'posion_description' => $snake_class->posion_description ?? '',
-                        'confidence' => $prediction['confidence'],
-                        'probability' => number_format($prediction['confidence'] * 100, 2) // แก้ไขให้ถูกต้องตามที่แนะนำ
-                    ];
+                    // เงื่อนไขกรณีที่ ตรวจจับงูได้ซ้ำกันให้แสดงแค่ครั้งเดียว
+                    if ($snake_class && !in_array($snake_class->id, array_column($snakeDetails, 'id'))) {
+                        // เก็บข้อมูลที่ต้องการไว้ใน array
+                        $snakeDetails[] = [
+                            'id' => $snake_class->id ?? null,
+                            'class_name' => $snake_class->name_th ?? $prediction['name'],
+                            'image' => asset($snake_class->image ? 'project/images/snake_type/' . $snake_class->image : 'project/images/snake-profileimg.png'),
+                            'posion_type' => $snake_class->posion_type,
+                            'posion_description' => $snake_class->posion_description ?? '',
+                            'confidence' => $prediction['confidence'],
+                            'probability' => number_format($prediction['confidence'] * 100, 2) // แก้ไขให้ถูกต้องตามที่แนะนำ
+                        ];
+                    }
                 }
+
+
             }
 
             // ส่งข้อมูลกลับไปยังหน้าบ้าน
-            return response()->json($snakeDetails);
+            return response()->json([
+                'original' => $predictions,
+                'snakes' => $snakeDetails,
+            ]);
         } else {
             // หากไม่มีไฟล์ถูกอัพโหลด
             return response()->json(['error' => 'No file uploaded.'], 400);

@@ -62,190 +62,10 @@
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-fluid">
                         <!--begin::Row-->
-                        <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
-                            <!--begin::Col-->
-                            <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-12 ">
                                 <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded">
-                                    <!--begin::Overlay-->
-
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 1</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ตั้งสติคลายกังวล
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="col-md-3">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3 p-15 rounded">
-                                    <!--begin::Overlay-->
-
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_1.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 2</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            ถอดเครื่องประดับและเสื้อผ้าที่อาจกดรัดอวัยวะส่วนที่งูกัดออก
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="col-md-3">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3 p-15 rounded">
-                                    <!--begin::Overlay-->
-
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_2.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 3</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            ล้างแผลด้วยน้ำสะอาด
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="mt-10"></div>
-                            <div class="col-md-4">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded">
-                                    <!--begin::Overlay-->
-
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_3.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 4</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            พยายามให้ผู้ที่ถูกงูกัดเคลื่อนไหวน้อยที่สุด
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="col-md-4">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border  border-3 p-15 rounded">
-                                    <!--begin::Overlay-->
-
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_4.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            ขั้นตอนที่ 5</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            รีบนำผู้ที่ถูกงูกัดส่งโรงพยาบาล หรือ
-                                            พิรจารณาการทำวิธีการปฐมพยาบาลเบื้องต้นอย่างถูกวิธีเมื่อถูกงูกัด
-                                            ถ้าหากว่าโรงพยาบาลอยู่ไกลจากจุดที่ถูกงูกัด
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="mt-10"></div>
-
-                            <div class="col-md-6">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-5 p-15 rounded">
+                                <div class="card-xl-stretch me-md-6 border border-5 border-dashed p-15 rounded">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
@@ -292,6 +112,191 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
+                        </div>
+
+                        <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
+                            <!--begin::Col-->
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3 border-dashed p-15 rounded min-h-400px">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            ขั้นตอนที่ 1</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">ตั้งสติคลายกังวล
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3 border-dashed p-15 rounded min-h-400px">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_1.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            ขั้นตอนที่ 2</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            ถอดเครื่องประดับและเสื้อผ้าที่อาจกดรัดอวัยวะส่วนที่งูกัดออก
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3 border-dashed p-15 rounded min-h-400px">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_2.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            ขั้นตอนที่ 3</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            ล้างแผลด้วยน้ำสะอาด
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="mt-10"></div>
+                            <div class="col-md-4">
+                                <!--begin::Hot sales post-->
+                                <div
+                                    class="card-xl-stretch me-md-6 border border-3 border-dashed  p-15 rounded min-h-400px">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_3.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            ขั้นตอนที่ 4</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            พยายามให้ผู้ที่ถูกงูกัดเคลื่อนไหวน้อยที่สุด
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="col-md-4">
+                                <!--begin::Hot sales post-->
+                                <div
+                                    class="card-xl-stretch me-md-6 border  border-3 border-dashed p-15 rounded min-h-400px">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_4.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            ขั้นตอนที่ 5</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            รีบนำผู้ที่ถูกงูกัดส่งโรงพยาบาล หรือ
+                                            พิรจารณาการทำวิธีการปฐมพยาบาลเบื้องต้นอย่างถูกวิธีเมื่อถูกงูกัด
+                                            ถ้าหากว่าโรงพยาบาลอยู่ไกลจากจุดที่ถูกงูกัด
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+
+
                         </div>
                         <!--end::Row-->
 

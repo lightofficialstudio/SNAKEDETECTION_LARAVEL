@@ -13,8 +13,8 @@
         <!--end::Header mobile toggle-->
         <!--begin::Logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-13">
-            <a href="#">
-                <img alt="Logo" src="{{ asset('project/images/logo.png') }}" class="h-70px"
+            <a href="{{ route('snake.home') }}">
+                <img alt="Logo" src="{{ asset('project/logo/snake_logo.png') }}" class="h-70px"
                     style="mix-blend-mode: multiply;
                 " />
 

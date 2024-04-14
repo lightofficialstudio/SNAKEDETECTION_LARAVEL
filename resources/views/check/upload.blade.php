@@ -44,6 +44,8 @@
 @endsection
 @section('content')
     @include('components.modal-manual-upload-snake-module')
+    @include('components.modal-policy')
+
     <!-- Loader -->
     <div id="loader" class="loader-container" style="display: none;">
         <div class="loader">
@@ -170,7 +172,7 @@
                                     <div class="col-md-6 col-sm-12 ">
                                         <h2>รูปภาพนำเข้า</h2><br />
                                         <div class="mb-5">
-                                            <span class="badge badge-secondary p-3">* ผู้ใช้งานสามารถครอบรูปภาพงู
+                                            <span class="badge badge-light-primary p-3">* ผู้ใช้งานสามารถครอบรูปภาพงู
                                                 เพื่อการตรวจจับที่แม่นยำมากขึ้น</span>
                                         </div>
                                         <div class="d-flex justify-content-center align-items-center "
@@ -239,6 +241,12 @@
 
         @push('scripts')
             <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // ซ่อน loader เมื่อโหลดหน้าเสร็จสิ้น
+                    $('#modal_policy').modal('show');
+                });
+            </script>
+            <script>
                 function uploadImage() {
                     $('#snake-image').click();
                 }
@@ -255,15 +263,25 @@
                 $('input[name="snake_image"]').change(function(e) {
                     var files = e.target.files;
                     var done = function(url) {
-                        $('#image').attr('src', url); // ตั้งค่า src ใหม่สำหรับรูปภาพ
-                        if (cropper) {
-                            cropper.destroy(); // ล้างอินสแตนซ์ Cropper.js ที่มีอยู่
-                        }
-                        cropper = new Cropper(document.getElementById('image'), {
-                            aspectRatio: 1,
-                            viewMode: 1,
+                        var image = new Image();
+                        image.src = url;
+                        image.onload = function() {
+                            var canvas = document.createElement('canvas');
+                            var ctx = canvas.getContext('2d');
+                            canvas.width = 500;
+                            canvas.height = 500;
+                            ctx.drawImage(image, 0, 0, 500, 500);
+                            var resizedUrl = canvas.toDataURL(); // รูปภาพที่มีขนาด 500x500 พิกเซล
+                            $('#image').attr('src', resizedUrl); // ตั้งค่า src ใหม่สำหรับรูปภาพ
 
-                        });
+                            if (cropper) {
+                                cropper.destroy(); // ล้างอินสแตนซ์ Cropper.js ที่มีอยู่
+                            }
+                            cropper = new Cropper(document.getElementById('image'), {
+                                aspectRatio: 1,
+                                viewMode: 1,
+                            });
+                        };
                     };
 
                     if (files && files.length > 0) {
@@ -280,6 +298,7 @@
                     }
                 });
             </script>
+
             <script>
                 // ฟังก์ชันสำหรับการแสดงรูปภาพที่เลือกจาก input ในการอัปโหลด
                 function handleSubmitSnakeImage() {
@@ -310,24 +329,23 @@
                                 contentType: false,
                                 processData: false,
                                 success: function(response) {
-                                    displayPredictionResults(response);
-                                    if (response.length === 0) {
+                                    displayPredictionResults(response.snakes);
+                                    if (response.snakes.length === 0) {
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'เกิดข้อผิดพลาด!',
-                                            text: 'ไม่มีผลการทำนาย สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 3.รูปภาพที่นำเข้าไม่มีงู 4.เป็นชนิดของงูที่ไม่ได้อยู่ในฐานข้อมูล โปรดตรวจสอบรูปภาพนำเข้าใหม่อีกครั้ง',
+                                            text: 'ไม่มีผลการทำนาย สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 3.รูปภาพที่นำเข้าไม่มีงู 4.เป็นชนิดของงูที่ไม่ได้อยู่ในฐานข้อมูล 5.รูปที่ครอบเล็กจนเกินไป โปรดตรวจสอบรูปภาพนำเข้าใหม่อีกครั้ง',
                                             confirmButtonText: 'ตกลง'
                                         });
                                     }
-                                    for (let i = 0; i < response.length; i++) {
-                                        if (response[i].confidence < 0.5) {
+                                    for (let i = 0; i < response.snakes.length; i++) {
+                                        if (response.snakes[0].confidence < 0.5) {
                                             Swal.fire({
                                                 icon: 'error',
                                                 title: 'คำเตือน!',
-                                                text: 'ผลการทำนายต่ำกว่า 50% สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 3.รูปภาพที่นำเข้าไม่มีงู 4.เป็นชนิดของงูที่ไม่ได้อยู่ในฐานข้อมูล โปรดตรวจสอบรูปภาพใหม่อีกครั้ง',
+                                                text: 'ผลการทำนายต่ำกว่า 50% สาเหตุเป็นได้ดังต่อไปนี้ 1.รูปภาพนำเข้าไม่ชัด 2.มีสิ่งกีดขวางตัวงู 3.รูปภาพที่นำเข้าไม่มีงู 4.เป็นชนิดของงูที่ไม่ได้อยู่ในฐานข้อมูล 5.รูปที่ครอบเล็กจนเกินไป โปรดตรวจสอบรูปภาพใหม่อีกครั้ง',
                                                 confirmButtonText: 'ตกลง'
                                             });
-
                                         }
                                     }
                                 },
@@ -369,19 +387,19 @@
                 // ฟังก์ชันสำหรับแสดงผลการทำนาย 3 อันดับแรก
                 function displayPredictionResults(predictions) {
                     let resultHtml = '<div class="list-group">'; // ใช้ list-group สำหรับสไตล์ของ Bootstrap
-                    predictions.slice(0, 3).forEach(function(prediction, index) {
+                    predictions.slice(0, 3).forEach(function(item, index) {
                         // ใช้ list-group-item และเพิ่มสไตล์ให้กับการแสดงผล
                         resultHtml += `
-                        <a href="${routes.snakeProfile.replace('%id%', prediction.id)}" class="list-group-item list-group-item-action mb-5 mt-3
+                        <a href="${routes.snakeProfile.replace('%id%', item.id)}" class="list-group-item list-group-item-action mb-5 mt-3
                         border border-gray-300 border-dashed rounded" aria-current="true">
                             <div class="d-flex w-100 justify-content-between align-items-center">
-                                <img src="${prediction.image}" style="max-width:200px; max-height:200px; " />
+                                <img src="${item.image}" style="max-width:200px; max-height:200px; " />
                                 <div class="">
-                                    <h2 class="mb-1">อันดับ ${index + 1} : ${prediction.class_name}</h2>
+                                    <h2 class="mb-1">อันดับ ${index + 1} : ${item.class_name}</h2>
                                     <br>
-                                    <h5 class="${prediction.posion_type === "งูไม่มีพิษ" ? 'text-muted' : 'text-danger'}">${prediction.posion_type }   ${prediction.posion_description}</h5>
+                                    <h5 class="${item.posion_type === "งูไม่มีพิษ" ? 'text-muted' : 'text-danger'}">${item.posion_type }   ${item.posion_description}</h5>
                                     <br>
-                                    <h4 class="text-muted badge badge-light-success">ความน่าจะเป็น : ${prediction.probability}%</h4>
+                                    <h4 class="text-muted badge badge-light-success">ความน่าจะเป็น : ${item.probability}%</h4>
                                 </div>
                                 <div>&nbsp;</div>
                             </div>

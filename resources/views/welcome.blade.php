@@ -80,7 +80,7 @@
                                             <!--begin::Title-->
                                             <div class="position-relative fs-2x z-index-2 fw-bold text-dark mb-2">
                                                 <span class="me-2">
-                                                    ทำนายชนิดงูโดย Machine Learning คืออะไร?
+                                                    ค้นหาชนิดงูโดย Machine Learning คืออะไร?
                                                 </span>
                                                 <br>
 
@@ -91,7 +91,7 @@
                                                 <span>
                                                     Snakedetection เป็นเว็บไซต์ที่ใช้เทคโนโลยี machine learning
                                                     เพื่อช่วยระบุชนิดของงูจากรูปภาพ. ง่ายๆ เพียงแค่อัปโหลดรูป,
-                                                    ระบบของเราจะทำนายชนิดของงูให้คุณทราบในไม่กี่วินาที.
+                                                    ระบบของเราจะค้นหาชนิดของงูให้คุณทราบในไม่กี่วินาที.
 
                                                 </span>
                                             </div>
@@ -129,14 +129,13 @@
                                     <a href="{{ route('snake.search.attribute') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/search-attribute.png') }}')">
+                                                style="max-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/search-attribute.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
                                                     ค้นหาด้วยคุณลักษณะ</b>
                                                 <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                                    ค้นหาและดูข้อมูลงู
-                                                    23 ชนิด ที่ถูกพบบ่อย</div>
+                                                    ค้นหาจากลักษณะต่างๆของงู เช่น ทรงหัว สี ลวดลาย</div>
                                             </div>
                                             <!--end::Body-->
                                         </div>
@@ -146,14 +145,13 @@
                                     <a href="{{ route('snake.search.content') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/search-content.png') }}')">
+                                                style="max-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/search-content.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
                                                     สารานุกรมงู</b>
                                                 <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                                    ค้นหาและดูข้อมูลงู
-                                                    23 ชนิด </div>
+                                                    ค้นหาและดูข้อมูลของงู (ทั้งหมด 23 ชนิด) </div>
                                             </div>
                                             <!--end::Body-->
                                         </div>
@@ -163,13 +161,13 @@
                                     <a href="{{ route('snake.firstaid') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
                                             <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/firstaid.png') }}')">
+                                                style="wmax-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/firstaid.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
                                                     วิธีปฐมพยาบาล</b>
                                                 <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                                    วิธีปฐมพยาบาลเบื้องต้นเมื่อถูกงูกัด</div>
+                                                    ดูวิธีปฐมพยาบาลเบื้องต้นเมื่อถูกงูกัด</div>
                                             </div>
                                             <!--end::Body-->
                                         </div>
@@ -179,8 +177,8 @@
                                     data-bs-target="#modal_emergency_call">
                                     <a href="#">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                                style="width:100%; height:400px; background-image:url('{{ asset('project/images/card/callcenter.png') }}')">
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px "
+                                                style="max-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/callcenter.png') }}')">
                                             </div>
                                             <div class="mt-5">
                                                 <b class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">

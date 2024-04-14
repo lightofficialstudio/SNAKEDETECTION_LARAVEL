@@ -307,6 +307,12 @@
                                     </div>
 
                                 </div>
+
+                                <div class="text-center mb-5">
+                                    <a href="javascript:window.history.back();"
+                                        class="btn btn-primary btn-lg rounded-4">ย้อนกลับ</a>
+                                </div>
+
                             </div>
                         </div>
                         <!--end::Row-->

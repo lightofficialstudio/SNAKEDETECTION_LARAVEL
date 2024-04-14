@@ -26,14 +26,16 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-        content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
+        content=" Snakedetection เป็นเว็บไซต์ที่ใช้เทคโนโลยี machine learning
+        เพื่อช่วยระบุชนิดของงูจากรูปภาพ. ง่ายๆ เพียงแค่อัปโหลดรูป,
+        ระบบของเราจะทำนายชนิดของงูให้คุณทราบในไม่กี่วินาที." />
+    <meta property="og:url" content="https://snakedetection.com/" />
+    <meta property="og:site_name" content="SnakeDetection " />
     <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- CSRF Token -->
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="canonical" href="https://snakedetection.com/" />
+    <link rel="shortcut icon" href="{{ asset('project/logo/snake_logo.png') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" /> --}}
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only)-->
     <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"

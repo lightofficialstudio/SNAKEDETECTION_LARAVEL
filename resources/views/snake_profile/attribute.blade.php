@@ -37,6 +37,58 @@
 
         <!--begin::Main-->
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                <!--begin::Toolbar container-->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                    <!--begin::Toolbar container-->
+                    <div class="d-flex flex-stack flex-row-fluid">
+                        <!--begin::Toolbar container-->
+                        <div class="d-flex flex-column flex-row-fluid">
+                            <!--begin::Toolbar wrapper-->
+                            <!--begin::Breadcrumb-->
+                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                    <a href="{{ route('snake.home') }}" class="text-white text-hover-primary">
+                                        <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                    </a>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item">
+                                    <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ค้นหางู</li>
+
+                                <li class="breadcrumb-item">
+                                    <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                </li>
+
+                                <li class="breadcrumb-item text-gray-700 fw-bold lh-1">ค้นหางูด้วยคุณลักษณะ</li>
+                                <!--end::Item-->
+                            </ul>
+                            <!--end::Breadcrumb-->
+                            <!--begin::Page title-->
+                            <div class="page-title d-flex align-items-center me-3">
+                                <!--begin::Title-->
+                                <h1
+                                    class="page-heading d-flex text-dark fw-bolder fs-2qx flex-column justify-content-center my-0">
+                                    ค้นหาด้วยคุณลักษณะ</h1>
+
+
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Page title-->
+                        </div>
+                        <!--end::Toolbar container-->
+
+                    </div>
+                    <!--end::Toolbar container-->
+                </div>
+                <!--end::Toolbar container-->
+            </div>
             <section class="header-img d-flex ">
                 {{-- <div class="blurred-bg"></div>  --}}
                 <div class="d-flex  rounded"
@@ -52,7 +104,8 @@
                                     <div class="form-floating">
                                         <select name="head_type" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option selected value="">ลักษณะหัวของงู (ไม่บังคับ)</option>
+                                            <option selected disabled value="">ลักษณะหัวของงู (ไม่บังคับ)</option>
+                                            <option value="">ไม่ทราบ</option>
                                             <option value="รูปวงรี" @if (old('head_type', $head_type) == 'รูปวงรี') selected @endif>
                                                 รูปวงรี</option>
                                             <option value="รูปสามเหลี่ยม" @if (old('head_type', $head_type) == 'รูปสามเหลี่ยม') selected @endif>
@@ -71,7 +124,8 @@
                                     <div class="form-floating">
                                         <select name="can_hoody" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option selected value="">แผ่แม่เบี้ย (ไม่บังคับ)</option>
+                                            <option selected disable value="">แผ่แม่เบี้ย (ไม่บังคับ)</option>
+                                            <option value="">ไม่ทราบ</option>
                                             <option value="yes" @if (old('can_hoody', $can_hoody) == 'yes') selected @endif>แผ่ได้
                                             </option>
                                             <option value="no" @if (old('can_hoody', $can_hoody) == 'no') selected @endif>
@@ -86,7 +140,8 @@
                                     <div class="form-floating">
                                         <select name="can_hiss" class="form-select" id="floatingSelect"
                                             aria-label="Floating label select example">
-                                            <option selected value="">มีเสียงขู่ (ไม่บังคับ)</option>
+                                            <option selected disabled value="">มีเสียงขู่ (ไม่บังคับ)</option>
+                                            <option value="">ไม่ทราบ</option>
                                             <option value="yes" @if (old('can_hiss', $can_hiss) == 'yes') selected @endif>
                                                 งูมีเสียงร้องขู่</option>
                                             <option value="no" @if (old('can_hiss', $can_hiss) == 'no') selected @endif>
@@ -168,7 +223,8 @@
 
                                                 <div class="form-check form-check-custom form-check-solid me-10">
                                                     <input class="form-check-input" type="radio" value="ตาราง"
-                                                        name="pattern" @if (old('pattern', $pattern) == 'ตาราง') checked @endif />
+                                                        name="pattern"
+                                                        @if (old('pattern', $pattern) == 'ตาราง') checked @endif />
                                                     <div class="form-check-label">
                                                         ตาราง
                                                     </div>
@@ -186,7 +242,8 @@
 
                                                 <div class="form-check form-check-custom form-check-solid me-10">
                                                     <input class="form-check-input" type="radio" value="ปล้องเล็ก"
-                                                        name="pattern" @if (old('pattern', $pattern) == 'ปล้องเล็ก') checked @endif />
+                                                        name="pattern"
+                                                        @if (old('pattern', $pattern) == 'ปล้องเล็ก') checked @endif />
                                                     <div class="form-check-label">
                                                         ปล้องเล็ก
                                                     </div>
@@ -383,7 +440,7 @@
                                     <!--end::Input group-->
                                 </div>
                                 <div class="form-group col-12 text-center ">
-                                    <button type="submit" class="btn btn-primary btn-lg">ค้นหา</button>
+                                    <button type="submit" class="btn btn-primary btn-lg text-center">ค้นหา</button>
                                 </div>
                             </div>
                         </form>
@@ -501,7 +558,8 @@
                         </div>
                     </section>
                 @else
-                    <section class="content" id="search-results" style="min-height: 100vh; background-color:#fefefe;">
+                    <section class="content" id="search-results"
+                        style="min-height: 100vh; background-color:#fefefe; display:none;">
                         <div id="kt_app_content" class="app-content">
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid">
@@ -548,6 +606,7 @@
                 @endif
                 <!--end::Content-->
             </div>
+
             <!--end::Content wrapper-->
 
 

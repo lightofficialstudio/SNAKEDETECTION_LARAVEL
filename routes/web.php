@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 // การเรียกใช้งาน Controller ที่เราสร้างไว้
 use App\Http\Controllers\CallCenterController; // การเรียกใช้งาน Controller ของ สายด่วนงู
 use App\Http\Controllers\FirstAidController; // การเรียกใช้งาน Controller ของ วิธีการปฐมพยาบาล
-use App\Http\Controllers\SnakeCheckController; // การเรียกใช้งาน Controller ของ ตรวจสอบว่างูเป็นพิษหรือไม่
 use App\Http\Controllers\SnakeProfileContoller; // การเรียกใช้งาน Controller ของ แสดงข้อมูลประวัติงู
 use App\Http\Controllers\SnakeUploadController; // การเรียกใช้งาน Controller ของ อัพโหลดรูปภาพเพื่อตรวจสอบว่างูเป็นพิษหรือไม่
 use App\Http\Controllers\SnakePolicyController; // การเรียกใช้งาน Controller ของ นโยบายความเป็นส่วนตัว
@@ -33,8 +32,6 @@ Route::get('/snake/search/attribute', [SnakeProfileContoller::class, 'attribute'
 
 // แสดงข้อมูลประวัติงู
 Route::get('/snake/profile/{id}', [SnakeProfileContoller::class, 'profile'])->name('snake.profile');
-// ตรวจสอบว่างูเป็นพิษหรือไม่
-Route::get('/snake/check/', [SnakeCheckController::class, 'index'])->name('snake.check');
 // อัพโหลดรูปภาพเพื่อตรวจสอบว่างูเป็นพิษหรือไม่
 Route::get('/snake/upload', [SnakeUploadController::class, 'index'])->name('snake.upload');
 // ส่งข้อมูลรูปภาพไปยัง เพื่อทำนายว่างูเป็นงูชนิดไหน?
