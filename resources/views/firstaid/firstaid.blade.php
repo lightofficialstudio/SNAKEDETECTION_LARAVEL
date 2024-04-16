@@ -157,7 +157,7 @@
 
                                     <!--begin::Image-->
                                     <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_1.jpg') }}')">
+                                        style="background-image:url('{{ asset('project/images/firstaid_2.jpg') }}')">
                                     </div>
                                     <!--end::Image-->
                                     <!--begin::Action-->
@@ -192,7 +192,7 @@
 
                                     <!--begin::Image-->
                                     <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_2.jpg') }}')">
+                                        style="background-image:url('{{ asset('project/images/firstaid_1.jpg') }}')">
                                     </div>
                                     <!--end::Image-->
                                     <!--begin::Action-->

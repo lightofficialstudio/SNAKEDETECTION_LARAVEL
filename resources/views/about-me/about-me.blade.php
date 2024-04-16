@@ -62,9 +62,6 @@
                     <div id="kt_app_content_container" class="app-container container-fluid">
                         <!--begin::Row-->
                         <div class="row g-12 d-flex justify-content-center mt-6 mb-6">
-
-
-
                             <div class="col-md-12">
                                 <!--begin::Hot sales post-->
                                 <div class="card-xl-stretch me-md-6 border border-2 border-dashed p-15 rounded">
@@ -90,9 +87,12 @@
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
 
-                                            <p>Snakedetection เป็นเว็บไซต์ที่ใช้เทคโนโลยี machine learning
-                                                เพื่อช่วยระบุชนิดของงูจากรูปภาพ. ง่ายๆ เพียงแค่อัปโหลดรูป,
-                                                ระบบของเราจะทำนายชนิดของงูให้คุณทราบในไม่กี่วินาที.</p>
+                                            <p>SnakeDetection
+                                                เป็นส่วนหนึ่งของปริญญานิพนธ์เรื่อง
+                                                "เว็บแอปพลิเคชันตรวจสอบชนิดของงูด้วย Machine Learning"
+                                                ของนักศึกษาระดับปริญญาตรี คณะวิทยาศาสตร์ประยุกต์
+                                                สาขาวิทยาการคอมพิวเตอร์และสารสนเทศ
+                                                มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</p>
 
                                         </div>
                                         <!--end::Text-->
@@ -107,14 +107,15 @@
                             <div class="mt-10 mb-10">
                                 <h1 class="text-center">อาจารย์ที่ปรึกษา</h1>
                             </div>
+
                             <div class="col-md-3">
                                 <!--begin::Hot sales post-->
                                 <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px max-h-300px"
+                                        style="background-image:url('{{ asset('project/images/profile/sathit.png') }}')">
                                     </div>
                                     <!--end::Image-->
                                     <!--begin::Action-->
@@ -127,13 +128,11 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            พิชญ์สินี ชุทสนิท</p>
+                                            ผู้ช่วยศาสตราจารย์ สถิตย์ ประสมพันธ์</p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            รหัสนักศึกษา 6204062636066
-                                            <br>
-                                            นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
+                                            อาจารย์ที่ปรึกษา
                                         </div>
                                         <!--end::Text-->
                                         <!--begin::Text-->
@@ -144,6 +143,81 @@
                                 </div>
                                 <!--end::Hot sales post-->
                             </div>
+
+                            <div class="mt-10 mb-10">
+                                <h1 class="text-center">ผู้ให้คำแนะนำ</h1>
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px max-h-300px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            นายสัตวแพทย์ปณิธิ ละอองบัว</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            นายสัตวแพทย์
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+                            <div class="col-md-3">
+                                <!--begin::Hot sales post-->
+                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
+                                    <!--begin::Overlay-->
+
+                                    <!--begin::Image-->
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px max-h-300px"
+                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    </div>
+                                    <!--end::Image-->
+                                    <!--begin::Action-->
+
+                                    <!--end::Action-->
+                                    </a>
+                                    <!--end::Overlay-->
+                                    <!--begin::Body-->
+                                    <div class="mt-5">
+                                        <!--begin::Title-->
+                                        <p href="#"
+                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
+                                            นายธนพงษ์ ตวัน</p>
+                                        <!--end::Title-->
+                                        <!--begin::Text-->
+                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
+                                            นักวิทยาศาสตร์การแพทย์
+                                        </div>
+                                        <!--end::Text-->
+                                        <!--begin::Text-->
+
+                                        <!--end::Text-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Hot sales post-->
+                            </div>
+
                             <div class="mt-10 mb-10">
                                 <h1 class="text-center">นักศึกษาผู้จัดทำ</h1>
                             </div>
@@ -153,8 +227,8 @@
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px max-h-300px"
+                                        style="background-image:url('{{ asset('project/images/profile/mill.png') }}')">
                                     </div>
                                     <!--end::Image-->
                                     <!--begin::Action-->
@@ -171,7 +245,7 @@
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            รหัสนักศึกษา 6204062636066
+                                            รหัสนักศึกษา 6104062630573
                                             <br>
                                             นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
                                         </div>
@@ -190,8 +264,8 @@
                                     <!--begin::Overlay-->
 
                                     <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_1.jpg') }}')">
+                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px max-h-300px"
+                                        style="background-image:url('{{ asset('project/images/profile/nut.png') }}')">
                                     </div>
                                     <!--end::Image-->
                                     <!--begin::Action-->
@@ -225,83 +299,7 @@
                                 <!--end::Hot sales post-->
                             </div>
 
-                            <div class="mt-10 mb-10">
-                                <h1 class="text-center">ผู้ให้คำแนะนำ</h1>
-                            </div>
-                            <div class="col-md-3">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
-                                    <!--begin::Overlay-->
 
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            พิชญ์สินี ชุทสนิท</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            รหัสนักศึกษา 6204062636066
-                                            <br>
-                                            นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
-                            <div class="col-md-3">
-                                <!--begin::Hot sales post-->
-                                <div class="card-xl-stretch me-md-6 border border-3  p-15 rounded border-dashed">
-                                    <!--begin::Overlay-->
-
-                                    <!--begin::Image-->
-                                    <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
-                                        style="background-image:url('{{ asset('project/images/firstaid_0.jpg') }}')">
-                                    </div>
-                                    <!--end::Image-->
-                                    <!--begin::Action-->
-
-                                    <!--end::Action-->
-                                    </a>
-                                    <!--end::Overlay-->
-                                    <!--begin::Body-->
-                                    <div class="mt-5">
-                                        <!--begin::Title-->
-                                        <p href="#"
-                                            class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            พิชญ์สินี ชุทสนิท</p>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
-                                            รหัสนักศึกษา 6204062636066
-                                            <br>
-                                            นักศึกษามหาวิทยาลัยพระจอมเกล้าพระนครเหนือ
-                                        </div>
-                                        <!--end::Text-->
-                                        <!--begin::Text-->
-
-                                        <!--end::Text-->
-                                    </div>
-                                    <!--end::Body-->
-                                </div>
-                                <!--end::Hot sales post-->
-                            </div>
                         </div>
                         <!--end::Row-->
 

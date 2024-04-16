@@ -48,7 +48,6 @@ class SnakeUploadController extends Controller
                 // วนลูปผ่าน array 'data'
                 foreach ($predictions['data'] as $prediction) {
                     // ค้นหาชื่อของงูจากฐานข้อมูล
-
                     $snake_class = Snake::where('name_en', $prediction['name'])
                         ->first();
                     // เงื่อนไขกรณีที่ ตรวจจับงูได้ซ้ำกันให้แสดงแค่ครั้งเดียว

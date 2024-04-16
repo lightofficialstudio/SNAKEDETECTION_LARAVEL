@@ -199,15 +199,16 @@
 
 
                                     </div>
-                                    <div class="col-md-6 col-sm-12 ">
-                                        <div class="h-150px">
+                                    <div class="col-md-6 col-sm-12 " style="min-height: 650px !important;">
+                                        <div class="h-150px ">
 
                                             <h2>ผลลัพธ์การตรวจสอบ</h2><br />
                                             <span class="badge badge-light-danger p-3">*
-                                                ผลลัพธ์ในการตรวจสอบอาจมีความไม่ถูกต้อง
-                                                ในกรณีที่ถูกงูกัดให้รีบพบแพทย์ให้เร็วที่สุด</span>
+                                                ผลลัพธ์ที่ได้มีความเสี่ยงในการผิดพลาด <br>
+                                                กรณีที่ถูกงูกัด ควรพาผู้ที่ถูกกัดพบแพทย์ทุกครั้ง </span>
 
                                             <div id="snake-result-prediction" class="mb-10"></div>
+
                                         </div>
 
                                     </div>
@@ -392,15 +393,20 @@
                         resultHtml += `
                         <a href="${routes.snakeProfile.replace('%id%', item.id)}" class="list-group-item list-group-item-action mb-5 mt-3
                         border border-gray-300 border-dashed rounded" aria-current="true">
-                            <div class="d-flex w-100 justify-content-between align-items-center">
-                                <img src="${item.image}" style="max-width:200px; max-height:200px; " />
-                                <div class="">
-                                    <h2 class="mb-1">อันดับ ${index + 1} : ${item.class_name}</h2>
+                            <div class="row d-flex w-100 justify-content-between align-items-center">
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="${item.image}" style="max-width:200px; max-height:200px; " />
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 mt-3">
+                                        <h2 class="mb-1">อันดับ ${index + 1} : ${item.class_name}</h2>
                                     <br>
                                     <h5 class="${item.posion_type === "งูไม่มีพิษ" ? 'text-muted' : 'text-danger'}">${item.posion_type }   ${item.posion_description}</h5>
                                     <br>
                                     <h4 class="text-muted badge badge-light-success">ความน่าจะเป็น : ${item.probability}%</h4>
-                                </div>
+                                    </div>
+
+
+
                                 <div>&nbsp;</div>
                             </div>
                         </a>`;

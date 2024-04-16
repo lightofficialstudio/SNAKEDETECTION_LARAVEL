@@ -208,7 +208,7 @@
                                                 <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
                                                     <span class="me-2">
                                                         @if ($searchPerformed === 1)
-                                                            ผลลัพธ์การค้นหา สารานุกรมงู
+                                                            ผลลัพธ์การค้นหา {{ $count }} ชนิด
                                                         @else
                                                             สารานุกรมงู
                                                         @endif

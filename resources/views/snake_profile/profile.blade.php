@@ -86,14 +86,14 @@
 
                                         <div class="d-flex justify-content-center">
                                             <img src="{{ asset($snake->image ? 'project/images/snake_type/' . $snake->image : 'project/images/snake-profileimg.png') }}"
-                                                alt="snake-original-check" style="max-width: 500px; max-height: 500px;"
+                                                alt="snake-original-check" style="max-width: 370px; max-height: 500px;"
                                                 class="shadow">
 
                                         </div>
                                         {{-- <h1 class="text-center badge badge-dark mt-5 mb-5 p-5">ข้อมูลของงู</h1><br /> --}}
                                         <div class="justify-content-center d-flex mt-10">
 
-                                            <table class="table table-bordered w-400px">
+                                            <table class="table table-bordered w-300px">
                                                 <thead class="table-dark">
                                                     <th>ข้อมูลงู</th>
                                                 </thead>
@@ -103,10 +103,14 @@
                                                             {{ $snake->name_th }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><b>ชื่ออังกฤษ</b> : {{ $snake->name_en }}</td>
+                                                        <td><b>ชื่ออังกฤษ</b> : {{ str_replace('_', ' ', $snake->name_en) }}
+                                                        </td>
+
                                                     </tr>
                                                     <tr>
-                                                        <td><b>ชื่อวิทยาศาสตร์</b> : <i>{{ $snake->name_sci }}</i></td>
+                                                        <td><b>ชื่อวิทยาศาสตร์</b> :
+                                                            <i> {{ str_replace('_', ' ', $snake->name_sci) }}</i>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td><b>ประเภทของพิษ : </b>
@@ -122,7 +126,10 @@
                                                     @if ($snake->posion_type != 'งูไม่มีพิษ')
                                                         <tr>
                                                             <td><b>คำอธิบายของพิษ</b> :
-                                                                {{ $snake->posion_description ?? '' }}</td>
+                                                                <span class="badge badge-light-danger">
+                                                                    {{ $snake->posion_description ?? '' }}
+                                                                </span>
+                                                            </td>
                                                         </tr>
                                                     @else
                                                     @endif
@@ -221,32 +228,35 @@
                                                 </div>
                                             </div>
                                             {{--  --}}
-                                            <div class="card mb-6 mb-xl-9">
-                                                <div class="card-body">
-                                                    <!--begin::Header-->
-                                                    <div class="d-flex flex-stack mb-3">
-                                                        <!--begin::Badge-->
-                                                        <div class="badge badge-dark fs-5">พฤติกรรม</div>
-                                                        <!--end::Badge-->
-                                                        <!--begin::Menu-->
-                                                        <div>
-                                                            <i class="ki-solid ki-graph fs-2"></i>
+                                            @if ($snake->behaviors != '-')
+                                                <div class="card mb-6 mb-xl-9">
+                                                    <div class="card-body">
+                                                        <!--begin::Header-->
+                                                        <div class="d-flex flex-stack mb-3">
+                                                            <!--begin::Badge-->
+                                                            <div class="badge badge-dark fs-5">พฤติกรรม</div>
+                                                            <!--end::Badge-->
+                                                            <!--begin::Menu-->
+                                                            <div>
+                                                                <i class="ki-solid ki-graph fs-2"></i>
+
+                                                            </div>
+                                                            <!--end::Menu-->
+                                                        </div>
+                                                        <!--end::Header-->
+                                                        <!--begin::Title-->
+                                                        <div class="mb-2">
 
                                                         </div>
-                                                        <!--end::Menu-->
-                                                    </div>
-                                                    <!--end::Header-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-2">
+                                                        <!--end::Title-->
+                                                        <!--begin::Content-->
+                                                        <div class="fs-6 fw-semibold text-gray-600 mb-5">
+                                                            {{ $snake->behaviors ?? '' }}</div>
 
                                                     </div>
-                                                    <!--end::Title-->
-                                                    <!--begin::Content-->
-                                                    <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        {{ $snake->behaviors ?? '' }}</div>
-
                                                 </div>
-                                            </div>
+                                            @endif
+
                                             {{--  --}}
                                             <div class="card mb-6 mb-xl-9">
                                                 <div class="card-body">
@@ -270,7 +280,8 @@
                                                     <!--end::Title-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-semibold text-gray-600 mb-5">
-                                                        {{ $snake->status ?? '' }}</div>
+                                                        {{ $snake->status == 'yes' ? 'เป็นสัตว์คุ้มครอง' : 'ไม่เป็นสัตว์คุ้มครอง' }}
+                                                    </div>
 
                                                 </div>
                                             </div>

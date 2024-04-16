@@ -151,7 +151,7 @@
                                     </div>
                                     <!--end::Input group-->
                                 </div>
-                                <div class="form-group col-6">
+                                <div class="form-group col-md-6 col-sm-12">
                                     <!--begin::Input group-->
                                     <label for="pattern-snake" class="fs-2x text-left mt-3 mb-3">ลวดลายบนตัวงู</label>
 
@@ -331,7 +331,7 @@
                                     <!--end::Row-->
                                     <!--end::Input group-->
                                 </div>
-                                <div class="form-group col-6">
+                                <div class="form-group col-md-6 col-sm-12">
                                     <!--begin::Input group-->
                                     <label for="pattern-snake" class="fs-2x text-left mt-3 mb-3">สีบนตัวงู</label>
 
@@ -478,7 +478,7 @@
                                                 <!--begin::Title-->
                                                 <div class="position-relative fs-3x z-index-2 fw-bold text-dark mb-2">
                                                     <span class="me-2">
-                                                        ผลลัพธ์การค้นหางูด้วยคุณลักษณะ
+                                                        ผลลัพธ์การค้นหา จำนวน {{ $snakes->count() }} ชนิด
                                                     </span>
                                                     <br>
 

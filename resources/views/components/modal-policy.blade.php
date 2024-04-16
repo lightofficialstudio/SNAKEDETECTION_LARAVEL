@@ -10,9 +10,11 @@
                   <h2>เงื่อนไขการใช้งาน</h2>
                   <!--end::Modal title-->
                   <!--begin::Close-->
-                  <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                      <i class="ki-outline ki-cross fs-1"></i>
-                  </div>
+                  <a href="{{ route('snake.home') }}">
+                      <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                          <i class="ki-outline ki-cross fs-1"></i>
+                      </div>
+                  </a>
                   <!--end::Close-->
               </div>
               <!--begin::Modal header-->
@@ -58,7 +60,9 @@
                                           </h2>
                                           <p>เราอาจปรับปรุงนโยบายความเป็นส่วนตัวและเงื่อนไขการใช้งานนี้เป็นครั้งคราว.
                                               เราแนะนำให้คุณตรวจสอบเอกสารนี้อย่างสม่ำเสมอเพื่อทราบถึงการเปลี่ยนแปลงใดๆ.
-                                          </p>
+                                          </p><br>
+                                          <span class="badge badge-secondary fs-3">หากปฏิเสธ
+                                              เราจะพาท่านกลับสู่หน้าหลักของเว็บแอปพลิเคชัน</span>
                                       </div>
                                       <!--end::Description-->
                                   </div>
@@ -70,9 +74,7 @@
                           </div>
                           <!--end::Type-->
 
-                          <span class="badge badge-light-danger p-3">*
-                              ผลลัพธ์ในการตรวจสอบอาจมีความไม่ถูกต้อง
-                              ในกรณีที่ถูกงูกัดให้รีบพบแพทย์ให้เร็วที่สุด</span>
+
 
 
 
@@ -81,11 +83,10 @@
 
                       <div class="btn-group">
                           <button data-bs-dismiss="modal" type="button"
-                              class="btn btn-light-primary fw-bolder px-9 py-4 me-4">
+                              class="btn btn-primary fw-bolder px-9 py-4 me-4">
                               ยอมรับ
                           </button>
-                          <a href="{{ route('snake.home') }}" type="button"
-                              class="btn btn-light-danger fw-bolder px-9 py-4">
+                          <a href="{{ route('snake.home') }}" type="button" class="btn btn-danger fw-bolder px-9 py-4">
                               ปฏิเสธ
                           </a>
                       </div>

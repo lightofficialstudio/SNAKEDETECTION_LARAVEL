@@ -24,7 +24,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            filter: blur(8px);
+            filter: blur(14px);
             z-index: 0;
         }
     </style>
@@ -36,18 +36,20 @@
             <section class="header-img d-flex align-items-center justify-content-center">
                 <div class="blurred-bg"></div> <!-- นี่คือ div ที่จะแสดงรูปภาพที่เบลอ -->
                 <div class="d-flex align-items-center justify-content-center rounded"
-                    style="width:90vh; max-width: 120vh; height:65vh; background-color: rgba(255, 255, 255, 0.5); z-index: 1;">
-
-                    <div class="text-center p-2">
-                        <h2 class="text-center fs-3x text-white font-weight-bold text-stroke">
-                            มาเริ่มอัปโหลดรูปภาพของงูที่คุณพบ
-                        </h2>
-                        <h1 class="text-center fs-2x text-white font-weight-bold text-stroke"> และค้นหาชนิดด้วย Machine
-                            Learning กันเลย</h1>
-                        <a href="{{ route('snake.upload') }}"
-                            class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3">อัปโหลดรูปภาพ</a>
-                        <input type="file" name="" id="inputToUploadImages" style="display: none;">
+                    style="width:90vh; max-width: 120vh; min-height:90vh; z-index:1; ">
+                    <div class="p-10 rounded" style="background-color: rgb(0,0,0,0.4)">
+                        <div class="text-center p-2">
+                            <h2 class="text-center fs-3x text-white font-weight-bold text-stroke">
+                                มาเริ่มอัปโหลดรูปภาพของงูที่คุณพบ
+                            </h2>
+                            <h1 class="text-center fs-2x text-white font-weight-bold text-stroke"> และค้นหาชนิดด้วย Machine
+                                Learning กันเลย</h1>
+                            <a href="{{ route('snake.upload') }}"
+                                class="btn btn-primary btn-lg btn-rounded p-8 mt-7 fs-3">อัปโหลดรูปภาพ</a>
+                            <input type="file" name="" id="inputToUploadImages" style="display: none;">
+                        </div>
                     </div>
+
                 </div>
             </section>
 
@@ -89,9 +91,10 @@
                                             <div
                                                 class="d-flex justify-content-center fs-2 z-index-2 text-dark align-items-center mb-3">
                                                 <span>
-                                                    Snakedetection เป็นเว็บไซต์ที่ใช้เทคโนโลยี machine learning
-                                                    เพื่อช่วยระบุชนิดของงูจากรูปภาพ. ง่ายๆ เพียงแค่อัปโหลดรูป,
-                                                    ระบบของเราจะค้นหาชนิดของงูให้คุณทราบในไม่กี่วินาที.
+                                                    Snakedetection เป็นเว็บแอปพลิเคชันที่ใช้เทคโนโลยี machine learning <br>
+                                                    เพื่อช่วยระบุชนิดของงูจากรูปภาพ. ง่ายๆ เพียงแค่อัปโหลดรูป, <br>
+                                                    ระบบของเราจะค้นหาชนิดของงูจากฐานข้อมูลงูทั้งหมด 23 ชนิด
+                                                    ให้คุณทราบในไม่กี่วินาที
 
                                                 </span>
                                             </div>
