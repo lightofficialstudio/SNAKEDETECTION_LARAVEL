@@ -32,17 +32,7 @@
 
 
             </ul>
-            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
-                <li class="menu-item">
-                    <h3 href="#" target="_blank" class="text-white px-2">คู่มือการใช้งานเว็บแอพลิเคชัน</h3>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('snake.manual') }}" target="_blank" class="menu-link px-2">คู่มือการใช้งาน</a>
-                </li>
 
-
-
-            </ul>
             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
                 <li class="menu-item">
                     <h3 href="#" target="_blank" class="text-white px-2">เงื่อนไขการใช้งาน</h3>

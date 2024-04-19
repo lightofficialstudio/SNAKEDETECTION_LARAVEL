@@ -131,7 +131,7 @@
                                 <div class="col-md-3 col-sm-12">
                                     <a href="{{ route('snake.search.attribute') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px "
                                                 style="max-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/search-attribute.png') }}')">
                                             </div>
                                             <div class="mt-5">
@@ -147,7 +147,7 @@
                                 <div class="col-md-3 col-sm-12">
                                     <a href="{{ route('snake.search.content') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px"
                                                 style="max-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/search-content.png') }}')">
                                             </div>
                                             <div class="mt-5">
@@ -163,7 +163,7 @@
                                 <div class="col-md-3 col-sm-12">
                                     <a href="{{ route('snake.firstaid') }}">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px"
                                                 style="wmax-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/firstaid.png') }}')">
                                             </div>
                                             <div class="mt-5">
@@ -180,7 +180,7 @@
                                     data-bs-target="#modal_emergency_call">
                                     <a href="#">
                                         <div class="card-xl-stretch me-md-6 border p-12 rounded">
-                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px "
+                                            <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-250px "
                                                 style="max-width:450px max-height:400px; background-image:url('{{ asset('project/images/card/callcenter.png') }}')">
                                             </div>
                                             <div class="mt-5">

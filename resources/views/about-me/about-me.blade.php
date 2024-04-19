@@ -80,14 +80,14 @@
                                         <!--begin::Title-->
                                         <p href="#"
                                             class="fs-2x text-dark fw-bold text-hover-primary text-dark lh-base">
-                                            คำอธิบายเว็บไซต์
+                                            SnakeDetection
 
                                         </p>
                                         <!--end::Title-->
                                         <!--begin::Text-->
                                         <div class="fw-semibold fs-4 text-gray-600 text-dark mt-3">
 
-                                            <p>SnakeDetection
+                                            <p>
                                                 เป็นส่วนหนึ่งของปริญญานิพนธ์เรื่อง
                                                 "เว็บแอปพลิเคชันตรวจสอบชนิดของงูด้วย Machine Learning"
                                                 ของนักศึกษาระดับปริญญาตรี คณะวิทยาศาสตร์ประยุกต์

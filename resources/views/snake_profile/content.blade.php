@@ -142,6 +142,9 @@
                                             <option value="ทั่วทุกภาค" @if (old('region', $region) == 'ทั่วทุกภาค') selected @endif>
                                                 ทุกภูมิภาค
                                             </option>
+                                            <option value="เหนือ" @if (old('region', $region) == 'เหนือ') selected @endif>
+                                                ภาคเหนือ
+                                            </option>
                                             <option value="กลาง" @if (old('region', $region) == 'กลาง') selected @endif>
                                                 ภาคกลาง
                                             </option>
