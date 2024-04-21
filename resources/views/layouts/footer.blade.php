@@ -48,7 +48,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="{{ route('snake.policy') }}" target="_blank"
+                    <a href="{{ route('snake.policy') }}"
                         class="menu-link px-2">ข้อกำหนดการใช้งานเว็บไซต์</a>
                 </li>
 
@@ -60,7 +60,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="{{ route('snake.aboutme') }}" target="_blank" class="menu-link px-2">เกี่ยวกับเรา</a>
+                    <a href="{{ route('snake.aboutme') }}"  class="menu-link px-2">เกี่ยวกับเรา</a>
                 </li>
 
 
