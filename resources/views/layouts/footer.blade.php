@@ -8,7 +8,7 @@
 
             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
                 <li class="menu-item">
-                    <h3 href="#" target="_blank" class="text-white px-2">เนื้อหา</h3>
+                    <h3 href="#" target="_blank" class="text-white px-2">เนื้อหาหลัก</h3>
                 </li>
                 <li class="menu-item">
                     <a href="{{ route('snake.upload') }}" class="menu-link px-2">ค้นหางูด้วยรูปภาพ</a>
@@ -19,6 +19,15 @@
                 <li class="menu-item">
                     <a href="{{ route('snake.search.content') }}" class="menu-link px-2">สารานุกรมงู</a>
                 </li>
+
+
+            </ul>
+
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1 d-flex flex-column">
+                <li class="menu-item ">
+                    <h3 href="#" target="_blank" class="text-white px-2">เนื้อหารอง</h3>
+                </li>
+
                 <li class="menu-item">
                     <a data-bs-toggle="modal" data-bs-target="#modal_emergency_call"
                         class="menu-link px-2">สายด่วนงู</a>
@@ -39,7 +48,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="{{ route('snake.policy') }}" target="_blank"
+                    <a href="{{ route('snake.policy') }}"
                         class="menu-link px-2">ข้อกำหนดการใช้งานเว็บไซต์</a>
                 </li>
 
@@ -51,7 +60,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="{{ route('snake.aboutme') }}" target="_blank" class="menu-link px-2">เกี่ยวกับเรา</a>
+                    <a href="{{ route('snake.aboutme') }}"  class="menu-link px-2">เกี่ยวกับเรา</a>
                 </li>
 
 
