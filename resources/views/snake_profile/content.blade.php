@@ -165,7 +165,7 @@
 
                                         </select>
 
-                                        <label for="floatingSelect">ประเภทสัตว์คุ้มครอง (ไม่บังคับ)</label>
+                                        <label for="floatingSelect">ภูมิภาคที่อยู่อาศัย (ไม่บังคับ) </label>
                                     </div>
                                     <!--end::Input group-->
                                 </div>
